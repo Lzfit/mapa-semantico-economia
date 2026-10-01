@@ -1,0 +1,1001 @@
+﻿posicao_receita,empresa,setor_primario,receita_2025_mil_reais,receita_2024_mil_reais,lucro_liquido_2025_mil_reais,patrimonio_liquido_2025_mil_reais,ativo_total_2025_mil_reais,cidade_sede,estado,pagina_pdf
+1,Petrobras,"Combustíveis, Petróleo e Químico",497549000,490829000,110605000,417587000,1223389000,Rio de Janeiro,RJ,1
+2,JBS,Alimentos e Bebidas,480583047,416952002,12535912,51594835,247689021,São Paulo,SP,1
+3,Banco do Brasil,Bancos,319462104,273505274,16781938,193567416,2455143253,Brasília,DF,1
+4,Bradesco,Bancos,267113345,211733717,23924636,178948630,2330327216,Osasco,SP,1
+5,Raízen Combustíveis,"Combustíveis, Petróleo e Químico",255268454,220454239,-4176951,18175938,140999678,Rio de Janeiro,RJ,1
+6,Itaú Unibanco Holding,Bancos,254790000,242258000,45849000,215076000,3066169000,São Paulo,SP,1
+7,Caixa,Bancos,244646480,189778413,16051819,149672372,2223557095,Brasília,DF,1
+8,Vale,"Siderurgia, Mineração e Metalurgia",213595000,206005000,11811000,188926000,476094000,Rio de Janeiro,RJ,1
+9,Vibra Energia,"Combustíveis, Petróleo e Químico",189807000,172959000,1979000,20741000,60963000,Rio de Janeiro,RJ,1
+10,MBRF,Alimentos e Bebidas,163962737,149135143,762675,14317085,141988425,São Paulo,SP,1
+11,Santander,Bancos,161360937,137183478,15338645,95650292,1255624187,São Paulo,SP,1
+12,Ultrapar,"Combustíveis, Petróleo e Químico",142369540,133498913,2541908,17730617,49348994,São Paulo,SP,1
+13,Ipiranga,"Combustíveis, Petróleo e Químico",126497005,120693216,1956919,8419898,25479785,Rio de Janeiro,RJ,1
+14,Grupo Bradesco Seguros,Seguradoras,118509532,121093000,10069766,47340241,511971427,Barueri,SP,1
+15,Cargill Alimentos,Alimentos e Bebidas,117950699,109188170,1695889,11822771,45342624,Itapira,SP,1
+16,Cargill,Agronegócio,115288598,106873743,1574514,10946603,43105515,São Paulo,SP,1
+17,BTG Pactual,Bancos,99213625,68478771,16663803,80293552,809301519,Rio de Janeiro,RJ,1
+18,Ambev,Alimentos e Bebidas,88242500,89452700,15988400,88774800,145087100,São Paulo,SP,1
+19,Raízen,"Combustíveis, Petróleo e Químico",87700109,66908527,-6098329,15124031,105915394,São Paulo,SP,1
+20,Assaí Atacadista,Atacado e Varejo,77307000,73819000,497000,5554000,47825000,São Paulo,SP,1
+21,Bunge,Agronegócio,76009736,69815951,1220884,9832285,32355646,São Paulo,SP,1
+22,BNDES,Bancos,73808710,73725589,25571645,172011238,962472648,Rio de Janeiro,RJ,1
+23,Braskem,"Combustíveis, Petróleo e Químico",70717000,77411000,-10961000,-16502000,81879000,São Paulo,SP,1
+24,Gerdau,"Siderurgia, Mineração e Metalurgia",69858532,67026656,1418438,53798489,81688175,São Paulo,SP,1
+25,Metalúrgica Gerdau,"Siderurgia, Mineração e Metalurgia",69856523,66025556,1413724,53858747,81758415,Porto Alegre,RS,1
+26,Axihum,Agronegócio,66322001,54444094,-1310553,17612804,62395917,Rincão,SP,1
+27,Copersucar,"Combustíveis, Petróleo e Químico",65780597,62345156,653141,2413413,17460898,Ribeirão Preto,SP,1
+28,Sicoob,Bancos,62173093,47263511,10388614,62699244,429991945,Brasília,DF,1
+29,ArcelorMittal,"Siderurgia, Mineração e Metalurgia",61759154,66550587,1838850,31022111,92977621,Belo Horizonte,MG,1
+30,Vivo,Tecnologia e Telecomunicações,59595000,55845048,6177543,69002726,128071708,São Paulo,SP,1
+31,Rede D’Or,Saúde e Serviços de Saúde,55725852,50571261,4843623,21621087,106548532,São Paulo,SP,1
+32,Minerva,Alimentos e Bebidas,54830072,34068866,848260,1893220,45876559,Barretos,SP,1
+33,Neoenergia,Energia Elétrica,52633000,48993000,5057000,36584000,119278000,Rio de Janeiro,RJ,1
+34,Atacadão,Atacado e Varejo,52504000,59476000,2038000,22830000,55434000,São Paulo,SP,1
+35,Equatorial Energia,Energia Elétrica,52073804,53760753,2503931,28327947,109603944,Brasília,DF,1
+36,Suzano,Papel e Celulose,50115679,47403282,13437687,43952173,167935519,Salvador,BA,1
+37,Enel Brasil,Energia Elétrica,49049703,44095325,2980974,65649432,115268372,São Paulo,SP,1
+38,LDC,Alimentos e Bebidas,48759705,38748107,825039,4751692,22923033,São Paulo,SP,1
+39,Amaggi,Agronegócio,47169093,40605351,1309182,14437647,42035522,Cuiabá,MT,1
+40,Brasilprev,Seguradoras,44835379,58861724,1991440,5320585,473503727,São Paulo,SP,1
+41,CSN,"Siderurgia, Mineração e Metalurgia",44797946,43687460,-1506726,12876059,100575369,Volta Redonda,RJ,1
+42,CPFL,Energia Elétrica,44367780,42628210,5745552,23504510,81099930,Campinas,SP,1
+43,Raia Drogasil,Atacado e Varejo,44250449,38871522,1343491,7749555,20630780,São Paulo,SP,1
+44,Simpar,"Transporte, Logística e Serviços Logísticos",43528375,41062901,212641,7411001,88642122,São Paulo,SP,1
+45,Cemig,Energia Elétrica,42751283,39819620,4899617,28581703,67028076,Belo Horizonte,MG,1
+46,Embraer,Bens de Capital e Eletroeletrônicos,41883234,35424174,1992037,20974950,71092088,Botucatu,SP,1
+47,Localiza,"Transporte, Logística e Serviços Logísticos",41781588,27271558,1870470,25539012,85566576,Belo Horizonte,MG,1
+48,Bradesco Saúde,Operadoras de Planos de Saúde,41471016,37531046,3280838,7760224,32692063,Rio de Janeiro,RJ,2
+49,WPA Participações,Participações e Mídia,41326647,38461413,7711327,28090351,55827290,Jaraguá do Sul,SC,2
+50,Porto,Seguradoras,41304942,35495218,3424078,15871223,55864993,São Paulo,SP,2
+51,Axia Energia,Energia Elétrica,41281595,40181552,6559657,118430137,279685593,Rio de Janeiro,RJ,2
+52,Weg,Bens de Capital e Eletroeletrônicos,40804110,37986941,6775958,18553364,42645030,Jaraguá do Sul,SC,2
+53,Cosan,"Combustíveis, Petróleo e Químico",40418596,43950742,-10194401,31009632,135117518,São Paulo,SP,2
+54,Magazine Luiza,Atacado e Varejo,38703387,38038068,204603,11278030,37911158,São Paulo,SP,2
+55,Grupo Mateus,Atacado e Varejo,38424403,32085428,1566844,11467816,24352014,São Luís,MA,2
+56,Comexport,"Transporte, Logística e Serviços Logísticos",38106487,35727865,2701942,4188060,13319002,São Paulo,SP,2
+57,Sabesp,Saneamento e Meio Ambiente,38092050,36145477,8462059,42401124,104202767,São Paulo,SP,2
+58,Energisa,Energia Elétrica,35441353,33715476,3140072,21184544,83471647,Cataguases,MG,2
+59,SulAmérica Seguros,Seguradoras,30892004,27331858,3415550,13164430,31241138,Rio de Janeiro,RJ,2
+60,Hapvida,Operadoras de Planos de Saúde,30863255,28952056,-237635,48203406,74101687,Fortaleza,CE,2
+61,Amil,Operadoras de Planos de Saúde,29771020,27051694,5418343,13078671,22014752,São Paulo,SP,2
+62,Votorantim Cimentos,Imobiliário e Construção Civil,29416000,26564574,3178000,19958000,49896000,São Paulo,SP,2
+63,Via,Atacado e Varejo,29197000,27206000,-2988000,2774000,33638000,São Paulo,SP,2
+64,Cemig Distribuição,Energia Elétrica,29043367,26617174,2121173,12521915,38255250,Belo Horizonte,MG,2
+65,Mapfre Brasil,Seguradoras,28433719,27045848,5457016,8649043,31639172,São Paulo,SP,2
+66,Coamo,Cooperativas,26787536,29501544,2017005,13373432,22370219,Londrina,PR,2
+67,TIM,Tecnologia e Telecomunicações,26624721,25447930,4311984,23977391,56939179,Rio de Janeiro,RJ,2
+68,Usiminas,"Siderurgia, Mineração e Metalurgia",26263450,25869799,-2910034,23701381,35684766,Belo Horizonte,MG,2
+69,Copel,Energia Elétrica,26116856,22651036,2687939,23091978,60414456,Curitiba,PR,2
+70,Bradesco Seguros,Seguradoras,23845140,22180671,5113350,12497824,445914852,Barueri,SP,2
+71,Banco XP,Bancos,23464197,8771099,859204,11421420,219517798,Rio de Janeiro,RJ,2
+72,Banco Votorantim,Bancos,22877296,21589898,1917602,12692193,138312114,São Paulo,SP,2
+73,Inpasa,Agronegócio,22600000,13652090,4900000,9300000,22600000,Sinop,MT,2
+74,Porto Seguro Seguros,Seguradoras,22244134,16948941,1781277,6985626,26799649,São Paulo,SP,2
+75,Gol Linhas Aéreas,"Transporte, Logística e Serviços Logísticos",22103281,19129573,-1304930,-17002393,26682569,São Paulo,SP,2
+76,Natura Cosméticos,Farmacêutico e Beleza,21823488,21271580,-1785238,12976710,28971321,Cajamar,SP,2
+77,Banrisul,Bancos,21729761,16243082,1714551,11465151,163858532,Porto Alegre,RS,2
+78,Klabin,Papel e Celulose,20697507,19645264,1678211,14401101,63796777,São Paulo,SP,2
+79,Sicredi Participações,Bancos,20608641,16891270,46246,5334874,223133242,Porto Alegre,RS,2
+80,Banco Cooperativo Sicredi,Bancos,20607583,16890097,180521,5313862,223066133,Porto Alegre,RS,2
+81,Citi,Bancos,20419213,21546928,2037148,4454010,187343500,São Paulo,SP,2
+82,Aegea,Saneamento e Meio Ambiente,20403843,15494936,1280100,4694561,55373598,São Paulo,SP,2
+83,EDP Brasil,Energia Elétrica,20174062,17447189,1994297,12083226,41649491,São Paulo,SP,2
+84,Azul Linhas Aéreas,"Transporte, Logística e Serviços Logísticos",19997726,18123135,124858,-29038062,23637914,Barueri,SP,2
+85,Rede Energia,Energia Elétrica,19392049,17884954,1677899,6640369,32899734,Cataguases,MG,2
+86,Organizações Globo,Participações e Mídia,19310555,17366214,1390238,12332537,28372111,Rio de Janeiro,RJ,2
+87,Copel Distribuição,Energia Elétrica,19202210,17030454,1072506,7955689,24647570,Curitiba,PR,2
+88,CBD,Atacado e Varejo,19113000,18790000,-815000,2124000,18426000,São Paulo,SP,2
+89,Motiva,"Transporte, Logística e Serviços Logísticos",18850645,18115933,3503497,16282437,71013870,São Paulo,SP,2
+90,Evolua Etanol,"Combustíveis, Petróleo e Químico",18504887,12454978,206091,2155990,2619856,Volta Redonda,RJ,2
+91,Basf,"Combustíveis, Petróleo e Químico",18498247,18529782,4638796,10016519,17271936,São Paulo,SP,2
+92,Eneva,Energia Elétrica,18416056,11387505,1157575,21406342,56840479,Rio de Janeiro,RJ,2
+93,Coelba,Energia Elétrica,18380000,16529000,1954000,7848000,35861000,Salvador,BA,2
+94,Globo,Participações e Mídia,18283369,16418345,1490755,17320026,27281275,Rio de Janeiro,RJ,2
+95,Banco Pan,Bancos,18149818,16614695,619635,8076986,71408093,São Paulo,SP,3
+96,Claro Nxt,Tecnologia e Telecomunicações,18056746,17637320,2011497,15544977,31101579,Rio de Janeiro,RJ,3
+97,CSN Mineração,"Siderurgia, Mineração e Metalurgia",18025121,16496317,1649159,6680808,33553574,Congonhas,MG,3
+98,Drogarias São Paulo Pacheco,Atacado e Varejo,17122703,15516357,171172,2346143,9785027,São Paulo,SP,3
+99,Santa Adria,Participações e Mídia,17122703,15516357,171295,2392236,9844164,Rio de Janeiro,RJ,3
+100,Cooxupé,Cooperativas,16997166,10692557,380718,2617024,13821564,Guaxupé,MG,3
+101,Compass,"Combustíveis, Petróleo e Químico",16604055,18383448,1459707,7436502,33347589,São Paulo,SP,3
+102,3tentos,Agronegócio,16423694,12825771,808699,4699914,13104355,Santa Bárbara do Sul,RS,3
+103,Lojas Renner,Moda e Vestuário,15829460,14436366,1457566,10456281,19626027,Porto Alegre,RS,3
+104,Prio,"Combustíveis, Petróleo e Químico",15583960,14360653,2251479,25779881,64179605,Rio de Janeiro,RJ,3
+105,Intermédica,Operadoras de Planos de Saúde,15431019,14948368,823061,14690685,24525543,São Paulo,SP,3
+106,Iochpe-Maxion,Bens de Capital e Eletroeletrônicos,15366537,15331813,217134,4851749,14392484,Cruzeiro,SP,3
+107,CRBS,Atacado e Varejo,15271000,16199190,1256260,5309561,8897949,Jaguariúna,SP,3
+108,Gerdau Aços Longos,"Siderurgia, Mineração e Metalurgia",15196060,15236569,-638060,15397788,20343386,São Paulo,SP,3
+109,Águia Branca,"Transporte, Logística e Serviços Logísticos",15019022,14414684,147756,2009482,10563781,Vitória,ES,3
+110,Light,Energia Elétrica,14996448,14876283,213095,5448695,25733415,Rio de Janeiro,RJ,3
+111,Pague Menos,Saúde e Serviços de Saúde,14906429,12641825,260282,3085176,9920927,Fortaleza,CE,3
+112,Movida,"Transporte, Logística e Serviços Logísticos",14672054,13481270,318364,2967804,34925260,São Paulo,SP,3
+113,Tokio Marine,Seguradoras,14632373,13440271,1467732,5027020,23638169,São Paulo,SP,3
+114,CBMM,"Siderurgia, Mineração e Metalurgia",14489559,13383789,6408791,1350589,18317678,Araxá,MG,3
+115,Comigo,Cooperativas,14103370,11216041,1073279,6762906,9991890,Paraúna,GO,3
+116,Três Corações,Alimentos e Bebidas,14098921,9701415,878711,2315821,7741140,Eusébio,CE,3
+117,Rumo,"Transporte, Logística e Serviços Logísticos",13847776,13936389,865125,14048438,53783092,Curitiba,PR,3
+118,Bradesco Vida e Previdência,Seguradoras,13769301,12541064,3943122,6224702,417987149,Barueri,SP,3
+119,Timbro,Agronegócio,13722095,14031517,84596,528510,5692044,Vitória,ES,3
+120,Havan,Atacado e Varejo,13693224,11697862,1486059,926051,9365795,Brusque,SC,3
+121,Petrogal,"Combustíveis, Petróleo e Químico",13526022,14762394,3140126,12048448,30115084,Rio de Janeiro,RJ,3
+122,Stone,Serviços Financeiros,13513256,11393798,339401,1729575,54419131,São Paulo,SP,3
+123,Light Serviços,Energia Elétrica,13509764,13527958,94639,5468107,21100772,Rio de Janeiro,RJ,3
+124,Weg Equipamentos,Bens de Capital e Eletroeletrônicos,13386427,13699126,4996430,19850822,26274154,Jaraguá do Sul,SC,3
+125,Banco Daycoval,Bancos,13201266,13557358,1796581,7086807,100569845,São Paulo,SP,3
+126,VTRM,Energia Elétrica,13176952,8059951,-557875,13775463,48727388,São Paulo,SP,3
+127,Randoncorp,Bens de Capital e Eletroeletrônicos,13143266,11915741,-59791,4747907,19077325,Caxias do Sul,RS,3
+128,Sertrading,Atacado e Varejo,13010932,497863,1090694,12193015,35973228,Vitória,ES,3
+129,Engie,Energia Elétrica,12860075,11218635,2857919,13914493,55312909,Florianópolis,SC,3
+130,Equatorial Goiás,Energia Elétrica,12711891,10855406,-352952,4518918,26227750,Goiânia,GO,3
+131,Solar Bebidas,Alimentos e Bebidas,12619850,11511909,1394244,4412020,12032349,Fortaleza,CE,3
+132,Whirlpool,Bens de Capital e Eletroeletrônicos,12561821,12931658,450784,1833818,10400830,São Paulo,SP,3
+133,Transpetro,"Transporte, Logística e Serviços Logísticos",12551419,12003545,1058719,5924255,26886701,Rio de Janeiro,RJ,3
+134,Eurofarma,Farmacêutico e Beleza,12478397,10973515,593544,5006962,18612918,Itapevi,SP,3
+135,RGE Sul,Energia Elétrica,12352016,11021946,1335886,6447780,21679066,São Leopoldo,RS,3
+136,Americanas,Atacado e Varejo,12305000,12452000,-271000,4759000,16249000,Rio de Janeiro,RJ,3
+137,Royal Fic,"Combustíveis, Petróleo e Químico",12286149,11339036,329386,219952,1742393,São Paulo,SP,3
+138,Equatorial PA,Energia Elétrica,12223744,10861897,1552654,5179045,18809559,Belém,PA,3
+139,Centauro Esporte,Moda e Vestuário,12088651,9516148,642305,3456002,10283053,São Paulo,SP,3
+140,Celesc,Energia Elétrica,11900276,10658858,729495,3968465,13830031,Florianópolis,SC,3
+141,Drogaria São Paulo,Atacado e Varejo,11869884,10703696,169631,1409604,6553880,São Paulo,SP,4
+142,Allianz Seguros,Seguradoras,11867442,9667791,287635,4886048,19139439,São Paulo,SP,4
+143,Arezzo,Moda e Vestuário,11819492,8379753,911249,7977304,15448601,Belo Horizonte,MG,4
+144,Iupar,Serviços Financeiros,11763634,10672170,11373930,52877735,54972559,São Paulo,SP,4
+145,Celesc Distribuição,Energia Elétrica,11692266,10478617,614199,2668203,12442889,Tubarão,SC,4
+146,Copa Energia/Copagaz,"Combustíveis, Petróleo e Químico",11592598,10901255,704921,3147684,6420152,São Paulo,SP,4
+147,Compass,"Combustíveis, Petróleo e Químico",11589616,15443193,1546478,1441482,14946780,São Paulo,SP,4
+148,CM Hospitalar,Saúde e Serviços de Saúde,11566926,11583370,18239,1937089,8983758,Ribeirão Preto,SP,4
+149,Anglo American Brasil,"Siderurgia, Mineração e Metalurgia",11545159,11644686,4509084,30669567,51839545,Belo Horizonte,MG,4
+150,EcoRodovias,"Transporte, Logística e Serviços Logísticos",11521073,9872372,866818,4374396,37100478,São Paulo,SP,4
+151,Profarma,Farmacêutico e Beleza,11450521,10153623,126013,1635564,6234275,Rio de Janeiro,RJ,4
+152,Eletronorte,Energia Elétrica,11258680,13294895,1334502,32677354,62708614,Brasília,DF,4
+153,Dasa,Saúde e Serviços de Saúde,11170362,15322079,-1135024,6893005,18562235,São Paulo,SP,4
+154,Grupo Potencial,Energia Elétrica,11125861,10438491,462622,1301000,2458740,Curitiba,PR,4
+155,Camil,Agronegócio,11115003,12262939,148471,3015690,10774545,São Paulo,SP,4
+156,Cielo,Serviços Financeiros,10948799,10295249,2282359,15112798,119122578,Barueri,SP,4
+157,MRV,Imobiliário e Construção Civil,10906236,9009035,-1042704,6155197,28529287,Belo Horizonte,MG,4
+158,Rede Américas,Saúde e Serviços de Saúde,10737378,7816499,-219943,5006281,14965109,Rio de Janeiro,RJ,4
+159,Cocamar,Cooperativas,10706044,9783608,512675,3519711,10043263,Maringá,PR,4
+160,Localiza Fleet,"Transporte, Logística e Serviços Logísticos",10637697,8117091,986023,5753767,21614962,Belo Horizonte,MG,4
+161,Samarco,"Siderurgia, Mineração e Metalurgia",10589918,7817351,-25816329,-87957906,37380251,Belo Horizonte,MG,4
+162,Guararapes Confecções,Moda e Vestuário,10497046,9634207,1475168,5352712,14872670,Natal,RN,4
+163,Copacol,Cooperativas,10492542,10192495,909638,4295438,10448395,Cafelândia,PR,4
+164,M. Dias Branco,Alimentos e Bebidas,10437548,9662833,659817,8238162,12559343,Eusébio,CE,4
+165,BNDESPar,Participações e Mídia,10362625,11116728,7475232,85761684,98290468,Rio de Janeiro,RJ,4
+166,Eisa,Alimentos e Bebidas,10300817,6224274,82684,543113,4902312,Vitória,ES,4
+167,Laticínios Bela Vista,Alimentos e Bebidas,10275000,9401353,346225,2585400,5430118,Goiânia,GO,4
+168,Banco Bradesco Financiamentos,Bancos,10247092,10059737,199012,625579,64225648,Rio de Janeiro,RJ,4
+169,Mapfre Seguros,Seguradoras,10150561,9555704,308775,3199479,17312188,São Paulo,SP,4
+170,Banco Agibank,Bancos,10112060,6955991,1091991,3263961,48869264,Campinas,SP,4
+171,BNB,Bancos,10106115,8302908,3083510,16066160,73287660,Fortaleza,CE,4
+172,Bradesco Seguro Auto,Seguradoras,10075839,9638789,912220,2004979,11142047,São Paulo,SP,4
+173,B3,Serviços Financeiros,10068227,9513468,4586872,17464079,48487647,São Paulo,SP,4
+174,ECB (B8),Agronegócio,10020461,7347151,479051,687149,6384657,Passo Fundo,RS,4
+175,BSBios,"Combustíveis, Petróleo e Químico",10006065,7336063,488123,669599,6357206,Passo Fundo,RS,4
+176,Mapfre,Seguradoras,9998762,9555704,308775,3199479,17312188,São Paulo,SP,4
+177,Neoenergia Elektro,Energia Elétrica,9977000,9328000,958000,2041000,13080000,Campinas,SP,4
+178,VLI Multimodal,"Transporte, Logística e Serviços Logísticos",9953533,9828861,1387014,8327510,22713804,Belo Horizonte,MG,4
+179,VLI,"Transporte, Logística e Serviços Logísticos",9953230,9821822,1399045,8310118,22815936,São Paulo,SP,4
+180,McDonald‘s,Alimentos e Bebidas,9874736,9532337,1272396,1907676,9983085,Barueri,SP,4
+181,Ampla Energia,Energia Elétrica,9762207,8741530,-9034,9884098,21448777,Rio de Janeiro,RJ,4
+182,Tupy,Bens de Capital e Eletroeletrônicos,9692948,10665110,-654552,2513376,9391641,Joinville,SC,4
+183,Cyrela,Imobiliário e Construção Civil,9679725,8185649,2395756,11466784,26109817,São Paulo,SP,4
+184,JSL,"Transporte, Logística e Serviços Logísticos",9640608,9056258,81704,1324556,12133203,São Paulo,SP,4
+185,Cooperalfa,Cooperativas,9482102,8424937,601935,4129298,7053985,Chapecó,SC,4
+186,Isa Energia,Energia Elétrica,9411153,7966581,2511015,21437011,47201372,São Paulo,SP,4
+187,Isa Capital,Energia Elétrica,9410611,7966015,2492670,21477760,47467950,São Paulo,SP,4
+188,Gazin,Atacado e Varejo,9406441,8692538,593120,3439833,11816797,Douradina,PR,5
+189,Banco Volkswagen,Bancos,9344362,7420577,571330,5265370,59370725,São Paulo,SP,5
+190,EMS,Farmacêutico e Beleza,9318124,8273822,546225,1914572,7987835,Hortolândia,SP,5
+191,TAG,"Transporte, Logística e Serviços Logísticos",9315000,9052000,3928000,6068000,30800000,Rio de Janeiro,RJ,5
+192,ArcelorMittal,"Siderurgia, Mineração e Metalurgia",9248422,10500147,-168642,14542047,16527881,São Gonçalo do Amarante,CE,5
+193,Coelce,Energia Elétrica,9172472,8442129,393974,5461400,16214965,Fortaleza,CE,5
+194,Marcopolo,Bens de Capital e Eletroeletrônicos,9057548,8593837,1235508,3895529,9722646,Caxias do Sul,RS,5
+195,Energisa Mato Grosso,Energia Elétrica,8982129,8214479,871279,3932600,15390846,Cuiabá,MT,5
+196,CBA,"Siderurgia, Mineração e Metalurgia",8788797,8173649,229854,4514508,13966017,São Paulo,SP,5
+197,Banco ABC,Bancos,8762191,10310137,1002000,6776126,66316409,Rio de Janeiro,RJ,5
+198,Norsa — Coca-Cola,Alimentos e Bebidas,8683874,7750170,1067885,4973659,10679795,Fortaleza,CE,5
+199,Celpe,Energia Elétrica,8681000,8249000,659000,2584000,15297000,Recife,PE,5
+200,Coopercitrus,Cooperativas,8678911,7940781,40594,1422989,8003203,Bebedouro,SP,5
+201,BP Bunge Bioenergia,"Combustíveis, Petróleo e Químico",8667308,8493760,-8614,5290985,14124740,São Paulo,SP,5
+202,Banco BMG,Bancos,8651864,7505500,560685,3892008,49047681,São Paulo,SP,5
+203,C6 Consignado,Bancos,8623546,7026559,1044896,3431668,53143390,São Paulo,SP,5
+204,Inter,Bancos,8576366,5834905,1159060,7878115,96366261,Belo Horizonte,MG,5
+205,SLC Agrícola,Agronegócio,8553147,6915764,565213,5655435,21341432,Porto Alegre,RS,5
+206,Amaggi Louis Dreyfus Zen-Noh Holdings,Agronegócio,8473765,7186362,201846,1121860,2560929,Palmas,TO,5
+207,Rodoil,"Transporte, Logística e Serviços Logísticos",8451006,7577421,40886,351872,1380436,Caxias do Sul,RS,5
+208,Fundação Bradesco,Participações e Mídia,8422019,6099187,9955604,101766859,101910352,Osasco,SP,5
+209,PagSeguro,Serviços Financeiros,8342734,8730542,1873754,5759274,71115022,São Paulo,SP,5
+210,Copasa,Saneamento e Meio Ambiente,8330190,7878006,1415744,8578303,17737247,Belo Horizonte,MG,5
+211,Bradseg,Seguradoras,8328579,7738739,8662924,43072822,51861674,São Paulo,SP,5
+212,Unimed Participações,Operadoras de Planos de Saúde,8308866,7244822,719978,2570956,7661040,São Paulo,SP,5
+213,Seguros Unimed,Seguradoras,8299910,7235834,737632,3091523,5770686,São Paulo,SP,5
+214,Novaagri,Agronegócio,8296399,10932617,-29305,325803,3225079,São Paulo,SP,5
+215,Fleury,Saúde e Serviços de Saúde,8291182,7684659,596671,5096268,13220481,São Paulo,SP,5
+216,Cibrafértil,Agronegócio,8288694,6962886,-186922,264002,4084860,Camaçari,BA,5
+217,Banco Mercantil do Brasil,Bancos,8259522,6110535,753315,2329290,35563180,Belo Horizonte,MG,5
+218,Duratex,Imobiliário e Construção Civil,8248752,8234647,63065,6846834,19000785,São Paulo,SP,5
+219,Caramuru Alimentos,Agronegócio,8157897,7272804,570799,2748916,7068495,Itumbiara,GO,5
+220,Equatorial Maranhão Distribuidora de Energia,Energia Elétrica,8126293,7096723,604175,4709967,13925486,São Luís,MA,5
+221,Oleoplan,"Combustíveis, Petróleo e Químico",8100950,6595362,602176,896882,4943229,Porto Alegre,RS,5
+222,Porto Seguro Saúde,Operadoras de Planos de Saúde,8078001,6327971,705125,2238068,4688136,São Paulo,SP,5
+223,C&A,Moda e Vestuário,7982958,7636539,587087,3707056,9318633,Barueri,SP,5
+224,NTS,"Combustíveis, Petróleo e Químico",7886381,7256473,3553361,-4054056,19249434,Rio de Janeiro,RJ,5
+225,Lojas Gazin,Atacado e Varejo,7881067,7039365,296197,2614630,8598081,Douradina,PR,5
+226,Integrada,Cooperativas,7869538,6143556,42759,1199469,5564597,Londrina,PR,5
+227,Banco Safra,Bancos,7846217,6520085,4297988,16771236,290449499,São Paulo,SP,5
+228,Grupo SBF,Atacado e Varejo,7736413,7151714,327970,3059794,9522546,São Paulo,SP,5
+229,Unimed BH,Cooperativas,7701099,6891622,632917,4260501,6618041,Belo Horizonte,MG,5
+230,Hypera,Farmacêutico e Beleza,7699157,7442466,1190827,12524374,25158004,São Paulo,SP,5
+231,Tenda Atacado,Atacado e Varejo,7682878,7189842,67219,114861,2647351,Guarulhos,SP,5
+232,Zurich Minas Seguros,Seguradoras,7676758,6610622,274517,2356558,13639554,Belo Horizonte,MG,5
+233,MRS Logística,"Transporte, Logística e Serviços Logísticos",7585058,7024973,1555063,8651391,24732735,Rio de Janeiro,RJ,5
+234,Prudential do Brasil,Seguradoras,7540406,1708650,1229938,4995408,27217461,São Paulo,SP,5
+235,White Martins,"Combustíveis, Petróleo e Químico",7474908,6853539,1435224,8525847,12280144,Rio de Janeiro,RJ,5
+236,Liberty Seguros,Seguradoras,7458168,6972615,484233,1866815,9453153,São Paulo,SP,6
+237,Sanco,Saneamento e Meio Ambiente,7437179,6378496,2449151,6622839,17896355,São Paulo,SP,6
+238,Bianchini,Agronegócio,7436161,8125409,560454,2635577,4099659,Porto Alegre,RS,6
+239,Águas do Rio,Saneamento e Meio Ambiente,7427230,6974703,-580404,7305756,25786838,Rio de Janeiro,RJ,6
+240,Bradesco Capitalização,Seguradoras,7385422,7024313,785227,626925,11319820,Barueri,SP,6
+241,Unidas,"Transporte, Logística e Serviços Logísticos",7342747,6519118,1711,2383879,17312008,Belo Horizonte,MG,6
+242,Smart Fit,Saúde e Serviços de Saúde,7241694,5580304,640534,5663406,21497648,São Paulo,SP,6
+243,Cemig GT,Energia Elétrica,7225809,6108966,1817262,10892445,19153008,Belo Horizonte,MG,6
+244,Sanepar,Saneamento e Meio Ambiente,7205727,6848219,2079568,12347781,26465924,Curitiba,PR,6
+245,Corsan,Saneamento e Meio Ambiente,7191997,6296452,2411110,5410634,16080485,Porto Alegre,RS,6
+246,Moema Bioeneriga,"Combustíveis, Petróleo e Químico",7168412,6947263,-207710,2732904,9817558,Orindiúva,SP,6
+247,São Martinho,Agronegócio,7162034,6891738,556731,6699362,21769383,Pradópolis,SP,6
+248,Bayer,Farmacêutico e Beleza,7065339,6504642,389985,3511324,13524736,Belford Roxo,RJ,6
+249,Cogna,Educação,7016663,6390593,586035,13454750,24122987,São Paulo,SP,6
+250,Redecard,Serviços Financeiros,7010693,5487989,3721126,39711197,159478486,São Paulo,SP,6
+251,Unimed Seguros Saúde,Operadoras de Planos de Saúde,7003883,6012276,616116,2304844,3805803,São Paulo,SP,6
+252,Cidade Maravilhosa,Moda e Vestuário,6968754,4869312,615981,5000577,8828689,Rio de Janeiro,RJ,6
+253,Aço Usiminas,"Siderurgia, Mineração e Metalurgia",6859891,6901480,70143,1959870,3184186,Belo Horizonte,MG,6
+254,Itaú Seguros,Seguradoras,6857586,5893611,2211050,4558898,14493504,São Paulo,SP,6
+255,Évora,Atacado e Varejo,6844179,6949038,613040,5312022,10947204,Porto Alegre,RS,6
+256,Porto Sudeste,"Transporte, Logística e Serviços Logísticos",6783063,5753766,-511364,-7647762,20679065,Rio de Janeiro,RJ,6
+257,Tereos Açúcar & Energia,Agronegócio,6775000,6717000,364000,3040000,9647000,Olímpia,SP,6
+258,Raízen Power,Energia Elétrica,6713234,2594550,-138940,74535,5460986,São Paulo,SP,6
+259,Aperam Inox América do Sul,"Siderurgia, Mineração e Metalurgia",6637945,6037316,61364,3143136,8524215,Belo Horizonte,MG,6
+260,Itaú Consignado,Bancos,6604563,6217193,-32139,966369,35204436,São Paulo,SP,6
+261,PicPay,Bancos,6592891,2993471,-251719,1031029,39072843,São Paulo,SP,6
+262,Novartis,Farmacêutico e Beleza,6501520,5775759,214735,557762,3494404,São Paulo,SP,6
+263,EDP São Paulo,Energia Elétrica,6450672,6342554,441507,1026600,9107164,São Paulo,SP,6
+264,CTG Brasil,Energia Elétrica,6408632,5836281,2680217,18981842,33011919,São Paulo,SP,6
+265,Serena,Energia Elétrica,6386242,3899382,20837,17350003,21670384,São Paulo,SP,6
+266,BancoSeguro,Bancos,6322556,3038239,72125,1355204,48044810,São Paulo,SP,6
+267,Norte Energia,Energia Elétrica,6275455,6249120,-1543674,8048415,41061759,Brasília,DF,6
+268,Rumo Malha Paulista,"Transporte, Logística e Serviços Logísticos",6204494,4919228,328115,7582159,22009624,São Paulo,SP,6
+269,Castrolanda,Cooperativas,6201453,5552366,287549,2113096,4664265,Castro,PR,6
+270,Porto Exportação,"Transporte, Logística e Serviços Logísticos",5983701,5182475,-30818,-182928,925787,Rio de Janeiro,RJ,6
+271,Comerc Energia LP,Energia Elétrica,5969818,4413714,-762276,5064569,17658612,São Paulo,SP,6
+272,Dimed,Farmacêutico e Beleza,5935019,5322904,124605,1281851,3830510,Eldorado do Sul,RS,6
+273,Bradesco Gestão de Saúde,Saúde e Serviços de Saúde,5933824,3451003,3579468,15413562,37918277,Barueri,SP,6
+274,Livelo,Serviços Financeiros,5889489,5362512,814475,1045643,6512386,Barueri,SP,6
+275,Eldorado Brasil,Papel e Celulose,5879469,6373370,4551787,5647692,37931495,São Paulo,SP,6
+276,Raízen Mime,"Combustíveis, Petróleo e Químico",5875307,5702240,107611,561112,946968,São Paulo,SP,6
+277,HDI,Seguradoras,5868355,5561333,970506,7443310,13529432,São Paulo,SP,6
+278,Lojas CEM,Atacado e Varejo,5866803,5611213,1267466,6003529,8816807,Salto,SP,6
+279,Zurich Previdência,Seguradoras,5863586,5469732,1698550,3082230,126838996,São Paulo,SP,6
+280,Aché,Farmacêutico e Beleza,5860053,5411153,760688,1834284,6791448,São Paulo,SP,6
+281,UPL,Agronegócio,5850916,5225110,-177667,1010113,6432320,Ituverava,SP,6
+282,EDP ES,Energia Elétrica,5835030,5429937,279727,1643280,9156039,Vitória,ES,6
+283,TOTVS,Tecnologia e Telecomunicações,5771867,5224007,920742,5443457,9452171,São Paulo,SP,6
+284,Vamos,"Transporte, Logística e Serviços Logísticos",5755712,4699312,328702,2562076,22964587,São Paulo,SP,7
+285,Arteris,"Transporte, Logística e Serviços Logísticos",5744941,6627303,215752,3776094,20677716,São Paulo,SP,7
+286,Oncoclínicas&Co,Saúde e Serviços de Saúde,5739367,6227227,-3671107,1062407,7130514,São Paulo,SP,7
+287,Pacheco,Atacado e Varejo,5707388,4862657,23965,876068,3438243,Rio de Janeiro,RJ,7
+288,Banco Carrefour,Bancos,5691261,4657916,431399,3140286,23088555,São Paulo,SP,7
+289,YDUQS,Educação,5521740,5351785,180177,2968042,9919168,Rio de Janeiro,RJ,7
+290,Allied Tecnologia,Tecnologia e Telecomunicações,5504620,5521381,332712,1551768,3369335,São Paulo,SP,7
+291,Tambasa,Atacado e Varejo,5464805,5014989,250329,431994,3301830,Contagem,MG,7
+292,Hospital Esperança,Saúde e Serviços de Saúde,5419968,4826896,315664,4778722,10247570,Recife,PE,7
+293,Copasul,Cooperativas,5410506,4216008,74343,882478,4394569,Naviraí,MS,7
+294,Mahle,Bens de Capital e Eletroeletrônicos,5406682,4557980,608756,863791,3793564,Queimados,RJ,7
+295,Repsol Sinopec,"Combustíveis, Petróleo e Químico",5406360,7041885,1191037,14110140,30801583,Rio de Janeiro,RJ,7
+296,Cury Construtora,Imobiliário e Construção Civil,5399424,3926310,1081220,1662054,5654395,Rio de Janeiro,RJ,7
+297,Banestes,Bancos,5386540,4590549,339919,2423231,39684811,Vitória,ES,7
+298,Atakarejo,Atacado e Varejo,5357053,4445630,167337,1663249,4109907,Salvador,BA,7
+299,Anglogold Ashanti,"Siderurgia, Mineração e Metalurgia",5355935,3501734,1906708,3054035,7059800,Nova Lima,MG,7
+300,Agrofel,Agronegócio,5350879,4377133,345872,933972,2409071,Porto Alegre,RS,7
+301,Termomecanica,Bens de Capital e Eletroeletrônicos,5330538,4546283,396583,3643922,4002837,São Paulo,SP,7
+302,Icatu,Seguradoras,5286740,4290353,525140,2048146,56595697,Rio de Janeiro,RJ,7
+303,Simple Way,"Transporte, Logística e Serviços Logísticos",5266307,4149626,-79351,1755791,19959325,São Paulo,SP,7
+304,LM Transportes,"Transporte, Logística e Serviços Logísticos",5266307,4149626,45188,2562357,19231438,Salvador,BA,7
+305,Rabobank,Bancos,5250702,11048815,647336,5678175,57083522,São Paulo,SP,7
+306,BK Brasil,Alimentos e Bebidas,5231945,4556360,-107137,1500615,4709699,Barueri,SP,7
+307,IRB Resseguros,Seguradoras,5211349,6057974,390945,5282690,15644036,Rio de Janeiro,RJ,7
+308,Bank of America Merrill Lynch Banco Múltiplo,Bancos,5198517,2841312,1270218,6296019,42420965,São Paulo,SP,7
+309,Nexa Recursos,"Siderurgia, Mineração e Metalurgia",5185982,5214998,-206704,5261755,13107835,Juiz de Fora,MG,7
+310,Amazonas Energia,Energia Elétrica,5163037,5173612,-2012854,-9523078,8217859,Manaus,AM,7
+311,Unipar Carbocloro,"Combustíveis, Petróleo e Químico",5142676,5431599,481744,1816895,7234816,São Paulo,SP,7
+312,Aura,"Siderurgia, Mineração e Metalurgia",5112417,3221711,-459284,1462194,8853341,São Paulo,SP,7
+313,Sonda Supermercados,Atacado e Varejo,5104916,4794580,429653,1024238,2549829,São Bernardo do Campo,SP,7
+314,Copel Geração e Transmissão,Energia Elétrica,5096933,4521519,1802418,15104658,32668098,Curitiba,PR,7
+315,Banco Pine,Bancos,5091234,2560513,444835,1407630,31440307,São Paulo,SP,7
+316,Embasa,Saneamento e Meio Ambiente,5047815,4720790,1006433,9106711,13474582,Salvador,BA,7
+317,BB Mapfre,Seguradoras,5042951,4411764,5065161,3349111,3350472,São Paulo,SP,7
+318,Pernambucanas,Moda e Vestuário,4982685,4830051,-464939,663021,8857933,São Paulo,SP,7
+319,Cocari,Cooperativas,4961655,4486394,60759,677357,4082403,Mandaguari,PR,7
+320,Crefisa,Serviços Financeiros,4912089,3265149,1105586,7068627,7375460,São Paulo,SP,7
+321,CSN Cimentos,Imobiliário e Construção Civil,4905992,4766335,132827,6721409,12526113,Pindamonhangaba,SP,7
+322,Usina Coruripe,Agronegócio,4832968,4407499,513023,3291190,12219204,Coruripe,AL,7
+323,Cateno Gestão,Tecnologia e Telecomunicações,4823087,4412424,1314345,9501111,10576510,Barueri,SP,7
+324,BRK Ambiental,Saneamento e Meio Ambiente,4782404,4294721,-107968,3267255,19752450,São Paulo,SP,7
+325,Energisa MT,Energia Elétrica,4751788,4522099,406989,1129059,8113319,Campo Grande,MS,7
+326,Roche Farma,Farmacêutico e Beleza,4744123,4990702,142645,1429549,3119878,São Paulo,SP,7
+327,Serpro,Tecnologia e Telecomunicações,4739080,3925711,755068,3063004,6645480,Brasília,DF,7
+328,Evertec,Tecnologia e Telecomunicações,4659090,4227430,722800,5551000,14505000,São Paulo,SP,7
+329,LDC Sucos,Alimentos e Bebidas,4632595,4710657,6423,1520426,8565150,Nova Venécia,ES,8
+330,Alpargatas,Moda e Vestuário,4564874,4108311,567926,3323759,6096758,São Paulo,SP,8
+331,Grupo Elfa,Farmacêutico e Beleza,4558538,5565261,-134025,2529500,6078772,Cabedelo,PR,8
+332,Innova,"Combustíveis, Petróleo e Químico",4532292,4852246,549675,3326736,4920431,Manaus,AM,8
+333,Iharabras,Agronegócio,4508685,4263169,675882,4638416,7296811,Sorocaba,SP,8
+334,EDP Trading,Energia Elétrica,4468113,3369907,189347,1063572,6215494,São Paulo,SP,8
+335,Intelbras,Tecnologia e Telecomunicações,4460379,4756146,483733,3014171,5325682,São José,SC,8
+336,Equatorial Piauí Distribuidora de Energia,Energia Elétrica,4414531,3679591,515264,1647434,7862712,Teresina,PI,8
+337,União Química,Farmacêutico e Beleza,4411560,4212685,250570,2059295,6601250,São Paulo,SP,8
+338,Copel Comercialização,Energia Elétrica,4402327,3568463,67642,312722,1559759,Curitiba,PR,8
+339,Alupar,Energia Elétrica,4397883,4002104,1733193,12576514,32114316,São Paulo,SP,8
+340,Calçados Beira Rio,Moda e Vestuário,4385193,4455019,490585,3433452,4648495,Rio de Janeiro,RJ,8
+341,XP Vida,Seguradoras,4344298,4998049,148029,385974,93576565,São Paulo,SP,8
+342,Direcional Engenharia,Imobiliário e Construção Civil,4343008,3348470,979692,2320151,13219635,Belo Horizonte,MG,8
+343,Frigol,Agronegócio,4268960,3492581,158055,506917,1704946,Lençóis Paulistas,SP,8
+344,PRIO Tigris,"Combustíveis, Petróleo e Químico",4253638,3984496,974859,7083757,26194968,Rio de Janeiro,RJ,8
+345,Supermercados Bahamas,Atacado e Varejo,4238692,4079291,-14248,195006,2247946,Juiz de Fora,MG,8
+346,Clínica São Vicente da Gávea,Saúde e Serviços de Saúde,4206410,3807117,204909,4308338,6555697,Rio de Janeiro,RJ,8
+347,Unidas Locadora,"Transporte, Logística e Serviços Logísticos",4201733,4010411,5933,2138579,8216244,Belo Horizonte,MG,8
+348,Rio Paraná Energia,Energia Elétrica,4199095,3876219,2342093,10937604,19982424,São Paulo,SP,8
+349,GTFoods,Agronegócio,4191908,4003286,312220,854172,3447484,Maringá,PR,8
+350,Saneago,Saneamento e Meio Ambiente,4184566,3852135,669769,5107065,9428976,Goiânia,GO,8
+351,Construtora Tenda,Imobiliário e Construção Civil,4173389,3284401,484431,1204864,6625534,São Paulo,SP,8
+352,Neoenergia Cosern,Energia Elétrica,4160000,3844000,683000,1663000,6906000,Natal,RN,8
+353,Banco Original,Bancos,4159734,2604495,22823,1803370,32106569,São Paulo,SP,8
+354,Belgo Arames,"Siderurgia, Mineração e Metalurgia",4156176,4366787,527839,1965905,2701092,Contagem,MG,8
+355,Iconic,"Combustíveis, Petróleo e Químico",4143069,3726362,329964,832786,2507661,Rio de Janeiro,RJ,8
+356,BB Gestão de Recursos,Serviços Financeiros,4140695,3687329,2346712,1428199,4537881,Rio de Janeiro,RJ,8
+357,Algar,Participações e Mídia,4096811,4333495,-60544,2541852,8084503,Uberlândia,MG,8
+358,AES Brasil Energia,Energia Elétrica,4095677,3880966,-368880,5284857,20015997,São Paulo,SP,8
+359,Fertilizantes Heringer,Agronegócio,4094770,4608584,-172242,-1319464,2148678,Viana,ES,8
+360,VIX Logística,"Transporte, Logística e Serviços Logísticos",4043611,3874770,170244,1325825,5191139,Vitória,ES,8
+361,Ânima,Educação,4023697,3801379,256665,2833656,10173712,São Paulo,SP,8
+362,SSA,Alimentos e Bebidas,3991174,3657618,434354,1123290,3819599,Itaberaí,GO,8
+363,American Tower Infra,Imobiliário e Construção Civil,3988124,4254925,365236,3793557,17256619,São Paulo,SP,8
+364,CDM,Alimentos e Bebidas,3975969,3018905,114395,866943,1680854,Porangatu,GO,8
+365,Somah,Imobiliário e Construção Civil,3969110,3969003,-217842,1109693,5366165,Rio de Janeiro,RJ,8
+366,Chubb,Seguradoras,3946978,3296311,170858,2117072,10604268,São Paulo,SP,8
+367,Multilaser,Tecnologia e Telecomunicações,3923762,3388498,121899,2968098,5253490,São Paulo,SP,8
+368,Brejeiro Alimentos,Alimentos e Bebidas,3895968,3729588,201134,1056220,2132697,Orlândia,SP,8
+369,Unimed Campinas,Operadoras de Planos de Saúde,3879515,3586412,175556,933885,1899041,Campinas,SP,8
+370,Braveo,Atacado e Varejo,3876740,3446942,88352,1135081,2151935,São Paulo,SP,8
+371,Banco CNH Industrial Capital,Bancos,3852621,4092715,-119658,2738747,27391993,Curitiba,PR,8
+372,ENBPar,Energia Elétrica,3821466,4338805,90034,15275549,38277271,Brasília,DF,8
+373,Athena Saúde Brasil,Operadoras de Planos de Saúde,3809700,3588680,47719,1996390,4182699,São Paulo,SP,8
+374,GRU — Airport,"Transporte, Logística e Serviços Logísticos",3779666,3260905,771830,-2430419,15664960,Guarulhos,SP,8
+375,Mineração Usiminas,"Siderurgia, Mineração e Metalurgia",3765704,2960663,487758,7591813,8489419,Itatiaiuçu,MG,8
+376,Itaú Capitalização,Seguradoras,3762088,3490728,562581,1266418,7161593,São Paulo,SP,9
+377,Gestamp,Bens de Capital e Eletroeletrônicos,3753314,3486323,255141,1291045,3319569,São José dos Pinhais,PR,9
+378,Sulamericana,Atacado e Varejo,3730043,3841346,50707,710826,2290574,Maringá,PR,9
+379,Zilor,"Combustíveis, Petróleo e Químico",3716980,3487117,36258,2382661,10131635,Campinas,SP,9
+380,Cerradinho Bioenergia,"Combustíveis, Petróleo e Químico",3712346,2574423,196528,1433331,7453275,São Paulo,SP,9
+381,Pedra Agro,Agronegócio,3704685,3540787,232,2437375,8624867,Serrana,SP,9
+382,Afya,Educação,3697255,3304329,812058,3696912,9344379,Nova Lima,MG,9
+383,Neoenergia Brasília,Energia Elétrica,3692000,3662000,-34000,3339000,6527000,Brasília,DF,9
+384,Eletronuclear,Energia Elétrica,3679040,4230830,-142098,11391860,24593321,Paraty,RJ,9
+385,Mataboi Alimentos,Alimentos e Bebidas,3653428,2697157,190279,772318,1288382,Araguari,MG,9
+386,Agribrasil,Agronegócio,3648124,2191955,-78792,139760,760253,São Paulo,SP,9
+387,Energisa Paraíba,Energia Elétrica,3644041,3415007,562893,1760356,5299897,João Pessoa,PB,9
+388,Santos Brasil,"Transporte, Logística e Serviços Logísticos",3627414,2903016,871664,1073643,5906097,São Paulo,SP,9
+389,TenarisConfab,"Siderurgia, Mineração e Metalurgia",3624046,3636984,301007,2183747,3907876,Pindamonhangaba,SP,9
+390,Sapore,Alimentos e Bebidas,3615908,2953803,128869,488636,1501100,Campinas,SP,9
+391,Zilor Energia e Alimentos,Alimentos e Bebidas,3608764,3276688,280382,1810568,9932572,Campinas,SP,9
+392,Ferrovia Centro Atlântica,"Transporte, Logística e Serviços Logísticos",3605519,3905772,43276,3382948,6933674,Belo Horizonte,MG,9
+393,Petz,Atacado e Varejo,3586622,3322608,40042,1708254,3932838,Rio de Janeiro,RJ,9
+394,AES Brasil,Energia Elétrica,3575301,3438492,99953,4697786,10426998,São Paulo,SP,9
+395,Bem Brasil Alimentos,Alimentos e Bebidas,3574518,3315388,201543,1709982,4278571,Araxá,MG,9
+396,Fundação Butantan,Farmacêutico e Beleza,3564352,3130625,723867,7573406,9410866,São Paulo,SP,9
+397,Vulcabras,Moda e Vestuário,3560287,3058760,1165334,2427345,3878996,São Paulo,SP,9
+398,Adama,Agronegócio,3558890,3658543,-10867,612585,4148060,Curitiba,PR,9
+399,CPFL Renováveis,Energia Elétrica,3557591,3631444,1084841,4688864,10400365,Campinas,SP,9
+400,Vulcabras CE,Moda e Vestuário,3555392,3048578,1160578,2412282,2412282,Horizonte,CE,9
+401,Jacto,Bens de Capital e Eletroeletrônicos,3528484,2397857,244620,2109179,3616572,Pompeia,SP,9
+402,Solvi Essencis,Saneamento e Meio Ambiente,3514178,2675486,309803,1519838,7361214,São Paulo,SP,9
+403,XP Energia,Energia Elétrica,3512697,1638032,227715,517638,12214994,São Paulo,SP,9
+404,Cantu,Atacado e Varejo,3498268,2600558,6912,1391474,4303569,São Paulo,SP,9
+405,Estrela Alimentos,Alimentos e Bebidas,3492650,2970130,62911,438860,1282442,Estrela D’Oeste,SP,9
+406,ICL América do Sul,Agronegócio,3484921,3286723,104375,1530074,5589086,São Paulo,SP,9
+407,Farmácias Nissei,Saúde e Serviços de Saúde,3484182,3011579,-47490,303057,1998951,Curitiba,PR,9
+408,Iguá Saneamento,Saneamento e Meio Ambiente,3457971,2623120,-625901,3381864,18000634,São Paulo,SP,9
+409,ArcelorMittal Sistemas Siderúrgicos,"Siderurgia, Mineração e Metalurgia",3455849,3384783,77807,629346,1094128,Araucária,PR,9
+410,Cocatrel,Cooperativas,3451438,3303390,12877,245098,2466077,Três Pontas,MG,9
+411,Vibra Foods,Agronegócio,3446546,3317340,197108,777480,2215488,Porto Alegre,RS,9
+412,Taesa,Energia Elétrica,3445360,2573507,1579863,7608982,22506506,Rio de Janeiro,RJ,9
+413,Tellerina,Atacado e Varejo,3409549,2803074,-31500,825315,4910517,São Paulo,SP,9
+414,Adecoagro,Agronegócio,3404111,3703075,281059,2024948,8217207,Angélica,MS,9
+415,Elevadores Atlas,Bens de Capital e Eletroeletrônicos,3377443,3063057,331250,248673,2585306,São Bernardo do Campo,SP,9
+416,Galp,"Combustíveis, Petróleo e Químico",3373302,2160620,216390,451492,1125325,Rio de Janeiro,RJ,9
+417,Positivo Tecnologia,Tecnologia e Telecomunicações,3354898,3688326,12234,1575992,4473551,Curitiba,PR,9
+418,***(2),Tecnologia e Telecomunicações,***(2),***(2),***(2),***(2),***(2),-,-,9
+419,MGB,Agronegócio,3341274,2613408,-5002,86685,267538,São Paulo,SP,9
+420,InterCement Brasil,Imobiliário e Construção Civil,3305864,3277374,777621,496204,6449094,São Paulo,SP,9
+421,Plano Plano,Imobiliário e Construção Civil,3281707,2589397,422700,1142545,4237860,São Paulo,SP,9
+422,Santander Corretora,Serviços Financeiros,3248789,2958702,2093377,6400631,16910048,São Paulo,SP,9
+423,Cagece,Saneamento e Meio Ambiente,3244993,3137018,224617,3681182,8009847,Fortaleza,CE,10
+424,J.Macêdo,Alimentos e Bebidas,3241934,3104919,347709,1346053,2970058,Fortaleza,CE,10
+425,Omint,Operadoras de Planos de Saúde,3196464,2723290,330703,804090,1312882,Rio de Janeiro,RJ,10
+426,Oba Hortifruti,Atacado e Varejo,3192356,2903190,79117,729087,2381160,São Paulo,SP,10
+427,Cigás,"Combustíveis, Petróleo e Químico",3187164,3501691,127238,537699,7756540,Manaus,AM,10
+428,Edge,Energia Elétrica,3144544,1561111,73367,980437,1982814,São Paulo,SP,10
+429,Unimed Fortaleza,Cooperativas,3127093,2871586,88404,537263,1685049,Fortaleza,CE,10
+430,Equatorial Transmissão,Energia Elétrica,3110343,1578678,1668139,4062140,12456735,São Luís,MA,10
+431,Eucatex,Imobiliário e Construção Civil,3104252,2857809,319105,2767503,4984659,São Paulo,SP,10
+432,Empresa de Navegação Elcano,"Transporte, Logística e Serviços Logísticos",3090123,4026196,134359,429363,2596844,Rio de Janeiro,RJ,10
+433,Log-In,"Transporte, Logística e Serviços Logísticos",3081024,2795756,93675,1089675,3890716,Rio de Janeiro,RJ,10
+434,Cimed,Farmacêutico e Beleza,3067594,2726887,196709,1228271,4217164,São Paulo,SP,10
+435,Metal Group,"Siderurgia, Mineração e Metalurgia",3066663,2928977,37824,214202,644196,Joinville,SC,10
+436,Arauco do Brasil,Imobiliário e Construção Civil,3063892,2943132,266503,1320772,2498150,Curitiba,PR,10
+437,Vivara,Moda e Vestuário,3026582,2577113,619502,2949564,4722692,São Paulo,SP,10
+438,Goldman Sachs do Brasil Banco Múltiplo,Bancos,3006378,3415762,1010289,5169570,28024847,São Paulo,SP,10
+439,Banco Mercedes-Benz do Brasil,Bancos,3004264,2678268,188786,2379071,20260371,São Bernardo do Campo,SP,10
+440,Angelina Colombo,Agronegócio,2992021,3195587,7224,2618955,8131150,Ariranha,SP,10
+441,Care Plus Medicina Assistencial,Operadoras de Planos de Saúde,2984561,2587916,350774,1165864,2125321,Barueri,SP,10
+442,Colombo Agroindústria,Agronegócio,2953512,3161203,-45698,2140671,7332946,Ariranha,SP,10
+443,Elgin,Bens de Capital e Eletroeletrônicos,2938584,2536881,339829,1514142,3287805,Mogi das Cruzes,SP,10
+444,Algar,Tecnologia e Telecomunicações,2931979,2821787,-197044,962592,6086063,Uberlândia,MG,10
+445,Vitória Diesel,Bens de Capital e Eletroeletrônicos,2928268,2913499,35188,306266,1692504,Paraty,RJ,10
+446,Banco BOCOM BBM,Bancos,2923621,4213085,386391,1643376,32645751,Rio de Janeiro,RJ,10
+447,Tecban,Serviços Financeiros,2913874,2783255,38244,991596,3222048,São Paulo,SP,10
+448,Daimler Truck Financial Services Brasil Holding,Serviços Financeiros,2909396,2700352,259628,2602427,20480583,São Bernardo do Campo,SP,10
+449,Merck,Farmacêutico e Beleza,2864598,2628894,413173,1789373,2750771,Rio de Janeiro,RJ,10
+450,Grupo Sinosserra,Atacado e Varejo,2859709,2689363,64622,264135,959480,Novo Hamburgo,RS,10
+451,Allos,Imobiliário e Construção Civil,2859106,2739848,945293,13899006,26006439,Rio de Janeiro,RJ,10
+452,Comlurb,Saneamento e Meio Ambiente,2856774,2883724,-93654,-648704,650569,Rio de Janeiro,RJ,10
+453,Cruzeiro do Sul,Educação,2836184,2568352,296866,1590655,4730611,São Paulo,SP,10
+454,Facchini,Bens de Capital e Eletroeletrônicos,2834395,3482187,182117,2237224,3973496,Guarulhos,SP,10
+455,Vipal Borrachas,"Combustíveis, Petróleo e Químico",2829299,2659257,147952,981332,2897110,Nova Prata,RS,10
+456,Tenda Negócios,Imobiliário e Construção Civil,2828118,2202940,551658,1157401,4085438,Rio de Janeiro,RJ,10
+457,Sofisa,Bancos,2827648,2439811,116752,1130534,18105350,São Paulo,SP,10
+458,Paraná Banco,Bancos,2818474,2248245,124286,1250569,13245614,Curitiba,PR,10
+459,CNP Seguros,Seguradoras,2815124,2835519,892192,5406230,10955555,Brasília,DF,10
+460,Gees,Agronegócio,2807840,2341322,106899,762703,2212529,Baixa Grande do Ribeiro,PI,10
+461,Fortbras,Atacado e Varejo,2799058,2927316,4362,951146,2484601,São Paulo,SP,10
+462,Salta Educação,Educação,2791597,2204231,121025,1266247,5107724,Rio de Janeiro,RJ,10
+463,Lojas Quero-Quero,Atacado e Varejo,2788412,2666330,-161941,404936,3771234,Cachoeirinha,RS,10
+464,Ipiranga Agro,"Combustíveis, Petróleo e Químico",2776722,2466322,345237,2270505,6269424,Iacanga,SP,10
+465,Cocapec,Cooperativas,2770584,2116482,88352,381843,1627100,Franca,SP,10
+466,Metrô,"Transporte, Logística e Serviços Logísticos",2761222,3019973,-1058568,44664396,48704042,São Paulo,SP,10
+467,Grupo Mag,Seguradoras,2760959,2571086,400297,1251835,6541736,Rio de Janeiro,RJ,10
+468,Azul Seguros,Seguradoras,2751443,5061157,144381,761834,1259972,Rio de Janeiro,RJ,11
+469,Multiplan,Imobiliário e Construção Civil,2739082,2544789,1141233,6299379,13154931,Rio de Janeiro,RJ,11
+470,Karoon,"Combustíveis, Petróleo e Químico",2734801,3214409,1028069,652344,4581281,Rio de Janeiro,RJ,11
+471,Unimed Goiânia,Cooperativas,2713667,2385049,52675,428151,1378966,Goiânia,GO,11
+472,Química Anastacio,"Combustíveis, Petróleo e Químico",2711416,2026244,38116,296982,1149654,São Paulo,SP,11
+473,Alelo,Serviços Financeiros,2708653,2519125,610791,1240007,8213674,Barueri,SP,11
+474,Prodesp,Tecnologia e Telecomunicações,2706638,2231634,85068,933751,2363002,Taboão da Serra,SP,11
+475,Energisa Sul-Sudeste,Energia Elétrica,2699256,2350700,140114,720215,3661923,Presidente Prudente,SP,11
+476,G10 Transportes,"Transporte, Logística e Serviços Logísticos",2684942,2123325,13193,51318,738080,Maringá,PR,11
+477,Barra Mansa Alimentos,Alimentos e Bebidas,2669886,2141650,194346,207986,741640,São Paulo,SP,11
+478,Rede D1000,Atacado e Varejo,2666765,2160645,22565,919277,1949154,Rio de Janeiro,RJ,11
+479,CS Brasil Frotas,"Transporte, Logística e Serviços Logísticos",2661209,2333672,645281,4861774,6516701,Mogi das Cruzes,SP,11
+480,CPTM,"Transporte, Logística e Serviços Logísticos",2656683,2574208,-588593,12889026,14726288,São Paulo,SP,11
+481,Raízen Centro-Sul,"Combustíveis, Petróleo e Químico",2656439,2926533,-48085,8692226,22296288,Brejinho,RN,11
+482,Heinz,Alimentos e Bebidas,2653498,2465082,37757,2557810,3599500,São Paulo,SP,11
+483,Hermes Pardini,Saúde e Serviços de Saúde,2641557,2450294,240297,1679011,2702013,Belo Horizonte,MG,11
+484,Banco GM,Bancos,2639048,2253383,401168,2644741,17233382,São Paulo,SP,11
+485,Granja Faria,Alimentos e Bebidas,2632810,2137332,301850,974671,2642944,Lauro Müller,SC,11
+486,Boa Safra,Agronegócio,2622416,1841052,101130,1967730,3608313,Formosa,GO,11
+487,Banco BNP Paribas,Bancos,2618785,5613106,77487,4660010,52338518,Rio de Janeiro,RJ,11
+488,Sodexo,Serviços Financeiros,2616233,2036668,627053,3241063,8641371,Barueri,SP,11
+489,Portobello,Imobiliário e Construção Civil,2606148,2407806,-291722,28475,3483526,Tijucas,SC,11
+490,Zoetis,Saúde e Serviços de Saúde,2589652,2341681,121302,1550990,2364815,Campinas,SP,11
+491,Grendene,Moda e Vestuário,2584341,2628580,644806,3153958,4501382,Sobral,CE,11
+492,Cocal,Agronegócio,2576073,2598918,168788,2505971,17441060,Paraguaçu Paulista,SP,11
+493,Atento,Participações e Mídia,2557565,2460151,-87801,17641,1689990,Rio de Janeiro,RJ,11
+494,Verene Energia,Energia Elétrica,2552896,387578,1398991,7848257,20614204,Rio de Janeiro,RJ,11
+495,Holambra,Cooperativas,2541231,2279992,18518,410424,1624340,Paranapanema,SP,11
+496,Sompo Seguros,Seguradoras,2540316,2624063,126214,1804335,6290128,São Paulo,SP,11
+497,Esfera,Serviços Financeiros,2535015,2275678,872577,888661,3273373,São Paulo,SP,11
+498,Alubar,Imobiliário e Construção Civil,2516449,3885196,171109,775735,1920551,Barcarena,PA,11
+499,Banco Volvo (Brasil),Bancos,2514187,2218371,440506,3988000,16914903,Curitiba,PR,11
+500,Austral Resseguradora,Seguradoras,2513948,2458260,92610,483712,6656016,Rio de Janeiro,RJ,11
+501,Banco Scania,Bancos,2474020,2087450,-84736,1287532,15723529,São Bernardo do Campo,SP,11
+502,Flora,Farmacêutico e Beleza,2458129,2286450,131687,975365,3699417,São Paulo,SP,11
+503,Deutsche Bank,Bancos,2447895,1898803,270694,2971196,18796082,São Paulo,SP,11
+504,AeC,Participações e Mídia,2443171,2204228,115026,411081,1402242,Belo Horizonte,MG,11
+505,Kalunga,Atacado e Varejo,2440343,2525428,46681,69040,2044991,São Paulo,SP,11
+506,Petronas,"Combustíveis, Petróleo e Químico",2437991,2505703,50185,622834,1301764,Rio de Janeiro,RJ,11
+507,Odontoprev,Operadoras de Planos de Saúde,2420159,2281192,582537,1282244,1945841,Barueri,SP,11
+508,Coop,Cooperativas,2418619,2433857,16158,518582,1593357,Santo André,SP,11
+509,Metropolitan Life,Seguradoras,2414261,2168148,139021,1338904,7816680,São Paulo,SP,11
+510,Tramontina Internacional,"Siderurgia, Mineração e Metalurgia",2411663,2574578,-84314,99020,2192648,Carlos Barbosa,RS,11
+511,Vicunha Têxtil,Moda e Vestuário,2408911,2442786,-122016,1160942,3313500,Maracanaú,CE,11
+512,Adoro,Alimentos e Bebidas,2408542,1905769,378851,484358,1363057,Várzea Paulista,SP,11
+513,Metalfrio Solutions,Bens de Capital e Eletroeletrônicos,2402881,2189092,21936,458696,1878277,São Paulo,SP,11
+514,Arlanxeo,"Combustíveis, Petróleo e Químico",2401903,2586688,157742,2149813,2577621,Duque de Caxias,RJ,11
+515,Morgan Stanley,Bancos,2399116,2022717,540485,4296551,21774692,São Paulo,SP,12
+516,Camda,Cooperativas,2388191,2061104,32769,540492,2010934,Adamantina,SP,12
+517,Alibem,Alimentos e Bebidas,2385524,2034118,326048,653432,3285322,Santa Rosa,RS,12
+518,Santher,Papel e Celulose,2369004,2401215,159550,592381,2116007,Bragança Paulista,SP,12
+519,Neomille,Agronegócio,2361872,1226943,311829,1444340,3730893,Chapadão do Céu,GO,12
+520,Moura Dubeux Engenharia,Imobiliário e Construção Civil,2356938,1570024,420173,1518151,5568082,Recife,PE,12
+521,Banco Toyota do Brasil,Bancos,2353135,2156924,343131,1282500,12149917,São Paulo,SP,12
+522,Itaú Corretora,Seguradoras,2348912,2021664,840735,1143687,2634239,São Paulo,SP,12
+523,Esho,Saúde e Serviços de Saúde,2346661,3812256,297955,2260425,3646349,Rio de Janeiro,RJ,12
+524,Jalles Machado,Agronegócio,2337911,1909528,-55950,2003170,7137606,Goianésia,GO,12
+525,Ferbasa,"Siderurgia, Mineração e Metalurgia",2334454,2236704,188676,3286040,4459480,Pojuca,BA,12
+526,Schulz Compressores,Bens de Capital e Eletroeletrônicos,2334336,1945886,288876,1500007,3093604,Joinville,SC,12
+527,Banco RCI Brasil,Bancos,2325378,1909020,346111,1258946,14368420,Curitiba,PR,12
+528,Nitro,"Combustíveis, Petróleo e Químico",2321234,2146427,211672,591838,2985267,São Paulo,SP,12
+529,Pacaembu Construtora,Imobiliário e Construção Civil,2319828,1692380,342674,865334,1783633,Bauru,SP,12
+530,Tramontina Cutelaria,"Siderurgia, Mineração e Metalurgia",2314518,2338754,204455,1711111,2672463,Carlos Barbosa,RS,12
+531,Stellantis Financiamento,Serviços Financeiros,2310710,,294034,2174099,16784016,São Paulo,SP,12
+532,Ticket,Tecnologia e Telecomunicações,2307091,1924946,601692,1926199,7604932,Barueri,SP,12
+533,Vital,Saneamento e Meio Ambiente,2302758,2427846,496753,797355,2827381,Rio de Janeiro,RJ,12
+534,Voltaire,Seguradoras,2298263,1883046,68412,631097,5119076,São Paulo,SP,12
+535,Bradesco Leasing,Serviços Financeiros,2288012,3434824,466215,4502331,17792155,Osasco,SP,12
+536,Grupo Bild,Imobiliário e Construção Civil,2286051,1969507,199790,586871,3415743,Ribeirão Preto,SP,12
+537,Spic Brasil Energia Participações,Energia Elétrica,2283603,2152793,-8438,7568563,16497544,São Paulo,SP,12
+538,Construcap,Imobiliário e Construção Civil,2260493,1929057,298195,1674320,3711204,São Paulo,SP,12
+539,Vitru Educação,Educação,2259078,2141809,369891,2925765,6093744,São Paulo,SP,12
+540,Cooperativa Tradição,Cooperativas,2252247,2243189,100428,846424,2641411,Pato Branco,PR,12
+541,Hidrovias do Brasil,"Transporte, Logística e Serviços Logísticos",2241099,1432424,-140918,2162052,6487308,São Paulo,SP,12
+542,Ferrovia Norte Sul — VLI,"Transporte, Logística e Serviços Logísticos",2237268,2281661,984597,2659568,4456912,São Luís,MA,12
+543,Tegma Gestão,"Transporte, Logística e Serviços Logísticos",2225428,2090127,242963,872233,1336745,São Bernardo do Campo,SP,12
+544,Pamplona,Alimentos e Bebidas,2223958,2110766,56335,730999,1476731,Rio do Sul,SC,12
+545,Ser Educacional,Educação,2216531,1981354,214436,1342852,3299058,Recife,PE,12
+546,EcoRodoanel,"Transporte, Logística e Serviços Logísticos",2216071,1456054,378780,1592744,3927200,Niterói,RJ,12
+547,Generali,Seguradoras,2214491,1656048,137829,694301,3035992,Rio de Janeiro,RJ,12
+548,Compesa,Saneamento e Meio Ambiente,2180315,2886188,192286,8744165,12351757,Recife,PE,12
+549,Hospital Mater Dei,Saúde e Serviços de Saúde,2175285,2226001,111916,1477574,4312889,Belo Horizonte,MG,12
+550,Grupo CBO,"Transporte, Logística e Serviços Logísticos",2171990,1981051,235115,2035743,6864968,Niterói,RJ,12
+551,Casan,Saneamento e Meio Ambiente,2168120,1950410,387059,2600843,6161832,Florianópolis,SC,12
+552,PetroReconcavo,"Combustíveis, Petróleo e Químico",2157609,3264554,638352,4330716,8668015,Mossoró,RN,12
+553,Porto Alegre Alimentos,Alimentos e Bebidas,2149021,1729925,9015,1029039,1538362,Ponte Nova,MG,12
+554,Café Cacique,Alimentos e Bebidas,2142013,1621504,19749,282525,1656325,Londrina,PR,12
+555,Dexxos Par,"Combustíveis, Petróleo e Químico",2136828,1810394,143653,1001959,1613764,Rio de Janeiro,RJ,12
+556,OceanPact,"Transporte, Logística e Serviços Logísticos",2133917,1721058,105476,1013462,3477655,Rio de Janeiro,RJ,12
+557,Cimed Indústria,Farmacêutico e Beleza,2133323,1867760,163168,1101850,2570198,São Paulo,SP,12
+558,BNP Cardif,Seguradoras,2118675,2095757,143387,713035,4289371,São Paulo,SP,12
+559,Pastifício Selmi,Alimentos e Bebidas,2115081,1937161,150070,513283,1519900,Sumaré,SP,12
+560,Banco Fidis,Bancos,2114284,1350425,306012,1384611,15614480,Nova Lima,MG,13
+561,Crédit Agricole,Bancos,2108050,1136885,281948,4058791,21248113,São Paulo,SP,13
+562,CEEE-T,Energia Elétrica,2106957,2065572,318725,3503786,8625223,Porto Alegre,RS,13
+563,Lorenzetti,Bens de Capital e Eletroeletrônicos,2102195,1728569,488702,843223,1599936,São Paulo,SP,13
+564,State Grid Holding,Energia Elétrica,2090471,1103808,2630837,13529227,37602568,Rio de Janeiro,RJ,13
+565,Lojas Le Biscuit,Atacado e Varejo,2089068,2232796,-767714,-335092,2303485,Feira de Santana,BA,13
+566,Constellation,"Combustíveis, Petróleo e Químico",2086072,1736480,34695,355426,853509,Rio de Janeiro,RJ,13
+567,Banco John Deere,Bancos,2081722,3366610,160680,4185867,18428548,Indaiatuba,SP,13
+568,Ci&T Software,Tecnologia e Telecomunicações,2065572,1639134,196262,495568,1512572,Campinas,SP,13
+569,Marilan,Alimentos e Bebidas,2062799,1841756,8700,524159,2799383,São Paulo,SP,13
+570,Valid,Tecnologia e Telecomunicações,2062563,2171344,268707,1720894,3147366,Rio de Janeiro,RJ,13
+571,Refinaria de Petróleo Riograndense,"Combustíveis, Petróleo e Químico",2054266,2177747,-341131,-295737,597888,Rio Grande,RS,13
+572,A.R. Colombo,Participações e Mídia,2042800,1976439,42830,787448,2065985,Colombo,PR,13
+573,Colombo,Atacado e Varejo,2037055,1957035,53122,743165,1959038,Caxias do Sul,RS,13
+574,Banco Mizuho do Brasil,Bancos,2016165,2932367,191245,1293373,16034843,São Paulo,SP,13
+575,Hospital Santa Lúcia,Saúde e Serviços de Saúde,2009135,1864487,166504,1394429,3150687,Brasília,DF,13
+576,Rumo Malha Sul,"Transporte, Logística e Serviços Logísticos",2005808,2170274,-594950,140659,1387103,Bauru,SP,13
+577,Braspress Transportes Urgentes,"Transporte, Logística e Serviços Logísticos",1990142,1875204,115003,686644,1248066,Guarulhos,SP,13
+578,Moeve Química Brasil,"Combustíveis, Petróleo e Químico",1988136,2100077,213307,692236,1628825,Camaçari,BA,13
+579,BRFértil,Agronegócio,1987760,1575012,123874,316284,957861,Curitiba,PR,13
+580,Construtora Queiroz Galvão,Imobiliário e Construção Civil,1971061,1660429,87350,1686136,2826244,Rio de Janeiro,RJ,13
+581,Veracel Celulose,Papel e Celulose,1968864,1877062,228847,3000044,5013191,Eunápolis,BA,13
+582,Porto de Santos,"Transporte, Logística e Serviços Logísticos",1933445,1644560,724614,3170236,6618930,Santos,SP,13
+583,Bionovis,Farmacêutico e Beleza,1931948,1747179,104907,520322,2138615,Valinhos,SP,13
+584,Tuper,"Siderurgia, Mineração e Metalurgia",1929152,2020883,122568,819237,1205283,São Bento do Sul,SC,13
+585,Panatlântica,"Siderurgia, Mineração e Metalurgia",1928530,2109725,49866,742060,1416094,Gravataí,RS,13
+586,Stone Pagamentos,Serviços Financeiros,1921984,4642949,161252,2312817,83764152,São Paulo,SP,13
+587,Prosegur Serviços,Participações e Mídia,1920634,1889716,38913,1085774,2184366,São Paulo,SP,13
+588,Too Seguros,Seguradoras,1905710,1988858,470845,841779,4108493,São Paulo,SP,13
+589,São Simão Energia,Energia Elétrica,1904192,1889467,736159,5353568,10929014,São Simão,GO,13
+590,Romagnole,Energia Elétrica,1896696,2262533,139211,573419,1535156,Mandaguari,PR,13
+591,Grupo Krona,"Combustíveis, Petróleo e Químico",1895571,1637815,100825,423193,1723316,Joinville,SC,13
+592,Elekeiroz,"Combustíveis, Petróleo e Químico",1892145,1771225,-31911,-38184,1352589,Várzea Paulista,SP,13
+593,Prumo,"Transporte, Logística e Serviços Logísticos",1890428,1496632,505596,-5014753,10627585,Rio de Janeiro,RJ,13
+594,Armac,"Transporte, Logística e Serviços Logísticos",1887757,1765969,73771,1330338,5340815,Barueri,SP,13
+595,PBio,"Combustíveis, Petróleo e Químico",1872764,1304662,7252,834139,1072716,Rio de Janeiro,RJ,13
+596,Allpark,"Transporte, Logística e Serviços Logísticos",1872588,1584808,14096,368806,2530252,São Paulo,SP,13
+597,Suhai Seguradora,Seguradoras,1858840,1575561,156570,352173,2330035,São Paulo,SP,13
+598,Ns2.Com Internet,Tecnologia e Telecomunicações,1857523,1695372,182443,729220,1622540,São Paulo,SP,13
+599,Tex,"Transporte, Logística e Serviços Logísticos",1843701,1752536,67042,122587,1033849,Barueri,SP,13
+600,Ponteland,Atacado e Varejo,1841084,1628199,283164,1109128,1790309,Seropedica,RJ,13
+601,Mills Estruturas e Serviços de Engenharia,"Transporte, Logística e Serviços Logísticos",1837835,1575405,301263,1521974,3943186,Rio de Janeiro,RJ,13
+602,Conasa,Saneamento e Meio Ambiente,1823039,1703571,-261793,969590,5763542,Londrina,PR,13
+603,Somos Educação,Educação,1811940,1674191,59736,5165362,7072277,São José dos Campos,SP,13
+604,Uisa,Agronegócio,1806532,1577321,-96740,1021912,4447798,São Paulo,SP,14
+605,Localiza Veículos Especiais,"Transporte, Logística e Serviços Logísticos",1800417,1325319,184711,4383042,5004782,Belo Horizonte,MG,14
+606,Fibra,Bancos,1794082,1571491,153539,1297764,22408418,São Paulo,SP,14
+607,Banco Bradescard,Bancos,1792928,1581328,-130100,107602,15330174,Barueri,SP,14
+608,Sandvik,"Siderurgia, Mineração e Metalurgia",1780991,1573870,76938,1049377,1650277,São Paulo,SP,14
+609,Entrevias Concessionária de Rodovias,"Transporte, Logística e Serviços Logísticos",1779661,949087,41699,139431,5576490,Sertãozinho,SP,14
+610,Josapar,Agronegócio,1776921,2173686,16792,766973,2311104,Porto Alegre,RS,14
+611,Porto Seguro Capitalização,Serviços Financeiros,1773904,1459157,49410,292414,2514311,São Paulo,SP,14
+612,Origem Energia,Energia Elétrica,1773274,1477825,583163,3417027,4327366,Pilar,AL,14
+613,Cardif do Brasil Seguros e Garantias,Seguradoras,1769445,1674159,110129,961130,3568219,São Paulo,SP,14
+614,Energisa,Energia Elétrica,1768508,1153324,-62807,27964,480917,Rio de Janeiro,RJ,14
+615,Lavvi,Imobiliário e Construção Civil,1761398,1549299,464164,1780796,4486572,São Paulo,SP,14
+616,Apsen,Farmacêutico e Beleza,1760085,1413367,233327,944264,1668397,São Paulo,SP,14
+617,Aliança Energia,Energia Elétrica,1759972,1329055,336172,4260083,9698003,Belo Horizonte,MG,14
+618,HDI Global,Seguradoras,1755444,1637448,59578,174530,2754803,São Paulo,SP,14
+619,NC Energia,Energia Elétrica,1748227,1396677,110138,473402,815722,Rio de Janeiro,RJ,14
+620,Paraná Equipamentos,Bens de Capital e Eletroeletrônicos,1748044,1931233,-96207,216106,1250320,Curitiba,PR,14
+621,Cagepa,Saneamento e Meio Ambiente,1743508,1515059,177695,6245361,7141053,João Pessoa,PB,14
+622,Segurpro,Participações e Mídia,1738299,1523881,39074,179526,966107,São Paulo,SP,14
+623,Assurant,Seguradoras,1738160,1570227,79753,405389,2940232,Barueri,SP,14
+624,Sabin,Saúde e Serviços de Saúde,1737928,1573768,169414,243871,1377678,Brasília,DF,14
+625,Prosegur,"Transporte, Logística e Serviços Logísticos",1734822,1720948,71560,1197520,2127762,Belo Horizonte,MG,14
+626,Iguá Rio,Saneamento e Meio Ambiente,1734252,1633097,-348039,224843,9064072,Rio de Janeiro,RJ,14
+627,IMC,Alimentos e Bebidas,1729658,1810794,-148968,859642,2305789,São Paulo,SP,14
+628,Vero,Tecnologia e Telecomunicações,1729145,1660862,38901,3295934,4182737,São Paulo,SP,14
+629,Terminal de Contingências de Paranaguá,"Transporte, Logística e Serviços Logísticos",1717320,1496913,652475,190837,3216626,Paranaguá,PR,14
+630,BDMG,Bancos,1710286,1236067,184822,2409528,14329089,Belo Horizonte,MG,14
+631,CESP,Energia Elétrica,1710155,1469889,335809,4779444,13477622,São Paulo,SP,14
+632,Blau Farmacêutica,Farmacêutico e Beleza,1702382,1754376,296773,2255742,3635027,Cotia,SP,14
+633,Banco BV,Bancos,1699928,847485,-139810,2810158,13618910,São Paulo,SP,14
+634,Bemobi Tech,Tecnologia e Telecomunicações,1696407,1498065,161262,973357,1865280,Rio de Janeiro,RJ,14
+635,Irani,Papel e Celulose,1686311,1555346,242050,1451934,3949686,Porto Alegre,RS,14
+636,São Braz,Alimentos e Bebidas,1684333,1372260,162232,946414,1143878,Belém,PA,14
+637,Eixo SP,"Transporte, Logística e Serviços Logísticos",1683826,1379644,-2417,1175377,4697958,Itirapina,SP,14
+638,Grupo Penha,Papel e Celulose,1682197,1510659,193508,1078993,1664185,São Paulo,SP,14
+639,Banco Digimais,Bancos,1675596,1269739,31281,787322,10054152,São Paulo,SP,14
+640,Transpanorama Transportes,"Transporte, Logística e Serviços Logísticos",1673772,1467973,61910,309862,1218459,Maringá,PR,14
+641,Foresea,"Combustíveis, Petróleo e Químico",1668485,1531528,42788,389561,675497,Rio de Janeiro,RJ,14
+642,Swiss,Seguradoras,1664998,1607293,61684,1093431,5124605,São Paulo,SP,14
+643,PicPay,Serviços Financeiros,1663188,1195383,1239806,2480379,12172376,São Paulo,SP,14
+644,Hélio Borenstein,Imobiliário e Construção Civil,1655862,1428414,117990,5195612,11653317,Mogi das Cruzes,SP,14
+645,Banco de Lage Landen Brasil,Bancos,1645822,2400621,-499175,1088225,13551609,Porto Alegre,RS,14
+646,brMalls,Imobiliário e Construção Civil,1643621,1570387,875365,12418515,20608396,Rio de Janeiro,RJ,14
+647,EGTC,Imobiliário e Construção Civil,1641467,1845853,-72088,278497,801074,Rio de Janeiro,RJ,14
+648,Mapfre Resseguros,Seguradoras,1639952,1420312,155012,486045,4460281,São Paulo,SP,14
+649,Viação Piracicabana,"Transporte, Logística e Serviços Logísticos",1639108,1466712,149617,554481,2869081,Piracicaba,SP,14
+650,Racional Engenharia,Imobiliário e Construção Civil,1638752,1685482,49590,75107,280756,São Paulo,SP,15
+651,Usina Santa Adélia,Agronegócio,1637077,1491887,179199,1455949,4179683,Jaboticabal,SP,15
+652,Eurobike,"Transporte, Logística e Serviços Logísticos",1636730,1581774,6882,95627,468689,Ribeirão Preto,SP,15
+653,Asperbras,Participações e Mídia,1627212,1372826,158009,1244040,2403890,Penápolis,SP,15
+654,Serra Diesel,"Combustíveis, Petróleo e Químico",1626637,1125685,-606,59464,225810,Coronel Barros,RS,15
+655,Light COM,Energia Elétrica,1626608,1431776,147774,337394,1564369,Rio de Janeiro,RJ,15
+656,Fairfax,Seguradoras,1626229,1652534,70909,641154,5688093,São Paulo,SP,15
+657,Banco Honda,Bancos,1625874,2430410,161034,1435510,10959590,São Paulo,SP,15
+658,Maqnelson Agrícola,Atacado e Varejo,1605764,1493261,114991,437032,893717,Uberlândia,MG,15
+659,AVB,"Siderurgia, Mineração e Metalurgia",1588851,1840664,77416,1917302,4039262,Açailândia,MA,15
+660,Superia Trading,"Transporte, Logística e Serviços Logísticos",1588541,1506896,18019,75250,387303,Vitória,ES,15
+661,Stefanini,Tecnologia e Telecomunicações,1581929,1577281,99491,155738,551128,Barueri,SP,15
+662,GDC Alimentos,Alimentos e Bebidas,1579210,1469723,77093,583230,1192427,Rio Verde,GO,15
+663,Mercadomóveis,Atacado e Varejo,1574020,1244995,207435,695018,1394174,São Paulo,SP,15
+664,Nardini Agroindustrial,Agronegócio,1573259,1635105,92054,1055545,3606753,Vista Alegre do Alto,SP,15
+665,Manaus Ambiental,Saneamento e Meio Ambiente,1571720,1263048,108181,730068,3129121,Manaus,AM,15
+666,Pottencial Seguradora,Seguradoras,1570218,1265010,182312,350880,3840705,Belo Horizonte,MG,15
+667,AlmavivA Telemarketing,Tecnologia e Telecomunicações,1569629,1648436,140567,728619,1424786,São Paulo,SP,15
+668,Teleperformance CRM,Tecnologia e Telecomunicações,1566265,1413256,16142,261615,924365,São Paulo,SP,15
+669,Rumo Malha Central,"Transporte, Logística e Serviços Logísticos",1565858,1785093,1112426,1446456,71366544,Anápolis,GO,15
+670,Priner,Bens de Capital e Eletroeletrônicos,1563623,1100583,8404,562334,1890643,Rio de Janeiro,RJ,15
+671,Sura Seguros,Seguradoras,1550040,1440359,19768,372595,2668009,Campinas,SP,15
+672,Helibras,"Transporte, Logística e Serviços Logísticos",1549610,1588177,99128,336256,1353527,Itajubá,MG,15
+673,Zurich Seguros,Seguradoras,1549488,1366343,437876,255798,2387531,São Paulo,SP,15
+674,CCR ViaSul,"Transporte, Logística e Serviços Logísticos",1545746,1203609,171862,1668500,3987992,São Gonçalo,RJ,15
+675,GPC Química,"Combustíveis, Petróleo e Químico",1535665,1310779,126446,508227,814822,Araucária,PR,15
+676,Getnet,Serviços Financeiros,1535664,1554924,633540,3437769,80338556,São Paulo,SP,15
+677,Unimed Florianópolis,Operadoras de Planos de Saúde,1532190,1487249,37397,507351,1114346,Florianópolis,SC,15
+678,Petrocoque,"Combustíveis, Petróleo e Químico",1530042,1112558,168336,134910,1118309,Cubatão,SP,15
+679,Embraport,"Transporte, Logística e Serviços Logísticos",1528781,1112075,1517459,-346095,3519200,Santos,SP,15
+680,Associação Hospitalar Moinhos de Vento,Saúde e Serviços de Saúde,1525910,1383461,100126,970363,1674887,Porto Alegre,RS,15
+681,Sooro,Agronegócio,1524587,1083274,366215,365820,1515742,Marechal Cândido Rondon,PR,15
+682,APC,Educação,1507383,1367030,60020,749168,1417975,Curitiba,PR,15
+683,FTD,Educação,1507084,1524867,121815,973704,1809713,São Paulo,SP,15
+684,Flamengo,Participações e Mídia,1499741,1158862,343171,957566,2221103,Rio de Janeiro,RJ,15
+685,Eztec,Imobiliário e Construção Civil,1498822,1560541,547595,5119897,7196637,São Paulo,SP,15
+686,AIG Seguros,Seguradoras,1496682,1597576,179148,811737,4315844,São Paulo,SP,15
+687,Kepler Weber,Agronegócio,1493030,1607297,156270,774231,1512406,São Paulo,SP,15
+688,Energisa Minas Rio,Energia Elétrica,1492595,1385805,83075,440394,2350079,Rio de Janeiro,RJ,15
+689,Locaweb,Tecnologia e Telecomunicações,1488531,1370032,-225450,2467887,3638385,São Paulo,SP,15
+690,CVC Viagens,"Transporte, Logística e Serviços Logísticos",1488493,1420763,-40935,478791,3738885,Santo André,SP,15
+691,TBG,"Transporte, Logística e Serviços Logísticos",1487000,1686000,449000,348000,2181000,Hortolândia,SP,15
+692,Iguatemi Shopping,Imobiliário e Construção Civil,1486833,1236345,582576,4651864,9497101,São Paulo,SP,15
+693,Aterpa,Imobiliário e Construção Civil,1483920,1094434,80148,188894,810181,Belo Horizonte,MG,15
+694,Lojas Marisa,Moda e Vestuário,1483225,1392169,-59982,224157,2056813,São Paulo,SP,16
+695,Nadir Figueiredo,Bens de Capital e Eletroeletrônicos,1471063,1452105,56364,388191,2331983,Suzano,SP,16
+696,Cimento Itambé,Imobiliário e Construção Civil,1466940,1361808,288087,1039782,2004790,Curitiba,PR,16
+697,Patrimar,Imobiliário e Construção Civil,1463176,1464532,32589,552614,3019668,Belo Horizonte,MG,16
+698,BYK — Taurus Armas,Bens de Capital e Eletroeletrônicos,1463029,1672674,-31372,1933625,3648113,São Leopoldo,RS,16
+699,Taurus,Bens de Capital e Eletroeletrônicos,1463029,1672674,17673,1257453,2586405,São Borja,RS,16
+700,Protege,"Transporte, Logística e Serviços Logísticos",1460235,1301991,52067,255287,828035,Santo André,SP,16
+701,Banco HSBC,Bancos,1454205,1653666,216192,1538961,15623724,São Paulo,SP,16
+702,Oeci,Imobiliário e Construção Civil,1450890,847029,217261,2414342,3198792,São Paulo,SP,16
+703,Copergás,"Combustíveis, Petróleo e Químico",1446390,1569798,150176,634937,1136117,Recife,PE,16
+704,Mobly,Atacado e Varejo,1445000,811197,-146800,222200,1834400,São Paulo,SP,16
+705,Cassems,Operadoras de Planos de Saúde,1444959,1342166,-24181,221357,788962,Campo Grande,MS,16
+706,Porto Itapoá,"Transporte, Logística e Serviços Logísticos",1435219,1222673,584466,1114050,2812458,Itapoá,SC,16
+707,Abimex,"Transporte, Logística e Serviços Logísticos",1429009,1482062,56211,619668,1465067,Jaraguá do Sul,SC,16
+708,Qualicorp,Seguradoras,1426845,1541924,17049,1308389,3938536,São Paulo,SP,16
+709,Neoenergia Renováveis,Energia Elétrica,1426628,1032028,169479,5154216,9296672,Rio de Janeiro,RJ,16
+710,Pacífico Operações Hospitalares,Saúde e Serviços de Saúde,1420537,60349,85452,609231,1798462,Guarulhos,SP,16
+711,Correcta,Agronegócio,1400035,1512124,35553,427402,471413,São Paulo,SP,16
+712,Simpress,Tecnologia e Telecomunicações,1392425,1390535,99570,1005864,1903700,Santana de Parnaíba,SP,16
+713,Voltswatts,Energia Elétrica,1388010,2528471,-501324,-200474,2191941,Recife,PE,16
+714,Swiss,Seguradoras,1386968,1044030,94352,512475,3385547,São Paulo,SP,16
+715,Wiz,Seguradoras,1382973,1257265,367710,1296137,2434061,Brasília,DF,16
+716,Trisul,Imobiliário e Construção Civil,1378596,1346694,213095,1478205,3433244,São Paulo,SP,16
+717,Construtora Barbosa Mello,Imobiliário e Construção Civil,1372824,1568367,107068,260997,889778,Belo Horizonte,MG,16
+718,Concessionária Rota,"Transporte, Logística e Serviços Logísticos",1371224,1336565,335485,980866,4017167,Itatiba,SP,16
+719,Fosnor,"Siderurgia, Mineração e Metalurgia",1370985,1151893,109904,1253829,2561490,São Paulo,SP,16
+720,Starr,Seguradoras,1370474,1517734,22680,153320,3124064,São Paulo,SP,16
+721,BRK Projetos Ambientias,Saneamento e Meio Ambiente,1363618,1222746,64557,956081,6528030,São Paulo,SP,16
+722,Ouribank,Bancos,1358227,,258927,387373,3673051,São Paulo,SP,16
+723,Jadlog,"Transporte, Logística e Serviços Logísticos",1335629,1275877,8699,515878,801328,São Paulo,SP,16
+724,Omni — Crédito,Serviços Financeiros,1335479,1958977,-5271,917675,6671882,São Paulo,SP,16
+725,Agrale,Bens de Capital e Eletroeletrônicos,1334279,1000371,69165,340535,1078265,Caxias do Sul,RS,16
+726,1500 Transportes,"Transporte, Logística e Serviços Logísticos",1328017,1178836,44109,91240,368300,Maringá,PR,16
+727,Romi,Bens de Capital e Eletroeletrônicos,1326712,1220011,86170,1248879,2759061,São Paulo,SP,16
+728,Leite Jussara,Alimentos e Bebidas,1325639,1475641,20901,174182,764821,Patrocínio Paulista,SP,16
+729,Ferro+ Mineração,"Siderurgia, Mineração e Metalurgia",1324094,1417683,253297,1398538,1679583,Ouro Preto,MG,16
+730,Sisnergy,Bens de Capital e Eletroeletrônicos,1322526,1198906,74934,280337,756934,Macaé,RJ,16
+731,Sika,Bens de Capital e Eletroeletrônicos,1320096,1268245,21637,662591,999659,Osasco,SP,16
+732,U&M,"Siderurgia, Mineração e Metalurgia",1310882,1245698,159430,515054,1643542,Rio de Janeiro,RJ,16
+733,Banco Hyundai Capital Brasil,Bancos,1300251,1013111,190973,787418,7839377,São Paulo,SP,16
+734,Banco MUFG,Bancos,1296227,1904618,86426,1622026,9317376,São Paulo,SP,16
+735,Lunelli,Moda e Vestuário,1282510,1323021,-17640,728776,1705874,Corupá,SC,16
+736,Grupo Maringá,"Siderurgia, Mineração e Metalurgia",1281864,1303018,116751,1378500,2801800,São Paulo,SP,16
+737,Ambiental Ceará,Saneamento e Meio Ambiente,1277825,393757,375960,528699,1885066,Juazeiro do Norte,CE,17
+738,Eletron,"Transporte, Logística e Serviços Logísticos",1274076,967594,476404,1014604,1557486,Belo Horizonte,MG,17
+739,Itaú CBD,Serviços Financeiros,1270508,1203862,441403,1498853,9653138,São Paulo,SP,17
+740,Da Mata,"Combustíveis, Petróleo e Químico",1268137,1556410,192292,477976,2318949,Rubiácea,SP,17
+741,Estrela,"Transporte, Logística e Serviços Logísticos",1264353,1281568,-37203,201637,1409699,Belo Horizonte,MG,17
+742,Camastra,Saneamento e Meio Ambiente,1263837,1246081,366405,670711,2976272,São Paulo,SP,17
+743,Pefisa,Serviços Financeiros,1263765,1275021,-55360,1029833,5611876,São Paulo,SP,17
+744,Banco Paccar,Bancos,1261007,957359,116004,2846570,8895778,Ponta Grossa,PR,17
+745,Rio Paranapanema Energia — CTG,Energia Elétrica,1259476,1204173,250847,1240831,3986965,São Paulo,SP,17
+746,Rio Paranapanema Participações,Energia Elétrica,1259476,1425140,218349,1407921,4050033,São Paulo,SP,17
+747,Portonave,"Transporte, Logística e Serviços Logísticos",1257526,1427655,569367,525631,3692231,Navegantes,SC,17
+748,Minasmáquinas,Bens de Capital e Eletroeletrônicos,1252235,1312998,41089,261617,593391,Contagem,MG,17
+749,Orquídea Alimentos,Alimentos e Bebidas,1234755,1159012,43606,165150,984663,Caxias do Sul,RS,17
+750,Seabras,"Combustíveis, Petróleo e Químico",1233328,1201920,287509,178926,1251010,Rio de Janeiro,RJ,17
+751,Coopercarga Logística,"Transporte, Logística e Serviços Logísticos",1233209,1286188,38329,109458,408368,Concórdia,SC,17
+752,Telmex do Brasil,Tecnologia e Telecomunicações,1232238,1036697,283877,7701532,8251780,São Paulo,SP,17
+753,Veste,Moda e Vestuário,1230948,1111555,24409,1065477,1655516,São Paulo,SP,17
+754,Austral Seguradora,Seguradoras,1229449,1161817,52957,274650,3213690,Rio de Janeiro,RJ,17
+755,Moinhos Cruzeiro do Sul,Agronegócio,1226582,1278987,-164740,343390,740436,Rio de Janeiro,RJ,17
+756,Ourofino,Farmacêutico e Beleza,1224992,1024792,222311,796857,1565822,Cravinhos,SP,17
+757,PB-LOG,"Transporte, Logística e Serviços Logísticos",1220209,1512484,407080,401021,707321,Rio de Janeiro,RJ,17
+758,Estok,Atacado e Varejo,1220144,1301173,-101654,-674384,891103,Belo Horizonte,MG,17
+759,FG Empreendimentos,Imobiliário e Construção Civil,1218976,1017337,438618,1147620,3715788,Balneário Camboriú,SC,17
+760,Desktop,Tecnologia e Telecomunicações,1218547,1128842,80773,1438031,3858352,Sumaré,SP,17
+761,Banco Industrial do Brasil,Bancos,1212619,1169458,31076,743223,8512352,São Paulo,SP,17
+762,Tegra,Imobiliário e Construção Civil,1205697,1321397,-77042,2432302,4263825,Rio de Janeiro,RJ,17
+763,Laboratórios B.Braun,Saúde e Serviços de Saúde,1205602,1228013,-7988,926218,1318523,Niterói,RJ,17
+764,Ri Happy,Atacado e Varejo,1203748,1179454,-52326,39704,1171404,Rio de Janeiro,RJ,17
+765,Cotrisel,Cooperativas,1203208,1560931,-119674,11791,726584,São Sepé,RS,17
+766,MetrôRio,"Transporte, Logística e Serviços Logísticos",1198722,940071,13838,1483020,4817239,Rio de Janeiro,RJ,17
+767,Greenbrier Maxion Equipamentos e Serviços Ferroviários,"Transporte, Logística e Serviços Logísticos",1193822,542841,112706,175867,685243,Hortolândia,SP,17
+768,Ferroport,"Transporte, Logística e Serviços Logísticos",1188765,1113185,551663,1853685,2430854,Rio de Janeiro,RJ,17
+769,Bazan,"Combustíveis, Petróleo e Químico",1184311,1241483,70352,1038592,1671080,Pontal,SP,17
+770,Multilog,"Transporte, Logística e Serviços Logísticos",1179784,1023051,151656,220600,1230370,Itajaí,SC,17
+771,Inspira Rede de Educadores,Educação,1176558,1065652,7589,2005273,2531070,Rio de Janeiro,RJ,17
+772,Brametal,"Siderurgia, Mineração e Metalurgia",1172425,1258778,81997,785716,1018774,Linhares,ES,17
+773,Akad,Seguradoras,1171364,1038582,37727,269558,2357934,São Paulo,SP,17
+774,Senior,Tecnologia e Telecomunicações,1170283,975958,246478,463045,1002431,Blumenau,SC,17
+775,Rede Sol,"Combustíveis, Petróleo e Químico",1165301,1415797,3811,109085,232965,Ribeirão Preto,SP,17
+776,Bela Vista,"Combustíveis, Petróleo e Químico",1163834,1228255,47693,949243,1284140,Ribeirão Preto,SP,17
+777,SG,"Transporte, Logística e Serviços Logísticos",1160497,932779,9945,5354,260180,Belo Horizonte,MG,17
+778,Plascar,Bens de Capital e Eletroeletrônicos,1152103,1131800,-203946,-732222,608138,Jundiaí,SP,17
+779,Eternit,Imobiliário e Construção Civil,1150164,1142972,48977,842994,1363317,São Paulo,SP,17
+780,Rôgga Empreendimentos,Imobiliário e Construção Civil,1140815,916433,191050,469356,1678983,Joinville,SC,18
+781,Zodiac Farmacêutica,Farmacêutico e Beleza,1130998,920255,610,240182,796509,Pindamonhangaba,SP,18
+782,CEG Rio,"Combustíveis, Petróleo e Químico",1130763,2717519,171050,824067,1417976,Rio de Janeiro,RJ,18
+783,Vidroporto,Alimentos e Bebidas,1127931,1174257,184196,810848,2251160,Porto Ferreira,SP,18
+784,Frimesa,Cooperativas,1125739,916726,81805,1213658,4068812,Medianeira,PR,18
+785,Rivelli,Agronegócio,1119235,1066227,56889,374516,1063327,Barbacena,MG,18
+786,Marlim Azul,Energia Elétrica,1117795,977262,111163,558650,3836149,São Paulo,SP,18
+787,Melnick Desenvolvimento Imobiliário,Imobiliário e Construção Civil,1117283,1028992,150056,1216258,2740776,Porto Alegre,RS,18
+788,Santa Joana Hospital,Saúde e Serviços de Saúde,1113607,1074013,114626,289992,632527,São Paulo,SP,18
+789,Ludfor Energia,Energia Elétrica,1111424,652236,49600,126152,1279818,Bento Gonçalves,RS,18
+790,CBF,Participações e Mídia,1109372,1219861,-182480,1259821,3391472,Rio de Janeiro,RJ,18
+791,Brasil Olhos,Participações e Mídia,1105423,937863,-106237,673905,1952227,São Paulo,SP,18
+792,CCR Metrô Bahia,"Transporte, Logística e Serviços Logísticos",1097536,1059396,92333,1533017,5482161,Salvador,BA,18
+793,S-Riko,Bens de Capital e Eletroeletrônicos,1097341,842806,51993,464721,595163,Porto Real,RJ,18
+794,Vast,"Transporte, Logística e Serviços Logísticos",1095808,913027,132035,-463040,5825323,Rio de Janeiro,RJ,18
+795,Frec,Imobiliário e Construção Civil,1095647,311970,-41061,143243,558107,São Paulo,SP,18
+796,Soufer Industrial,"Siderurgia, Mineração e Metalurgia",1094832,1128652,-7107,576238,748484,São João da Boa Vista,SP,18
+797,Credit Suisse,Bancos,1093094,1675448,374708,4239478,13972998,São Paulo,SP,18
+798,Belo Monte,Energia Elétrica,1083302,1159426,459949,4952739,9838414,Rio de Janeiro,RJ,18
+799,Arteris Literal Sul,"Transporte, Logística e Serviços Logísticos",1083160,1559561,-559220,2013215,5934758,Curitiba,PR,18
+800,Brasif Exportação Importação,Bens de Capital e Eletroeletrônicos,1082701,1163324,21280,328759,891667,Belo Horizonte,MG,18
+801,Argo Energia,Energia Elétrica,1079334,1084954,580790,3739672,11342419,São Paulo,SP,18
+802,Bradesco Consórcios,Serviços Financeiros,1077874,2801658,2586329,7524903,9369013,Osasco,SP,18
+803,Grande Moinho Cearense,Agronegócio,1075439,1124285,112734,954244,1477690,Fortaleza,CE,18
+804,São Paulo Futebol Clube,Participações e Mídia,1073921,727572,56981,-536217,1918519,São Paulo,SP,18
+805,SLC Centro-Oeste,Agronegócio,1069621,1028172,25405,1804654,3538031,Sento Sé,BA,18
+806,Supera,Farmacêutico e Beleza,1065395,943891,54902,106959,465853,São Paulo,SP,18
+807,Tramontina Multi,"Siderurgia, Mineração e Metalurgia",1065084,1139526,79340,377388,760083,Carlos Barbosa,RS,18
+808,Todeschini,Imobiliário e Construção Civil,1064785,994079,186775,1528530,2322998,Bento Gonçalves,RS,18
+809,Mangels,Bens de Capital e Eletroeletrônicos,1063608,948038,48022,46969,721479,Três Corações,MG,18
+810,Usina São Manoel,Agronegócio,1062047,1149988,170262,1570773,3843262,São Manuel,SP,18
+811,Cervejaria Cidade Imperial,Alimentos e Bebidas,1060174,937366,1515,203096,837653,Frutal,MG,18
+812,Agis,Imobiliário e Construção Civil,1059026,1627478,213273,699044,1334197,São Paulo,SP,18
+813,Mitre Realty,Imobiliário e Construção Civil,1054924,1179438,78116,1055104,2384092,São Paulo,SP,18
+814,TPI — Triunfo,Serviços Financeiros,1054757,1152704,-402656,482450,2197127,São Paulo,SP,18
+815,Orizon VR,Saneamento e Meio Ambiente,1050340,903473,73962,1551637,4293945,São Paulo,SP,18
+816,Vilma,Alimentos e Bebidas,1050271,1024685,87514,762751,941891,Juiz de Fora,MG,18
+817,Let‘s Rent a Car,"Transporte, Logística e Serviços Logísticos",1049448,1045323,42602,611246,1993535,Araraquara,SP,18
+818,KSB,Bens de Capital e Eletroeletrônicos,1048477,881553,179997,345984,756494,São Paulo,SP,18
+819,Banco Bs2,Bancos,1047249,780987,72065,900036,7729962,Belo Horizonte,MG,18
+820,Track&Field,Moda e Vestuário,1046512,831759,142318,565400,974206,Osasco,SP,18
+821,Lwart Soluções,Saneamento e Meio Ambiente,1038148,999443,89907,773899,2352873,São Paulo,SP,18
+822,Hospital São Rafael,Saúde e Serviços de Saúde,1037805,951783,141061,362469,932811,Salvador,BA,18
+823,EDP Nordeste,Energia Elétrica,1030861,65230,108474,347409,2319703,São Paulo,SP,18
+824,CS Brasil,"Transporte, Logística e Serviços Logísticos",1030532,788348,115783,816622,1813042,Rio de Janeiro,RJ,18
+825,Kaefer Rip,Bens de Capital e Eletroeletrônicos,1028739,1055493,76808,180083,759790,Indaiatuba,SP,19
+826,Arauco,Imobiliário e Construção Civil,1027710,990059,159248,696055,934528,Ponta Grossa,PR,19
+827,Concremat,Imobiliário e Construção Civil,1024150,860301,43661,377586,829745,Rio de Janeiro,RJ,19
+828,Banco Bradesco Berj,Bancos,1023160,377903,1286,1095374,9685430,Rio de Janeiro,RJ,19
+829,Granado,Farmacêutico e Beleza,1022992,861691,25909,511931,946261,Rio de Janeiro,RJ,19
+830,Ultracargos,"Transporte, Logística e Serviços Logísticos",1020908,1075558,196067,1225224,4190115,São Paulo,SP,19
+831,Mundial,Bens de Capital e Eletroeletrônicos,1018848,969980,-21970,134489,1453609,São Paulo,SP,19
+832,Hospital Alemão Oswaldo Cruz,Saúde e Serviços de Saúde,1017882,1098432,-13343,603662,1132085,São Paulo,SP,19
+833,Kroma Energia,Energia Elétrica,1014238,1079257,2247,112584,1044005,Recife,PE,19
+834,Anaconda Farinha de Trigo,Alimentos e Bebidas,1005939,1016611,255380,757074,848388,São Paulo,SP,19
+835,Morlan,Bens de Capital e Eletroeletrônicos,1004150,945775,63656,738984,936711,Orlândia,SP,19
+836,Unimed Campo Grande MS Cooperativa de Trabalho Médico,Cooperativas,1001843,970420,27364,330223,650756,Campo Grande,MS,19
+837,Haitong,Bancos,990699,668016,-32432,536687,8092144,São Paulo,SP,19
+838,Schio,Agronegócio,984784,862431,50109,441209,1572357,São Paulo,SP,19
+839,Magnesita,"Siderurgia, Mineração e Metalurgia",982749,915379,185697,1242076,2145159,Contagem,MG,19
+840,Sansuy,"Combustíveis, Petróleo e Químico",975914,944820,-284204,-2269401,570135,Embu das Artes,SP,19
+841,Paschoalotto,Serviços Financeiros,973650,909973,25822,7594,466439,Bauru,SP,19
+842,Adecco,Participações e Mídia,971895,762603,22634,68234,347854,São Paulo,SP,19
+843,Bandeirantes Máquinas,Bens de Capital e Eletroeletrônicos,965959,992013,22642,195175,577069,Contagem,MG,19
+844,Vulcabras BA,Moda e Vestuário,964397,865512,491483,848247,1143986,Itapetinga,BA,19
+845,Privalia,Tecnologia e Telecomunicações,959547,933688,-20306,112042,557363,São Paulo,SP,19
+846,Eugenio Raulino Koerich,Atacado e Varejo,957774,937066,20188,402728,723254,Florianópolis,SC,19
+847,Qualicorp,Saúde e Serviços de Saúde,957158,978346,31527,925986,1712639,São Paulo,SP,19
+848,Corredor,"Transporte, Logística e Serviços Logísticos",955118,954878,-12655,376119,3182194,São Paulo,SP,19
+849,Banco Société Générale Brasil,Bancos,954165,1912966,57261,1696654,8229369,São Paulo,SP,19
+850,Supermercado Guanabara,Atacado e Varejo,945221,811819,10751,131308,389651,Rio Grande,RS,19
+851,Brasilata,"Siderurgia, Mineração e Metalurgia",944824,982944,-33918,292109,928079,Jundiaí,SP,19
+852,Toledo do Brasil,"Siderurgia, Mineração e Metalurgia",940029,889899,94906,350575,613172,São Bernardo do Campo,SP,19
+853,Triple Play,Participações e Mídia,938903,753596,-111780,436285,2374142,São Paulo,SP,19
+854,Grupo Kallas,Imobiliário e Construção Civil,923144,1254533,-155379,850856,2021084,São Paulo,SP,19
+855,Ther Gold Participações e Administração,Participações e Mídia,923144,1254929,-167835,513267,2032870,São Paulo,SP,19
+856,Aesc,Saúde e Serviços de Saúde,920869,832502,-19472,77451,894088,Caxias do Sul,RS,19
+857,Madem — Bobinas de Madeira,Imobiliário e Construção Civil,918291,770722,95883,597991,957926,Garibaldi,RS,19
+858,Scala Data Centers,Tecnologia e Telecomunicações,916400,666976,-20952,5963427,12786427,Barueri,SP,19
+859,Leitesol,Agronegócio,915182,862920,53503,121183,277132,Bragança Paulista,SP,19
+860,Bigfer Indústria e Comércio de Ferragens,Atacado e Varejo,914020,848182,67836,251212,422656,Farroupilha,RS,19
+861,Pitágoras,Educação,909532,837034,333602,1014054,1542439,Belo Horizonte,MG,19
+862,Ibema,Papel e Celulose,898476,886739,32527,395675,764899,Curitiba,PR,19
+863,Bandepe,Bancos,897151,1214978,644151,5968971,7730754,Recife,PE,19
+864,Cia Muller,Alimentos e Bebidas,891438,812108,107552,830901,1254144,São Paulo,SP,19
+865,Lavoro Agro,Agronegócio,888191,1550929,-994147,-735533,1174797,São Paulo,SP,19
+866,Althaia,Farmacêutico e Beleza,883886,737703,219981,440166,1109601,Atibaia,SP,19
+867,Junto Seguros,Seguradoras,879408,650684,71512,309617,3245292,Curitiba,PR,19
+868,BrasilAgro,Agronegócio,877443,771126,138019,2177728,3837002,São Paulo,SP,19
+869,Orizon,Saneamento e Meio Ambiente,877017,754653,35988,817300,2983796,São Paulo,SP,19
+870,Autopista Régis,"Transporte, Logística e Serviços Logísticos",874917,821124,165135,671253,2478086,Registro,SP,20
+871,Liderança Serviços,"Transporte, Logística e Serviços Logísticos",874252,746518,12454,111679,184013,São José,SC,20
+872,Tramontina Eletrik,"Siderurgia, Mineração e Metalurgia",866030,742166,64383,405151,797062,Carlos Barbosa,RS,20
+873,Emccamp,Imobiliário e Construção Civil,864190,904674,85494,523815,1217121,Belo Horizonte,MG,20
+874,Panatlântica Tubos,"Siderurgia, Mineração e Metalurgia",859683,860167,29808,518665,673139,Caxias do Sul,RS,20
+875,Pettenati,Moda e Vestuário,854123,746450,42497,510135,1024919,Caxias do Sul,RS,20
+876,Necta Gás,"Combustíveis, Petróleo e Químico",853144,833300,154763,585374,852224,Ribeirão Preto,SP,20
+877,Ibratec,Papel e Celulose,850837,733014,53775,104190,572632,Itapevi,SP,20
+878,Ademicon Consórcio e Investimento,Serviços Financeiros,847633,879019,569965,109039,1832120,Curitiba,PR,20
+879,Ambiental Ceará,Saneamento e Meio Ambiente,845921,389161,142698,241537,1285389,Fortaleza,CE,20
+880,Tora Transportes,"Transporte, Logística e Serviços Logísticos",844702,908093,-13151,142854,915119,Contagem,MG,20
+881,Eletromidia,Participações e Mídia,837521,740739,111139,1101680,3042017,São Paulo,SP,20
+882,Mogiana Alimentos,Alimentos e Bebidas,835497,590775,-49116,269177,626991,Campinas,SP,20
+883,Banco Rendimento,Bancos,833842,677521,98760,493256,4466514,São Paulo,SP,20
+884,MagaluPay,Serviços Financeiros,830728,882827,51316,485722,2919525,Barueri,SP,20
+885,American Life Seguros,Seguradoras,829382,475175,39914,105641,1105747,São Paulo,SP,20
+886,Paco Metalurgia,"Siderurgia, Mineração e Metalurgia",824393,743105,32419,304463,700819,Caxias do Sul,RS,20
+887,Transpes,"Transporte, Logística e Serviços Logísticos",822788,801679,88131,243470,1433166,Belo Horizonte,MG,20
+888,Banco Yamaha Motor do Brasil,Bancos,820518,1150492,-18916,459033,3851827,Guarulhos,SP,20
+889,COI,Saúde e Serviços de Saúde,820371,687440,141902,272097,473120,Rio de Janeiro,RJ,20
+890,Vittia,Agronegócio,819983,786619,66151,644373,929946,São Joaquim da Barra,SP,20
+891,Multilog Brasil,"Transporte, Logística e Serviços Logísticos",817558,770551,114877,301973,964466,Barueri,SP,20
+892,Compagas,"Combustíveis, Petróleo e Químico",814372,872195,71860,484634,1144547,Curitiba,PR,20
+893,Atvos,"Combustíveis, Petróleo e Químico",812286,766833,-13046,970431,1967183,Caçu,GO,20
+894,Ultrafértil,Agronegócio,811386,728484,29395,2245484,4262751,Cubatão,SP,20
+895,Corinthians,Participações e Mídia,810126,704915,-143441,-774194,1983098,São Paulo,SP,20
+896,Delga,Bens de Capital e Eletroeletrônicos,801958,910614,-35450,69192,502854,Diadema,SP,20
+897,K1,Imobiliário e Construção Civil,801867,750579,-3280,110618,759422,Tupandi,RS,20
+898,Minasligas,"Siderurgia, Mineração e Metalurgia",799246,886722,97868,727112,1204114,Pirapora,MG,20
+899,ICTSI Rio Brasil Terminal 1,"Transporte, Logística e Serviços Logísticos",798365,711724,-166510,563199,2159405,Rio de Janeiro,RJ,20
+900,Cart,"Transporte, Logística e Serviços Logísticos",795592,775814,78169,1652198,4258856,Bauru,SP,20
+901,ES Gás,"Combustíveis, Petróleo e Químico",795590,1627587,33225,1101517,1954043,Vitória,ES,20
+902,Mapfre Vida,Seguradoras,794092,808411,59611,651109,1218609,São Paulo,SP,20
+903,Engeform Engenharia,Imobiliário e Construção Civil,794016,1051869,57771,228059,320498,São Paulo,SP,20
+904,Tronox Pigmentos do Brasil,"Combustíveis, Petróleo e Químico",793096,660951,-66637,570068,927579,Camaçari,BA,20
+905,Nova Energia,Energia Elétrica,791367,639250,8258,65359,313349,São Paulo,SP,20
+906,Delga Indústria e Comércio,Bens de Capital e Eletroeletrônicos,791278,890850,-16745,28739,461703,Diadema,SP,20
+907,Koppert,Agronegócio,791062,660107,-10653,98830,895966,Piracicaba,SP,20
+908,Banco Caterpillar,Bancos,788901,1308448,69642,1323212,5879752,São Paulo,SP,20
+909,Itaú Vida,Seguradoras,786865,787145,479757,4823429,355131289,São Paulo,SP,20
+910,Linx,Tecnologia e Telecomunicações,782400,855813,52452,1432860,1746245,São Paulo,SP,20
+911,SulAmérica,Seguradoras,780962,646483,196090,1715476,12604301,Rio de Janeiro,RJ,20
+912,Grupo Santa Maria,Papel e Celulose,780187,752249,59913,476790,1136535,Guarapuava,PR,20
+913,Azulão Geração,Energia Elétrica,776406,705177,233334,1608926,3073159,Rio de Janeiro,RJ,20
+914,Argo Transmissão,Energia Elétrica,772789,779107,374963,2232726,6139167,São Paulo,SP,21
+915,Rocha Terminais,"Transporte, Logística e Serviços Logísticos",770021,659651,176830,1211404,2712679,São Francisco do Sul,SC,21
+916,Condor,"Siderurgia, Mineração e Metalurgia",767286,725029,48410,293791,660214,São Bento do Sul,SC,21
+917,Moinho Paulista,Alimentos e Bebidas,767272,656304,25377,192681,408589,Santos,SP,21
+918,Arteris Fernão Dias,"Transporte, Logística e Serviços Logísticos",766690,753238,56968,933985,2528364,Pouso Alegre,MG,21
+919,Serveng,Energia Elétrica,762333,705659,200503,943808,1762002,São Paulo,SP,21
+920,Polo Films,Papel e Celulose,760229,760961,25349,350258,432523,Barueri,SP,21
+921,Rio Grande Seguros,Seguradoras,757183,720858,115972,120160,7566312,Porto Alegre,RS,21
+922,Webmotors,Tecnologia e Telecomunicações,756207,625452,161425,522455,1028658,São Paulo,SP,21
+923,Baldo,Agronegócio,750949,763059,242250,1390555,1614087,Encantado,RS,21
+924,Pan Financeira,Serviços Financeiros,749701,944444,207010,1794960,5652587,São Paulo,SP,21
+925,Natural One,Alimentos e Bebidas,749462,789206,-231217,682408,2357985,Jarinu,SP,21
+926,Cia Canoinhas,Papel e Celulose,744422,667693,93276,157224,494748,Canoinhas,SC,21
+927,Painco,"Siderurgia, Mineração e Metalurgia",737595,798767,13690,307317,598986,Rio Das Pedras,SP,21
+928,Zurich Resseguradora,Seguradoras,737292,667222,58307,139919,2617972,São Paulo,SP,21
+929,Banco Bradesco BBI,Bancos,736443,649459,1371330,5701273,14818959,São Paulo,SP,21
+930,Novo Banco Continental,Bancos,733820,511953,-803,276362,5030377,Porto Alegre,RS,21
+931,Santa Helena,Alimentos e Bebidas,732157,711618,34710,241341,656715,Ribeirão Preto,SP,21
+932,Agehab,Imobiliário e Construção Civil,730456,447166,200006,722210,993876,Goiânia,GO,21
+933,Transportes Della Volpe,"Transporte, Logística e Serviços Logísticos",729781,767259,5922,437324,657341,São Luís,MA,21
+934,Movecta,"Transporte, Logística e Serviços Logísticos",725067,679362,90162,243457,753486,Guarujá,SP,21
+935,Ocrim Produtos Alimentícios,Alimentos e Bebidas,723855,669324,13568,117523,335111,São Paulo,SP,21
+936,Via-Sudeste,"Transporte, Logística e Serviços Logísticos",718835,658751,3085,66934,576764,São Paulo,SP,21
+937,Shoulder,Moda e Vestuário,718314,644591,126502,211187,886914,São Paulo,SP,21
+938,Peccin,Alimentos e Bebidas,708932,656104,1601,155976,640022,Cristal,RS,21
+939,Energia São Manoel,Energia Elétrica,708353,470279,9948,1750552,3766731,Rio de Janeiro,RJ,21
+940,Yakult,Alimentos e Bebidas,705211,664282,14334,522587,682485,São Paulo,SP,21
+941,CP Kelco,Agronegócio,691613,716861,80221,1254757,1345756,Limeira,SP,21
+942,Borealis Brasil,"Combustíveis, Petróleo e Químico",691252,610386,95517,190852,340281,Itatiba,SP,21
+943,UBS BB Serviços Financeiros,Bancos,689864,847302,42732,1463161,2241828,São Paulo,SP,21
+944,Sotreq,Imobiliário e Construção Civil,684879,701336,49352,264121,726213,Rio de Janeiro,RJ,21
+945,Chubb Resseguradora,Seguradoras,684690,525362,114968,142290,2143422,São Paulo,SP,21
+946,Portos do Paraná,"Transporte, Logística e Serviços Logísticos",680918,588215,280758,1428894,2593475,Paranaguá,PR,21
+947,Tramontina Farroupilha,"Siderurgia, Mineração e Metalurgia",679148,595477,67563,459988,829126,Farroupilha,RS,21
+948,Base Química,"Combustíveis, Petróleo e Químico",677023,696544,69692,167895,311889,Ribeirão Preto,SP,21
+949,Bragagnolo Papel e Embalagem,Papel e Celulose,675654,604130,47148,754005,883597,Faxinal dos Guedes,SC,21
+950,Gadkin,Alimentos e Bebidas,675300,783433,48959,374407,413959,Barueri,SP,21
+951,Light Energia,Energia Elétrica,672559,860589,168525,1153378,3112506,Rio de Janeiro,RJ,21
+952,Grid Energia,Energia Elétrica,669817,281338,28570,44252,188798,Belo Horizonte,MG,21
+953,Banrisul Icatu,Seguradoras,667895,658424,177490,283516,8971615,Porto Alegre,RS,21
+954,Moinho Globo,Alimentos e Bebidas,666168,539290,61624,234881,354454,Rio de Janeiro,RJ,21
+955,Kovi Tecnologia,Tecnologia e Telecomunicações,661892,609857,-187542,-155157,738365,São Paulo,SP,21
+956,EDP Transmissão Norte Nordeste II,Energia Elétrica,661714,41835,125297,106402,865163,São Paulo,SP,21
+957,Inframerica Aeroporto de Brasília,"Transporte, Logística e Serviços Logísticos",660156,587777,-315517,-2541454,3293146,Brasília,DF,21
+958,Baldan,Agronegócio,653793,654185,-181,316944,895772,Matão,SP,21
+959,Umoe,"Combustíveis, Petróleo e Químico",653783,639154,102523,575450,1443324,Sandovalina,PR,22
+960,CFL Inc. Par,Imobiliário e Construção Civil,651448,1076882,128365,508384,1476976,Porto Alegre,RS,22
+961,Daycoval Leasing,Bancos,650024,564708,210802,1395958,1912225,Barueri,SP,22
+962,Blanver,Farmacêutico e Beleza,648885,830764,16927,106641,725131,Taboão da Serra,SP,22
+963,Selbetti,Tecnologia e Telecomunicações,642241,564246,8061,72936,614336,Rio de Janeiro,RJ,22
+964,Van Oord,"Transporte, Logística e Serviços Logísticos",641970,519654,59224,186658,326298,Rio de Janeiro,RJ,22
+965,Chimarrão Energia,Energia Elétrica,640042,337867,317365,1141221,4120962,Eldorado do Sul,RS,22
+966,Ágora,Serviços Financeiros,635707,432972,387312,3873133,9626978,São Paulo,SP,22
+967,Fábrica Carioca de Catalisadores,"Combustíveis, Petróleo e Químico",634861,644670,81199,265618,572969,Rio de Janeiro,RJ,22
+968,Calcados Dakota,Moda e Vestuário,633585,637330,99186,842613,1032645,Russas,CE,22
+969,AmstedMaxion — Fundidos Industriais,Bens de Capital e Eletroeletrônicos,633136,447156,93687,380567,637325,Cruzeiro,SP,22
+970,Grupasso,Participações e Mídia,632613,1128229,-86962,69485,844556,São Paulo,SP,22
+971,NG Metalurgia,"Siderurgia, Mineração e Metalurgia",630023,651989,122278,133829,702686,Piracicaba,SP,22
+972,IHS Brasil,"Transporte, Logística e Serviços Logísticos",628454,551170,-337604,3412115,6527130,São Paulo,SP,22
+973,CSU Cardsystem,Tecnologia e Telecomunicações,623529,567639,106051,465112,750929,Barueri,SP,22
+974,Gelf Siderurgia,"Siderurgia, Mineração e Metalurgia",622529,589282,-13122,417561,660763,Sete Lagoas,MG,22
+975,Tecnosonda,Imobiliário e Construção Civil,621906,650696,38019,188558,328422,Rio de Janeiro,RJ,22
+976,TMSA,"Transporte, Logística e Serviços Logísticos",621604,726747,80948,86693,413571,Porto Alegre,RS,22
+977,Lafepe,Farmacêutico e Beleza,620846,687016,28894,314896,637783,Recife,PE,22
+978,Gafisa,Imobiliário e Construção Civil,619692,1012352,-544550,1537033,4727891,São Paulo,SP,22
+979,AOVS,Tecnologia e Telecomunicações,616412,566555,146272,337266,1158553,São Paulo,SP,22
+980,Dock,Tecnologia e Telecomunicações,614979,667876,-84133,125019,2889496,Barueri,SP,22
+981,Cattalini,"Transporte, Logística e Serviços Logísticos",612716,549464,260082,173900,1289871,Paranaguá,PR,22
+982,Realcafé,Alimentos e Bebidas,612237,578390,44466,224806,503746,Viana,ES,22
+983,Peixoto Comércio,Atacado e Varejo,609513,607673,16524,266882,367362,Uberlândia,MG,22
+984,Banco Rodobens,Bancos,609359,556678,78210,772404,3843513,São Paulo,SP,22
+985,ICC,Atacado e Varejo,606191,529489,43870,202845,568581,São Paulo,SP,22
+986,SLC Mit,Agronegócio,603959,565614,-43358,308054,1017113,São Desidério,BA,22
+987,Atlas,Atacado e Varejo,602754,520072,75343,329631,565976,Esteio,RS,22
+988,Apolo,Imobiliário e Construção Civil,601163,499615,27119,472097,742885,Rio de Janeiro,RJ,22
+989,FDA Energia,Energia Elétrica,598908,560073,163800,2200356,2430853,Curitiba,PR,22
+990,Apolo,"Siderurgia, Mineração e Metalurgia",595785,424535,1458,251162,542673,São Paulo,SP,22
+991,BRQ,Tecnologia e Telecomunicações,593671,581866,68436,94344,416706,São Paulo,SP,22
+992,Sequoia Logística e Transportes,"Transporte, Logística e Serviços Logísticos",592928,769016,-195422,-183235,752623,Embu das Artes,SP,22
+993,Desenvolve SP,Participações e Mídia,592830,581667,289236,3461849,4182767,São Paulo,SP,22
+994,BRF Energia,Energia Elétrica,591003,474867,3760,16739,252363,Itajaí,SC,22
+995,Alsol Energias Renováveis,Energia Elétrica,588950,380409,-83145,702778,3258369,Uberlândia,MG,22
+996,Berkley International do Brasil Seguros,Seguradoras,585644,530638,58056,168515,1414893,São Paulo,SP,22
+997,Paranaíta,Energia Elétrica,583525,579813,407246,2636981,4345259,Rio de Janeiro,RJ,22
+998,Arcadis,"Transporte, Logística e Serviços Logísticos",582250,567465,29858,210703,365238,Rio de Janeiro,RJ,22
+999,Medilar,Saúde e Serviços de Saúde,581634,573682,8966,103608,284229,Vera Cruz,RS,22
+1000,Fomento Paraná,Participações e Mídia,562238,415321,299050,3502327,4322305,Curitiba,PR,22
