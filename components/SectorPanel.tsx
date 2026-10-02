@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { associationColor } from "@/lib/colors";
 import type { PanelLayout } from "@/lib/sectorLayout";
 import { CompanyCell } from "./CompanyCell";
 
@@ -8,6 +9,10 @@ interface Props {
   gap: number;
   padding: number;
   headerHeight: number;
+  /** `null` antes da primeira análise. */
+  scores: Record<string, number | null> | null;
+  topIds: ReadonlySet<string>;
+  activeId: string;
 }
 
 export const SectorPanel = memo(function SectorPanel({
@@ -16,6 +21,9 @@ export const SectorPanel = memo(function SectorPanel({
   gap,
   padding,
   headerHeight,
+  scores,
+  topIds,
+  activeId,
 }: Props) {
   return (
     <section
@@ -43,10 +51,21 @@ export const SectorPanel = memo(function SectorPanel({
           gap,
         }}
       >
-        {panel.companies.map((c) => (
-          <CompanyCell key={c.id} company={c} />
-        ))}
+        {panel.companies.map((c) => {
+          const score = scores?.[c.id] ?? null;
+          return (
+            <CompanyCell
+              key={c.id}
+              company={c}
+              color={score === null ? undefined : associationColor(score)}
+              scoreLabel={score === null ? undefined : `${Math.round(score * 100)} por cento de associação`}
+              highlighted={topIds.has(c.id)}
+              tabIndex={c.id === activeId ? 0 : -1}
+            />
+          );
+        })}
       </div>
     </section>
   );
 });
+

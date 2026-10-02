@@ -162,3 +162,29 @@ export function computeLayout(
   }
   return { panels, width: cfg.width, height, config: cfg };
 }
+
+/** Borda do painel (px), que desloca a grade interna. */
+export const PANEL_BORDER = 1;
+
+export interface Rect {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+}
+
+/** Posição absoluta (no container do mosaico) da célula `index` do painel. */
+export function cellRect(panel: PanelLayout, index: number, cfg: LayoutConfig): Rect {
+  const pitch = cfg.cell + cfg.gap;
+  return {
+    x: panel.x + PANEL_BORDER + cfg.panelPadding + (index % panel.cols) * pitch,
+    y:
+      panel.y +
+      PANEL_BORDER +
+      cfg.panelPadding +
+      cfg.headerHeight +
+      Math.floor(index / panel.cols) * pitch,
+    w: cfg.cell,
+    h: cfg.cell,
+  };
+}

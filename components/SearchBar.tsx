@@ -1,13 +1,28 @@
 "use client";
 
-export function SearchBar({ initialValue }: { initialValue: string }) {
+interface Props {
+  value: string;
+  onChange: (value: string) => void;
+  onSubmit: () => void;
+  loading: boolean;
+}
+
+export function SearchBar({ value, onChange, onSubmit, loading }: Props) {
   return (
     <form
       role="search"
-      onSubmit={(e) => e.preventDefault()}
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSubmit();
+      }}
       className="flex h-16 items-center gap-4 rounded-[18px] border border-assoc-max/35 bg-surface px-6 shadow-[0_0_0_4px_rgba(47,157,85,0.06)] focus-within:border-assoc-max/70"
     >
-      <button type="submit" aria-label="Buscar" className="text-ink-soft">
+      <button
+        type="submit"
+        aria-label="Buscar"
+        disabled={loading}
+        className={`text-ink-soft ${loading ? "animate-pulse" : ""}`}
+      >
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.8" />
           <path d="m20 20-3.5-3.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
@@ -15,7 +30,8 @@ export function SearchBar({ initialValue }: { initialValue: string }) {
       </button>
       <input
         type="text"
-        defaultValue={initialValue}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
         placeholder="Explore um tema da economia brasileira"
         aria-label="Tema"
         minLength={2}
