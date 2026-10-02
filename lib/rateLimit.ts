@@ -1,3 +1,4 @@
+import { StoreUnavailableError } from "./store";
 import type { Store } from "./store";
 
 export class RateLimitedError extends Error {
@@ -24,29 +25,44 @@ export async function enforceRateLimit(
   now: number,
 ): Promise<void> {
   const window = Math.floor(now / WINDOW_MS);
-  const count = await store.incr(`jev-search:rl:${bucket}:${ipHash}:${window}`, 70);
+  let count: number;
+  try {
+    count = await store.incr(`jev-search:rl:${bucket}:${ipHash}:${window}`, 70);
+  } catch (err) {
+    throw new StoreUnavailableError(err);
+  }
   if (count > limit) {
     const retry = Math.max(1, Math.ceil(((window + 1) * WINDOW_MS - now) / 1000));
     throw new RateLimitedError(retry);
   }
 }
 
-const INFLIGHT_KEY = "jev-search:inflight";
+const SLOTS_KEY = "jev-search:slots";
+/** Maior que o `maxDuration` da rota (60s): o lease só vence se a instância morrer. */
+export const SLOT_LEASE_SECONDS = 90;
 
-/** Teto global de buscas simultâneas chegando ao Jev (cada uma usa 4 requests paralelos). */
-export async function withInflightSlot<T>(
+/**
+ * Teto global de buscas simultâneas chegando ao Jev, com lease por slot: se a
+ * instância morrer no meio da busca, o lease vence sozinho. O slot é liberado em
+ * `finally`, inclusive quando a busca falha.
+ */
+export async function withConcurrencySlot<T>(
   store: Store,
   max: number,
+  now: () => number,
   fn: () => Promise<T>,
 ): Promise<T> {
-  const count = await store.incr(INFLIGHT_KEY, 120);
-  if (count > max) {
-    await store.decr(INFLIGHT_KEY);
-    throw new BusyError();
+  const token = `${now()}-${Math.random().toString(36).slice(2)}`;
+  let acquired: boolean;
+  try {
+    acquired = await store.acquireLease(SLOTS_KEY, token, max, SLOT_LEASE_SECONDS, now());
+  } catch (err) {
+    throw new StoreUnavailableError(err);
   }
+  if (!acquired) throw new BusyError();
   try {
     return await fn();
   } finally {
-    await store.decr(INFLIGHT_KEY).catch(() => {});
+    await store.releaseLease(SLOTS_KEY, token).catch(() => {});
   }
 }

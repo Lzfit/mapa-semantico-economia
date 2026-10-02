@@ -114,3 +114,51 @@ describe("POST /api/search", () => {
     expect(res.status).toBe(502);
   });
 });
+
+describe("POST /api/search sem Redis em produção", () => {
+  it("responde 503 limpo e não chama o Jev", async () => {
+    vi.resetModules();
+    vi.stubEnv("VERCEL_ENV", "production");
+    vi.stubEnv("REDIS_URL", "");
+    vi.stubEnv("REDIS_TOKEN", "");
+    vi.stubEnv("UPSTASH_REDIS_REST_URL", "");
+    vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "");
+    const spy = mockJev();
+    vi.spyOn(console, "error").mockImplementation(() => {});
+    const { POST: strictPost } = await import("@/app/api/search/route");
+    const res = await strictPost(
+      new Request("http://localhost/api/search", {
+        method: "POST",
+        headers: { "x-vercel-forwarded-for": "8.8.8.8" },
+        body: JSON.stringify({ theme: "data centers" }),
+      }),
+    );
+    expect(res.status).toBe(503);
+    expect(res.headers.get("retry-after")).toBe("5");
+    const text = await res.text();
+    expect(text).toContain("Serviço temporariamente indisponível");
+    expect(text).not.toContain("chave-que-nao-pode-vazar");
+    expect(spy).not.toHaveBeenCalled();
+  });
+
+  it("com Redis configurado mas fora do ar em produção também responde 503 sem chamar o Jev", async () => {
+    vi.resetModules();
+    vi.stubEnv("VERCEL_ENV", "production");
+    vi.stubEnv("REDIS_URL", "https://redis.test");
+    vi.stubEnv("REDIS_TOKEN", "t");
+    const spy = vi.spyOn(globalThis, "fetch").mockRejectedValue(new Error("redis fora"));
+    vi.stubEnv("TYPESAFE_API_KEY", "chave-que-nao-pode-vazar");
+    vi.spyOn(console, "error").mockImplementation(() => {});
+    const { POST: strictPost } = await import("@/app/api/search/route");
+    const res = await strictPost(
+      new Request("http://localhost/api/search", {
+        method: "POST",
+        headers: { "x-vercel-forwarded-for": "8.8.8.9" },
+        body: JSON.stringify({ theme: "data centers" }),
+      }),
+    );
+    expect(res.status).toBe(503);
+    const jevCalls = spy.mock.calls.filter(([u]) => String(u).includes("typesafe"));
+    expect(jevCalls).toHaveLength(0);
+  });
+});

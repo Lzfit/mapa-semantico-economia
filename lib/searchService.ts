@@ -1,4 +1,4 @@
-import { BusyError, RateLimitedError, enforceRateLimit, withInflightSlot } from "./rateLimit";
+import { BusyError, RateLimitedError, enforceRateLimit, withConcurrencySlot } from "./rateLimit";
 import { buildSearchResponse, evaluateTheme } from "./search";
 import {
   CACHE_TTL_SECONDS,
@@ -10,11 +10,12 @@ import {
 import type { Evaluation } from "./searchCache";
 import type { BatchOptions } from "./batching";
 import type { JevConfig } from "./jev";
+import { StoreUnavailableError } from "./store";
 import type { Store } from "./store";
 import type { SearchResponse } from "@/types/api";
 import type { Company } from "@/types/company";
 
-export { BusyError, RateLimitedError };
+export { BusyError, RateLimitedError, StoreUnavailableError };
 
 /** Falha de uma análise que outra requisição estava calculando. */
 export class SearchUnavailableError extends Error {}
@@ -55,7 +56,8 @@ export interface SearchDeps {
   log?: (message: string) => void;
 }
 
-const LOCK_TTL_SECONDS = 60;
+/** Maior que o maxDuration da rota (60s): o lock só vence se a instância morrer. */
+export const LOCK_TTL_SECONDS = 75;
 const POLL_MS = 250;
 const MAX_WAIT_MS = 45_000;
 
@@ -85,14 +87,17 @@ export async function handleSearch(
 
   await enforceRateLimit(store, "all", ipHash, limits.allPerMinute, now());
 
-  const readCache = async () => {
+  // Antes de qualquer chamada ao Jev, falha do armazenamento distribuído vira
+  // StoreUnavailableError (503): sem cache/lock/limites não há busca nova.
+  const guard = async <T>(op: () => Promise<T>): Promise<T> => {
     try {
-      return decodeEvaluation(await store.get(cacheKey), companies);
-    } catch {
-      log("cache_read_failed");
-      return null;
+      return await op();
+    } catch (err) {
+      throw err instanceof StoreUnavailableError ? err : new StoreUnavailableError(err);
     }
   };
+
+  const readCache = async () => decodeEvaluation(await guard(() => store.get(cacheKey)), companies);
 
   let waited = false;
   for (;;) {
@@ -100,7 +105,7 @@ export async function handleSearch(
     if (cached) return respond(cached, true);
 
     const token = `${now()}-${Math.random().toString(36).slice(2)}`;
-    if (await store.setNx(lockKey, token, LOCK_TTL_SECONDS)) {
+    if (await guard(() => store.setNx(lockKey, token, LOCK_TTL_SECONDS))) {
       try {
         // Outra instância pode ter terminado entre a leitura e o lock.
         const again = await readCache();
@@ -109,7 +114,7 @@ export async function handleSearch(
         if (waited) throw new SearchUnavailableError("calculo_anterior_falhou");
 
         await enforceRateLimit(store, "new", ipHash, limits.newPerMinute, now());
-        const evaluation = await withInflightSlot(store, limits.maxConcurrent, () =>
+        const evaluation = await withConcurrencySlot(store, limits.maxConcurrent, now, () =>
           evaluate(theme, companies, deps.getConfig(), deps.batchOptions),
         );
         try {
@@ -119,6 +124,7 @@ export async function handleSearch(
         }
         return respond(evaluation, false);
       } finally {
+        // Só libera o próprio lock (token); se já venceu e outro assumiu, não mexe.
         await store.delIfEquals(lockKey, token).catch(() => log("lock_release_failed"));
       }
     }

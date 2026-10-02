@@ -1,5 +1,13 @@
 import { describe, expect, it, vi } from "vitest";
-import { FallbackStore, MemoryStore, RedisStore, StoreConfigError, createStore } from "@/lib/store";
+import {
+  FallbackStore,
+  MemoryStore,
+  RedisStore,
+  StoreConfigError,
+  StoreUnavailableError,
+  createStore,
+  isStrictEnv,
+} from "@/lib/store";
 import type { RedisLike, Store } from "@/lib/store";
 
 describe("MemoryStore", () => {
@@ -30,7 +38,6 @@ describe("MemoryStore", () => {
     const s = new MemoryStore(() => t);
     expect(await s.incr("c", 70)).toBe(1);
     expect(await s.incr("c", 70)).toBe(2);
-    expect(await s.decr("c")).toBe(1);
     t = 70_001;
     expect(await s.incr("c", 70)).toBe(1);
   });
@@ -42,8 +49,7 @@ function fakeRedis() {
     get: async (k) => (calls.push(["get", k]), k === "hit" ? "valor" : null),
     set: async (k, v, o) => (calls.push(["set", k, v, o]), o.nx ? "OK" : "OK"),
     del: async (k) => (calls.push(["del", k]), 1),
-    decr: async (k) => (calls.push(["decr", k]), 4),
-    eval: async (_s, keys, args) => (calls.push(["eval", keys, args]), 1),
+    eval: async (script, keys, args) => (calls.push(["eval", keys, args, script]), 1),
     pipeline: () => {
       const ops: unknown[] = [];
       const p = {
@@ -92,20 +98,64 @@ describe("FallbackStore", () => {
   });
 });
 
-describe("createStore", () => {
-  it("usa memória localmente sem Redis", () => {
-    expect(createStore({ NODE_ENV: "development" })).toBeInstanceOf(MemoryStore);
+describe("leases de concorrência (MemoryStore)", () => {
+  it("respeita o máximo e libera o slot", async () => {
+    const s = new MemoryStore();
+    expect(await s.acquireLease("slots", "a", 2, 90, 0)).toBe(true);
+    expect(await s.acquireLease("slots", "b", 2, 90, 0)).toBe(true);
+    expect(await s.acquireLease("slots", "c", 2, 90, 0)).toBe(false);
+    await s.releaseLease("slots", "a");
+    expect(await s.acquireLease("slots", "c", 2, 90, 0)).toBe(true);
   });
 
-  it("usa Redis quando REDIS_URL/REDIS_TOKEN (ou UPSTASH_*) existem", () => {
-    expect(createStore({ REDIS_URL: "https://x.upstash.io", REDIS_TOKEN: "t" })).toBeInstanceOf(FallbackStore);
+  it("lease de instância que morreu vence sozinho pelo TTL", async () => {
+    const s = new MemoryStore();
+    await s.acquireLease("slots", "morta", 1, 90, 0);
+    expect(await s.acquireLease("slots", "nova", 1, 90, 89_999)).toBe(false);
+    expect(await s.acquireLease("slots", "nova", 1, 90, 90_000)).toBe(true);
+  });
+});
+
+describe("leases (RedisStore)", () => {
+  it("usa script Lua atômico com limpeza de vencidos, TTL e liberação por token", async () => {
+    const { redis, calls } = fakeRedis();
+    const s = new RedisStore(redis);
+    expect(await s.acquireLease("slots", "tok", 16, 90, 123_000)).toBe(true);
+    await s.releaseLease("slots", "tok");
+    const acquire = calls.find((c) => c[0] === "eval" && String(c[3]).includes("ZCARD"))!;
+    expect(acquire[1]).toEqual(["slots"]);
+    expect(acquire[2]).toEqual(["123000", "90000", "16", "tok"]);
+    expect(String(acquire[3])).toContain("ZREMRANGEBYSCORE");
+    expect(String(acquire[3])).toContain("PEXPIRE");
+    expect(calls.some((c) => c[0] === "eval" && String(c[3]).includes("ZREM") && JSON.stringify(c[2]) === '["tok"]')).toBe(true);
+  });
+});
+
+describe("createStore", () => {
+  const redisEnv = { REDIS_URL: "https://x.upstash.io", REDIS_TOKEN: "t" };
+
+  it("usa memória localmente sem Redis", () => {
+    expect(createStore({ NODE_ENV: "development" })).toBeInstanceOf(MemoryStore);
+    expect(createStore({ NODE_ENV: "production" })).toBeInstanceOf(MemoryStore); // next start local
+    expect(createStore({ VERCEL_ENV: "development" })).toBeInstanceOf(MemoryStore);
+  });
+
+  it("local com Redis usa fallback em memória se o Redis cair", () => {
+    expect(createStore(redisEnv)).toBeInstanceOf(FallbackStore);
     expect(
       createStore({ UPSTASH_REDIS_REST_URL: "https://x.upstash.io", UPSTASH_REDIS_REST_TOKEN: "t" }),
     ).toBeInstanceOf(FallbackStore);
   });
 
-  it("produção na Vercel sem Redis falha em vez de cair para memória", () => {
-    expect(() => createStore({ VERCEL_ENV: "production" })).toThrow(StoreConfigError);
-    expect(createStore({ VERCEL_ENV: "preview" })).toBeInstanceOf(MemoryStore);
+  it("production/preview da Vercel exigem Redis e não têm fallback silencioso", () => {
+    for (const VERCEL_ENV of ["production", "preview"]) {
+      expect(isStrictEnv({ VERCEL_ENV })).toBe(true);
+      expect(() => createStore({ VERCEL_ENV })).toThrow(StoreConfigError);
+      expect(() => createStore({ VERCEL_ENV })).toThrow(StoreUnavailableError);
+      const strict = createStore({ ...redisEnv, VERCEL_ENV });
+      expect(strict).toBeInstanceOf(RedisStore);
+      expect(strict).not.toBeInstanceOf(FallbackStore);
+    }
+    expect(isStrictEnv({ VERCEL_ENV: "development" })).toBe(false);
   });
 });

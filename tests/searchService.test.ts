@@ -6,14 +6,17 @@ import {
   BusyError,
   RateLimitedError,
   SearchUnavailableError,
+  StoreUnavailableError,
   handleSearch,
   readLimits,
 } from "@/lib/searchService";
 import type { Limits, SearchDeps } from "@/lib/searchService";
 import { evaluateTheme } from "@/lib/search";
-import { MemoryStore } from "@/lib/store";
+import { FallbackStore, MemoryStore } from "@/lib/store";
 import type { Store } from "@/lib/store";
 import type { Evaluation } from "@/lib/searchCache";
+import { LOCK_TTL_SECONDS } from "@/lib/searchService";
+import { SLOT_LEASE_SECONDS, withConcurrencySlot } from "@/lib/rateLimit";
 import { mockConfig, okResponse } from "./helpers";
 
 const companies = loadCompanies();
@@ -106,12 +109,10 @@ describe("cache", () => {
     expect(decodeEvaluation(JSON.stringify({ v: 1, ...withZeroOn418 }), companies)).toBeNull();
   });
 
-  it("falha de leitura/escrita do cache não derruba a busca", async () => {
+  it("falha ao gravar o cache não derruba a busca já calculada", async () => {
     const inner = new MemoryStore();
-    const flaky: Store = {
-      get: async () => {
-        throw new Error("x");
-      },
+    const store: Store = {
+      get: (k) => inner.get(k),
       set: async () => {
         throw new Error("x");
       },
@@ -119,13 +120,13 @@ describe("cache", () => {
       del: (k) => inner.del(k),
       delIfEquals: (k, v) => inner.delIfEquals(k, v),
       incr: (k, t) => inner.incr(k, t),
-      decr: (k) => inner.decr(k),
+      acquireLease: (k, t, m, ttl, n) => inner.acquireLease(k, t, m, ttl, n),
+      releaseLease: (k, t) => inner.releaseLease(k, t),
     };
-    const { d } = deps({ store: flaky });
+    const { d } = deps({ store });
     const log = vi.fn();
     const res = await handleSearch("café", "ip1", { ...d, log });
     expect(res.cached).toBe(false);
-    expect(log).toHaveBeenCalledWith("cache_read_failed");
     expect(log).toHaveBeenCalledWith("cache_write_failed");
   });
 });
@@ -266,5 +267,128 @@ describe("linha 418 e comportamento existente", () => {
     expect(readJevConfig(env as unknown as NodeJS.ProcessEnv).endpoint).toBe("https://api.typesafe.ai/v1/systemone");
     const dev = { TYPESAFE_API_KEY: "k", JEV_API_URL: "http://localhost:4010/x" };
     expect(readJevConfig(dev as unknown as NodeJS.ProcessEnv).endpoint).toBe("http://localhost:4010/x");
+  });
+});
+
+/** Store cujas operações podem ser derrubadas, como um Redis fora do ar. */
+function downableStore(inner: Store = new MemoryStore()) {
+  const state = { down: false };
+  const guard = <A extends unknown[], R>(fn: (...a: A) => Promise<R>) =>
+    (...a: A) => (state.down ? Promise.reject(new Error("redis fora")) : fn(...a));
+  const store: Store = {
+    get: guard((k: string) => inner.get(k)),
+    set: guard((k: string, v: string, t: number) => inner.set(k, v, t)),
+    setNx: guard((k: string, v: string, t: number) => inner.setNx(k, v, t)),
+    del: guard((k: string) => inner.del(k)),
+    delIfEquals: guard((k: string, v: string) => inner.delIfEquals(k, v)),
+    incr: guard((k: string, t: number) => inner.incr(k, t)),
+    acquireLease: guard((k: string, t: string, m: number, ttl: number, n: number) =>
+      inner.acquireLease(k, t, m, ttl, n)),
+    releaseLease: guard((k: string, t: string) => inner.releaseLease(k, t)),
+  };
+  return { store, state };
+}
+
+describe("lock de deduplicação com TTL e dono", () => {
+  it("grava o lock com TTL maior que o maxDuration da rota", async () => {
+    const { d, store } = deps();
+    const setNx = vi.spyOn(store, "setNx");
+    await handleSearch("café", "ip1", d);
+    expect(setNx).toHaveBeenCalledWith(lockKeyFor("café"), expect.any(String), LOCK_TTL_SECONDS);
+    expect(LOCK_TTL_SECONDS).toBeGreaterThan(60);
+  });
+
+  it("lock de instância que morreu expira e não bloqueia a query para sempre", async () => {
+    let t = 1_000_000;
+    const store = new MemoryStore(() => t);
+    const { d, evaluate } = deps({ store, now: () => t });
+    await store.setNx(lockKeyFor("café"), "instancia-morta", LOCK_TTL_SECONDS);
+    t += LOCK_TTL_SECONDS * 1000;
+    const res = await handleSearch("café", "ip1", d);
+    expect(res.cached).toBe(false);
+    expect(evaluate).toHaveBeenCalledTimes(1);
+  });
+
+  it("só o dono libera o lock: lock reassumido por outra instância é preservado", async () => {
+    let t = 1_000_000;
+    const store = new MemoryStore(() => t);
+    const { d, evaluate } = deps({ store, now: () => t });
+    evaluate.mockImplementation(async () => {
+      // o lock vence durante a busca lenta e outra instância o assume
+      t += (LOCK_TTL_SECONDS + 1) * 1000;
+      expect(await store.setNx(lockKeyFor("café"), "outra-instancia", LOCK_TTL_SECONDS)).toBe(true);
+      return evaluation();
+    });
+    await handleSearch("café", "ip1", d);
+    expect(await store.get(lockKeyFor("café"))).toBe("outra-instancia");
+  });
+
+  it("o dono libera o próprio lock ao terminar, com sucesso ou erro", async () => {
+    const { d, store, evaluate } = deps();
+    await handleSearch("a", "ip1", d);
+    expect(await store.get(lockKeyFor("a"))).toBeNull();
+    evaluate.mockRejectedValueOnce(new Error("jev fora"));
+    await expect(handleSearch("b", "ip1", d)).rejects.toThrow();
+    expect(await store.get(lockKeyFor("b"))).toBeNull();
+  });
+});
+
+describe("slot de concorrência não vaza", () => {
+  it("erro dentro da busca libera o slot (finally)", async () => {
+    const { d, store, evaluate } = deps({ limits: { ...limits, maxConcurrent: 1 } });
+    evaluate.mockRejectedValueOnce(new Error("jev fora"));
+    await expect(handleSearch("a", "ip1", d)).rejects.toThrow("jev fora");
+    const spy = vi.spyOn(store, "releaseLease");
+    await expect(handleSearch("b", "ip2", d)).resolves.toBeDefined(); // só 1 slot e ele voltou
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
+
+  it("instância que morre sem liberar perde o slot pelo lease (TTL)", async () => {
+    const store = new MemoryStore();
+    let t = 5_000_000;
+    const never = new Promise<never>(() => {});
+    void withConcurrencySlot(store, 1, () => t, () => never); // "morreu": nunca libera
+    await expect(withConcurrencySlot(store, 1, () => t, async () => "x")).rejects.toBeInstanceOf(BusyError);
+    t += SLOT_LEASE_SECONDS * 1000;
+    await expect(withConcurrencySlot(store, 1, () => t, async () => "x")).resolves.toBe("x");
+  });
+
+  it("falha ao liberar o slot não esconde o resultado da busca", async () => {
+    const store = new MemoryStore();
+    vi.spyOn(store, "releaseLease").mockRejectedValue(new Error("redis fora"));
+    await expect(withConcurrencySlot(store, 1, Date.now, async () => "ok")).resolves.toBe("ok");
+  });
+});
+
+describe("Redis indisponível", () => {
+  it("em produção (store estrito): StoreUnavailableError antes de chamar o Jev", async () => {
+    const { store, state } = downableStore();
+    const { d, evaluate } = deps({ store });
+    state.down = true;
+    await expect(handleSearch("café", "ip1", d)).rejects.toBeInstanceOf(StoreUnavailableError);
+    expect(evaluate).not.toHaveBeenCalled();
+  });
+
+  it("falha no lock ou no slot também aborta antes do Jev", async () => {
+    const base = downableStore();
+    const { d, evaluate } = deps({ store: base.store });
+    vi.spyOn(base.store, "setNx").mockRejectedValue(new Error("x"));
+    await expect(handleSearch("a", "ip1", d)).rejects.toBeInstanceOf(StoreUnavailableError);
+    const base2 = downableStore();
+    const d2 = deps({ store: base2.store, evaluate });
+    vi.spyOn(base2.store, "acquireLease").mockRejectedValue(new Error("x"));
+    await expect(handleSearch("b", "ip1", d2.d)).rejects.toBeInstanceOf(StoreUnavailableError);
+    expect(evaluate).not.toHaveBeenCalled();
+  });
+
+  it("em desenvolvimento (FallbackStore): usa memória local e a busca funciona", async () => {
+    const primary = downableStore();
+    primary.state.down = true;
+    vi.spyOn(console, "warn").mockImplementation(() => {});
+    const { d, evaluate } = deps({ store: new FallbackStore(primary.store, new MemoryStore()) });
+    const res = await handleSearch("café", "ip1", d);
+    expect(res.cached).toBe(false);
+    expect(evaluate).toHaveBeenCalledTimes(1);
+    expect((await handleSearch("café", "ip1", d)).cached).toBe(true);
   });
 });

@@ -15,7 +15,20 @@ export interface Store {
   delIfEquals(key: string, value: string): Promise<void>;
   /** INCR atômico; renova o TTL da chave. */
   incr(key: string, ttlSeconds: number): Promise<number>;
-  decr(key: string): Promise<number>;
+  /**
+   * Lease distribuído de concorrência: ocupa um dos `max` slots por `ttlSeconds`.
+   * Leases vencidos são descartados, então uma instância que morre não prende o slot.
+   */
+  acquireLease(key: string, token: string, max: number, ttlSeconds: number, nowMs: number): Promise<boolean>;
+  releaseLease(key: string, token: string): Promise<void>;
+}
+
+/** O armazenamento distribuído falhou ou não está configurado. */
+export class StoreUnavailableError extends Error {
+  constructor(cause?: unknown) {
+    super("store_unavailable");
+    this.cause = cause;
+  }
 }
 
 export class MemoryStore implements Store {
@@ -61,14 +74,19 @@ export class MemoryStore implements Store {
     return next;
   }
 
-  async decr(key: string) {
-    const entry = this.live(key);
-    const next = Number(entry?.value ?? 0) - 1;
-    this.data.set(key, {
-      value: String(next),
-      expiresAt: entry?.expiresAt ?? this.now() + 60_000,
-    });
-    return next;
+  private leases = new Map<string, Map<string, number>>();
+
+  async acquireLease(key: string, token: string, max: number, ttlSeconds: number, nowMs: number) {
+    const slots = this.leases.get(key) ?? new Map<string, number>();
+    for (const [t, expiresAt] of slots) if (expiresAt <= nowMs) slots.delete(t);
+    this.leases.set(key, slots);
+    if (slots.size >= max) return false;
+    slots.set(token, nowMs + ttlSeconds * 1000);
+    return true;
+  }
+
+  async releaseLease(key: string, token: string) {
+    this.leases.get(key)?.delete(token);
   }
 }
 
@@ -77,7 +95,6 @@ export interface RedisLike {
   get(key: string): Promise<unknown>;
   set(key: string, value: string, opts: { ex: number; nx?: boolean }): Promise<unknown>;
   del(key: string): Promise<unknown>;
-  decr(key: string): Promise<number>;
   eval(script: string, keys: string[], args: string[]): Promise<unknown>;
   pipeline(): {
     incr(key: string): unknown;
@@ -87,6 +104,14 @@ export interface RedisLike {
 }
 
 const DEL_IF_EQUALS = `if redis.call('get', KEYS[1]) == ARGV[1] then return redis.call('del', KEYS[1]) else return 0 end`;
+
+// Conjunto ordenado token → expiração; remove vencidos e respeita o máximo de forma atômica.
+const ACQUIRE_LEASE = `redis.call('ZREMRANGEBYSCORE', KEYS[1], '-inf', ARGV[1])
+if redis.call('ZCARD', KEYS[1]) >= tonumber(ARGV[3]) then return 0 end
+redis.call('ZADD', KEYS[1], tonumber(ARGV[1]) + tonumber(ARGV[2]), ARGV[4])
+redis.call('PEXPIRE', KEYS[1], ARGV[2])
+return 1`;
+const RELEASE_LEASE = `return redis.call('ZREM', KEYS[1], ARGV[1])`;
 
 export class RedisStore implements Store {
   constructor(private redis: RedisLike) {}
@@ -120,8 +145,17 @@ export class RedisStore implements Store {
     return Number(count);
   }
 
-  async decr(key: string) {
-    return this.redis.decr(key);
+  async acquireLease(key: string, token: string, max: number, ttlSeconds: number, nowMs: number) {
+    const ok = await this.redis.eval(
+      ACQUIRE_LEASE,
+      [key],
+      [String(nowMs), String(ttlSeconds * 1000), String(max), token],
+    );
+    return Number(ok) === 1;
+  }
+
+  async releaseLease(key: string, token: string) {
+    await this.redis.eval(RELEASE_LEASE, [key], [token]);
   }
 }
 
@@ -151,10 +185,12 @@ export class FallbackStore implements Store {
   del = (key: string) => this.run((s) => s.del(key));
   delIfEquals = (key: string, value: string) => this.run((s) => s.delIfEquals(key, value));
   incr = (key: string, ttl: number) => this.run((s) => s.incr(key, ttl));
-  decr = (key: string) => this.run((s) => s.decr(key));
+  acquireLease = (key: string, token: string, max: number, ttl: number, nowMs: number) =>
+    this.run((s) => s.acquireLease(key, token, max, ttl, nowMs));
+  releaseLease = (key: string, token: string) => this.run((s) => s.releaseLease(key, token));
 }
 
-export class StoreConfigError extends Error {}
+export class StoreConfigError extends StoreUnavailableError {}
 
 export interface StoreEnv {
   REDIS_URL?: string;
@@ -165,25 +201,35 @@ export interface StoreEnv {
   NODE_ENV?: string;
 }
 
-/** Produção (Vercel) exige Redis; local/preview/`next start` local usam memória. */
+/**
+ * Deploys da Vercel (production e preview) exigem Redis e nunca caem para
+ * memória: sem a proteção distribuída a busca responde 503 antes de chegar ao
+ * Jev. Local/desenvolvimento usa memória (ou Redis com fallback em memória).
+ */
+export function isStrictEnv(env: StoreEnv): boolean {
+  return env.VERCEL_ENV === "production" || env.VERCEL_ENV === "preview";
+}
+
 export function createStore(env: StoreEnv = process.env as StoreEnv): Store {
   const url = env.REDIS_URL?.trim() || env.UPSTASH_REDIS_REST_URL?.trim();
   const token = env.REDIS_TOKEN?.trim() || env.UPSTASH_REDIS_REST_TOKEN?.trim();
-  const memory = new MemoryStore();
+  const strict = isStrictEnv(env);
 
   if (url && token) {
     const redis = new Redis({ url, token, automaticDeserialization: false });
-    return new FallbackStore(new RedisStore(redis as unknown as RedisLike), memory, (err) =>
+    const store = new RedisStore(redis as unknown as RedisLike);
+    if (strict) return store; // erros do Redis propagam; nada de fallback silencioso
+    return new FallbackStore(store, new MemoryStore(), (err) =>
       console.error("redis_error", err instanceof Error ? err.message : "erro desconhecido"),
     );
   }
-  if (env.VERCEL_ENV === "production") {
-    throw new StoreConfigError("Redis não configurado em produção (REDIS_URL e REDIS_TOKEN).");
+  if (strict) {
+    throw new StoreConfigError(new Error("Redis não configurado (REDIS_URL e REDIS_TOKEN)."));
   }
   if (env.NODE_ENV === "production") {
     console.warn("Redis não configurado: usando cache em memória (apenas desenvolvimento/local).");
   }
-  return memory;
+  return new MemoryStore();
 }
 
 let singleton: Store | null = null;

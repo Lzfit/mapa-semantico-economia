@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { resolveClientIp } from "@/lib/clientIp";
 import { loadCompanies } from "@/lib/companies";
 import { readJevConfig } from "@/lib/jev";
 import { cleanTheme, isValidTheme } from "@/lib/normalizeTheme";
@@ -6,6 +7,7 @@ import {
   BusyError,
   RateLimitedError,
   SearchUnavailableError,
+  StoreUnavailableError,
   handleSearch,
   readLimits,
 } from "@/lib/searchService";
@@ -25,15 +27,9 @@ const fail = (error: string, status: number, headers: Record<string, string> = {
     headers: { "Cache-Control": "no-store", ...headers },
   });
 
-/** IP do cliente (a Vercel define esses cabeçalhos); só o hash entra nas chaves do Redis. */
-function clientIpHash(request: Request): string {
-  const ip =
-    request.headers.get("x-vercel-forwarded-for") ??
-    request.headers.get("x-real-ip") ??
-    request.headers.get("x-forwarded-for")?.split(",")[0] ??
-    "unknown";
-  return createHash("sha256").update(ip.trim()).digest("hex").slice(0, 24);
-}
+/** Só o hash do IP entra nas chaves do Redis. */
+const clientIpHash = (request: Request) =>
+  createHash("sha256").update(resolveClientIp(request.headers)).digest("hex").slice(0, 24);
 
 export async function POST(request: Request) {
   // Só `theme` é lido do corpo; nada mais influencia endpoint, modelo ou chave.
@@ -67,6 +63,13 @@ export async function POST(request: Request) {
         503,
         { "Retry-After": String(err.retryAfterSeconds) },
       );
+    }
+    if (err instanceof StoreUnavailableError) {
+      // Sem proteção distribuída não há busca nova: nunca chega ao Jev.
+      console.error("store_unavailable");
+      return fail("Serviço temporariamente indisponível. Tente novamente em instantes.", 503, {
+        "Retry-After": "5",
+      });
     }
     // Detalhes internos ficam só no log do servidor.
     console.error(
