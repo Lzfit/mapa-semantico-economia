@@ -107,12 +107,13 @@ describe("placeLabels com o mosaico real", () => {
   };
 
   const cases = [
-    [592, true, false], [848, true, false], [1008, true, false],
-    [848, true, true], [900, false, false], [360, false, false],
+    [592, true, false, false], [848, true, false, false], [1008, true, false, false],
+    [848, true, true, false], [900, false, false, false], [360, false, false, false],
+    [709, false, false, true], [688, false, false, true], [754, false, false, true],
   ] as const;
 
-  it.each(cases)("respeita todas as regras (largura %i, compacto %s, baixo %s)", (width, compact, short) => {
-    const cfg = configForWidth(width, compact, short);
+  it.each(cases)("respeita todas as regras (largura %i, compacto %s, baixo %s, tablet baixo %s)", (width, compact, short, tabletShort) => {
+    const cfg = configForWidth(width, compact, short, tabletShort);
     const layout = computeLayout(companies, cfg);
     const rects = new Map<string, Rect>();
     layout.panels.forEach((p) => p.companies.forEach((c, i) => rects.set(c.id, cellRect(p, i, cfg))));

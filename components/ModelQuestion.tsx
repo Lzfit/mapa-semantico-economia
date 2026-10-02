@@ -7,7 +7,7 @@ export function ModelQuestion({ theme }: { theme: string }) {
       >
         PERGUNTA AO MODELO
       </h2>
-      <p className="mt-1.5 text-[15px] leading-relaxed text-ink lg:mt-0.5 lg:text-[13.5px] lg:leading-snug">
+      <p className="mt-1.5 text-[15px] leading-relaxed text-ink lg:mt-0.5 lg:text-[13.5px] lg:leading-snug tshort:mt-0.5 tshort:text-[13.5px] tshort:leading-snug">
         Quais das 1.000 maiores empresas do Brasil participam de forma
         economicamente relevante do mercado, da cadeia de valor ou do
         ecossistema relacionado a <strong className="font-semibold">“{theme}”</strong>?

@@ -8,7 +8,7 @@ export function BrandMark() {
   return (
     <span
       aria-hidden="true"
-      className="flex h-[1.25em] shrink-0 items-center text-[28px] leading-tight sm:text-[38px] lg:text-[30px] short:text-[26px]"
+      className="flex h-[1.25em] shrink-0 items-center text-[28px] leading-tight sm:text-[38px] lg:text-[30px] short:text-[26px] tshort:text-[26px]"
     >
       <svg viewBox="0 0 28 30" className="h-[0.72em] w-auto" focusable="false">
         <rect x="0" y="16.5" width="6.5" height="13.5" rx="3.25" fill="#6fcb94" />
@@ -24,12 +24,12 @@ export function Header({ hasResult = false }: Props) {
     <header className="flex items-start gap-3 lg:gap-2.5">
       <BrandMark />
       <div>
-        <h1 className="font-serif text-[28px] leading-tight tracking-tight text-ink sm:text-[38px] lg:text-[30px] short:text-[26px]">
+        <h1 className="font-serif text-[28px] leading-tight tracking-tight text-ink sm:text-[38px] lg:text-[30px] short:text-[26px] tshort:text-[26px]">
           Mapa Semântico da Economia Brasileira
         </h1>
         <div
           className={`grid grid-rows-[1fr] transition-[grid-template-rows,opacity] duration-500 ease-out ${
-            hasResult ? "lg:grid-rows-[0fr] lg:opacity-0" : ""
+            hasResult ? "lg:grid-rows-[0fr] lg:opacity-0 tshort:grid-rows-[0fr] tshort:opacity-0" : ""
           }`}
         >
           <p className="min-h-0 overflow-hidden text-[15px] text-ink-soft sm:text-base">

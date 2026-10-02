@@ -127,3 +127,41 @@ describe("compacto de pouca altura", () => {
     expect(configForWidth(900).cell).toBe(12);
   });
 });
+
+describe("tablet largo de pouca altura (768–1023px, ≤760px)", () => {
+  const widths = [688, 709, 754];
+
+  it("usa células de 9px com paddings e gaps do desktop baixo", () => {
+    const cfg = configForWidth(709, false, false, true);
+    const desktopShort = configForWidth(848, true, true);
+    expect(cfg.cell).toBe(9);
+    expect(cfg.gap).toBe(desktopShort.gap);
+    expect(cfg.panelPadding).toBe(desktopShort.panelPadding);
+    expect(cfg.panelGap).toBe(desktopShort.panelGap);
+  });
+
+  it.each(widths)("mantém 1.000 células iguais e a mesma ordem dos setores (%ipx)", (width) => {
+    const tablet = computeLayout(companies, configForWidth(width, false, false, true));
+    const normal = computeLayout(companies, configForWidth(width));
+    const ids = tablet.panels.flatMap((p) => p.companies.map((c) => c.id));
+    expect(ids).toHaveLength(1000);
+    expect(new Set(ids).size).toBe(1000);
+    expect(tablet.panels.map((p) => p.sector)).toEqual(normal.panels.map((p) => p.sector));
+    expect(ids).toEqual(normal.panels.flatMap((p) => p.companies.map((c) => c.id)));
+    expect(tablet.height).toBeLessThan(normal.height);
+  });
+
+  it("deixa o mosaico baixo o bastante para caber ao lado do cabeçalho em ~718px", () => {
+    for (const width of widths) {
+      expect(computeLayout(companies, configForWidth(width, false, false, true)).height).toBeLessThan(480);
+    }
+  });
+
+  it("não altera tablet normal, mobile nem desktop", () => {
+    expect(configForWidth(709)).toEqual(configForWidth(709, false, false, false));
+    expect(configForWidth(1008, true)).toEqual(configForWidth(1008, true, false, false));
+    expect(configForWidth(848, true, true)).toEqual(configForWidth(848, true, true, false));
+    expect(configForWidth(848, true, true, true)).toEqual(configForWidth(848, true, true));
+    expect(configForWidth(340).cell).toBe(9);
+  });
+});

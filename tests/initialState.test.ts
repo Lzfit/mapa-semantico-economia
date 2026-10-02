@@ -6,6 +6,7 @@ import { MapExperience } from "@/components/MapExperience";
 import { ModelQuestion } from "@/components/ModelQuestion";
 import { loadCompanies } from "@/lib/companies";
 import { readFileSync } from "node:fs";
+import { useIsTabletShort } from "@/lib/useIsMobile";
 
 const companies = loadCompanies();
 const html = renderToStaticMarkup(createElement(MapExperience, { companies }));
@@ -77,5 +78,14 @@ describe("depois da primeira busca", () => {
     expect(out).toContain("Empresa A");
     expect(out).toContain("<ol");
     expect(out).not.toContain("aparecerão aqui");
+  });
+});
+
+describe("breakpoint de tablet largo com pouca altura", () => {
+  it("o variante CSS e o hook usam a mesma faixa: 768–1023px de largura e até 760px de altura", () => {
+    const css = readFileSync("app/globals.css", "utf8");
+    const query = "(min-width: 768px) and (max-width: 1023px) and (max-height: 760px)";
+    expect(css).toContain(`@custom-variant tshort (@media ${query});`);
+    expect(useIsTabletShort.toString()).toContain(query);
   });
 });
