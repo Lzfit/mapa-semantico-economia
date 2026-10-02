@@ -40,9 +40,9 @@ export function configForWidth(width: number): LayoutConfig {
     cell,
     gap: mobile ? 2 : 3,
     panelPadding: mobile ? 12 : 16,
-    panelGap: mobile ? 10 : 12,
+    panelGap: mobile ? 6 : 8,
     headerHeight: 32,
-    minPanelWidth: mobile ? width : 150,
+    minPanelWidth: mobile ? width : width < 1000 ? 175 : 150,
   };
 }
 
