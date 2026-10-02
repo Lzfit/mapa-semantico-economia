@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { cleanTheme, isValidTheme } from "@/lib/normalizeTheme";
 import { topAssociated } from "@/lib/ranking";
 import { useIsDesktop, useIsMobile, useIsShortDesktop } from "@/lib/useIsMobile";
@@ -13,7 +13,6 @@ import { ModelQuestion } from "./ModelQuestion";
 import { SearchBar } from "./SearchBar";
 import { SectorMosaic } from "./SectorMosaic";
 
-const INITIAL_THEME = "data centers";
 const ERROR_MESSAGE = "Não foi possível concluir esta análise. Tente novamente.";
 
 async function requestSearch(theme: string): Promise<SearchResponse> {
@@ -30,11 +29,13 @@ export function MapExperience({ companies }: { companies: Company[] }) {
   const isMobile = useIsMobile();
   const isDesktop = useIsDesktop();
   const isShort = useIsShortDesktop();
-  const [input, setInput] = useState(INITIAL_THEME);
+  const [input, setInput] = useState("");
   const [data, setData] = useState<SearchResponse | null>(null);
-  const [loading, setLoading] = useState(true); // a demonstração inicial já está a caminho
+  // Tema da primeira busca executada; `null` enquanto nenhuma busca foi feita.
+  const [submittedTheme, setSubmittedTheme] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
   const [failed, setFailed] = useState(false);
-  const lastTheme = useRef(INITIAL_THEME);
+  const lastTheme = useRef("");
   const requestSeq = useRef(0);
 
   // Atualiza o mapa só quando os scores completos chegam; respostas antigas são descartadas.
@@ -56,17 +57,13 @@ export function MapExperience({ companies }: { companies: Company[] }) {
       const theme = cleanTheme(rawTheme);
       if (!isValidTheme(theme)) return;
       lastTheme.current = theme;
+      setSubmittedTheme((prev) => prev ?? theme);
       setLoading(true);
       setFailed(false);
       track(++requestSeq.current, requestSearch(theme));
     },
     [track],
   );
-
-  // Estado inicial: demonstração com "data centers".
-  useEffect(() => {
-    track(++requestSeq.current, requestSearch(INITIAL_THEME));
-  }, [track]);
 
   const limit = isMobile ? 6 : 8;
   const top = useMemo(() => (data ? topAssociated(data.results, limit) : null), [data, limit]);
@@ -87,8 +84,10 @@ export function MapExperience({ companies }: { companies: Company[] }) {
       />
       <div className="flex flex-col gap-4 lg:gap-3 short:gap-2">
         <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:items-end lg:gap-8">
-          <ModelQuestion theme={data?.theme ?? INITIAL_THEME} />
-          <ColorLegend />
+          {submittedTheme !== null && <ModelQuestion theme={data?.theme ?? submittedTheme} />}
+          <div className="lg:col-start-2">
+            <ColorLegend />
+          </div>
         </div>
         {failed && (
           <p role="alert" className="text-sm text-ink-soft">

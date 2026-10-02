@@ -2,9 +2,6 @@ import { ASSOCIATION_STOPS } from "@/lib/colors";
 import { formatPercent } from "@/lib/formatters";
 import type { SearchResult } from "@/types/api";
 
-/** Máximo de itens: 8 no desktop e tablet, 6 no mobile (SPEC §14 e §18). */
-const PLACEHOLDER_ROWS = 8;
-const MOBILE_ROWS = 6;
 const BAR_COLOR = ASSOCIATION_STOPS[ASSOCIATION_STOPS.length - 1][1];
 
 interface Props {
@@ -58,30 +55,9 @@ export function AssociationRanking({ items, loading }: Props) {
             })}
           </ol>
         ) : (
-          <>
-            <p className="mb-4 hidden text-sm text-ink-soft lg:block">
-              As empresas mais associadas ao tema aparecerão aqui.
-            </p>
-            <ol
-              className="grid grid-cols-2 gap-x-6 gap-y-3 lg:flex lg:flex-col lg:gap-4"
-              aria-hidden="true"
-            >
-              {Array.from({ length: PLACEHOLDER_ROWS }, (_, i) => (
-                <li
-                  key={i}
-                  className={`items-center gap-3 ${i >= MOBILE_ROWS ? "hidden md:flex" : "flex"}`}
-                >
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-assoc-min/70 text-xs text-ink-soft lg:h-7 lg:w-7">
-                    {i + 1}
-                  </span>
-                  <div className="flex-1">
-                    <div className="h-2 w-2/5 rounded-full bg-assoc-min/80" />
-                    <div className="mt-2 h-1.5 rounded-full bg-assoc-min/60" />
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </>
+          <p className="text-sm text-ink-soft">
+            As empresas mais associadas ao tema aparecerão aqui.
+          </p>
         )}
       </div>
     </section>

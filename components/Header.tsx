@@ -22,12 +22,6 @@ export function Header({ hasResult = false }: Props) {
           </p>
         </div>
       </div>
-      <a
-        href="#como-funciona"
-        className="shrink-0 pt-2 text-sm text-ink-soft transition-colors hover:text-ink lg:pt-1.5"
-      >
-        Como funciona
-      </a>
     </header>
   );
 }

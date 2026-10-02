@@ -32,7 +32,7 @@ export function SearchBar({ value, onChange, onSubmit, loading }: Props) {
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        placeholder="Explore um tema da economia brasileira"
+        placeholder="Digite um tema"
         aria-label="Tema"
         minLength={2}
         maxLength={80}
