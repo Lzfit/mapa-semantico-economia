@@ -20,7 +20,7 @@ export const SectorPanel = memo(function SectorPanel({
   return (
     <section
       aria-label={panel.sector}
-      className="absolute rounded-xl border border-line bg-surface"
+      className="absolute rounded-lg border border-line/50 bg-surface/50"
       style={{
         left: panel.x,
         top: panel.y,
@@ -30,7 +30,7 @@ export const SectorPanel = memo(function SectorPanel({
       }}
     >
       <h3
-        className="line-clamp-2 text-[10.5px] font-medium uppercase leading-[14px] tracking-[0.06em] text-ink-soft"
+        className="line-clamp-2 text-[10.5px] font-medium uppercase leading-[14px] tracking-[0.06em] text-ink-soft/80"
         style={{ height: headerHeight }}
       >
         {panel.sector}
