@@ -39,7 +39,9 @@ export function readJevConfig(env: NodeJS.ProcessEnv = process.env): JevConfig {
     apiKey,
     model: env.JEV_MODEL?.trim() || "jev-latest",
     batchSize: Number.isInteger(size) && size > 0 ? size : 250,
-    endpoint: env.JEV_API_URL?.trim() || DEFAULT_JEV_ENDPOINT,
+    // Override só fora da produção da Vercel; nunca vem do usuário (somente de env).
+    endpoint:
+      (env.VERCEL_ENV !== "production" && env.JEV_API_URL?.trim()) || DEFAULT_JEV_ENDPOINT,
     timeoutMs: 15_000,
   };
 }
