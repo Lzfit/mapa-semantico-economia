@@ -1,13 +1,27 @@
+import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { MapExperience } from "@/components/MapExperience";
 import { loadCompanies } from "@/lib/companies";
 import { parseLang } from "@/lib/i18n";
+import { buildMetadata } from "@/lib/siteMetadata";
+
+type SearchParams = Promise<{ lang?: string | string[] }>;
+
+/** Metadata e Open Graph no idioma da URL (`?lang=en` → inglês; padrão português). */
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: SearchParams;
+}): Promise<Metadata> {
+  const { lang } = await searchParams;
+  return buildMetadata(parseLang(lang));
+}
 
 export default async function Home({
   searchParams,
 }: {
-  searchParams: Promise<{ lang?: string | string[] }>;
+  searchParams: SearchParams;
 }) {
   const { lang } = await searchParams;
   const companies = loadCompanies();
