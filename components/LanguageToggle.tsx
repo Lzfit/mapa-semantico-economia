@@ -1,12 +1,19 @@
 "use client";
 
 import { Fragment } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { LANG_NAMES, LANGS } from "@/lib/i18n";
+import type { Lang } from "@/lib/i18n";
 import { useI18n } from "./LanguageProvider";
 
 /** Seletor discreto PT | EN no header. */
 export function LanguageToggle() {
   const { lang, setLang, t } = useI18n();
+  const change = (next: Lang) => {
+    if (next === lang) return;
+    setLang(next);
+    trackEvent("language_changed", { from_language: lang, to_language: next });
+  };
   return (
     <div
       role="group"
@@ -25,7 +32,7 @@ export function LanguageToggle() {
             lang={l}
             aria-label={LANG_NAMES[l]}
             aria-pressed={lang === l}
-            onClick={() => lang !== l && setLang(l)}
+            onClick={() => change(l)}
             className={`rounded-sm px-0.5 outline-none transition-colors focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-ink ${
               lang === l ? "font-semibold text-ink" : "hover:text-ink"
             }`}
