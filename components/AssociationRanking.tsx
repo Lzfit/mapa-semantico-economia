@@ -18,7 +18,7 @@ export function AssociationRanking({ items, loading }: Props) {
     <section
       aria-labelledby="ranking-titulo"
       aria-busy={loading}
-      className="rounded-2xl border border-line bg-surface px-4 py-3.5 lg:p-6"
+      className="rounded-2xl border border-line bg-surface px-4 py-3.5 lg:px-5 lg:py-4"
     >
       <h2
         id="ranking-titulo"
@@ -26,10 +26,10 @@ export function AssociationRanking({ items, loading }: Props) {
       >
         MAIS ASSOCIADAS
       </h2>
-      <div className="mt-2.5 border-t border-line pt-3 lg:mt-4">
+      <div className="mt-2.5 border-t border-line pt-3 lg:mt-3 lg:pt-3.5">
         {items ? (
           <ol
-            className="grid grid-cols-2 gap-x-6 gap-y-3 transition-opacity duration-300 lg:flex lg:flex-col lg:gap-[18px]"
+            className="grid grid-cols-2 gap-x-6 gap-y-3 transition-opacity duration-300 lg:flex lg:flex-col lg:gap-3"
             style={{ opacity: loading ? 0.55 : 1 }}
           >
             {items.map((r, i) => {

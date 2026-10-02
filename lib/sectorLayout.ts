@@ -12,6 +12,11 @@ export interface LayoutConfig {
   headerHeight: number;
   /** Largura mínima do painel, para o nome do setor caber. */
   minPanelWidth: number;
+  /** Tipografia do nome do setor (px). */
+  titleFont: number;
+  titleLine: number;
+  /** letter-spacing do nome do setor, em em. */
+  titleTracking: number;
 }
 
 export interface PanelLayout {
@@ -32,7 +37,25 @@ export interface MosaicLayout {
   config: LayoutConfig;
 }
 
-export function configForWidth(width: number): LayoutConfig {
+/**
+ * `compact` = viewport desktop (≥1024px): células, gaps e paddings menores para o
+ * mapa caber melhor na primeira dobra. A lógica do layout é a mesma.
+ */
+export function configForWidth(width: number, compact = false): LayoutConfig {
+  if (compact) {
+    return {
+      width,
+      cell: 11,
+      gap: 2,
+      panelPadding: 10,
+      panelGap: 6,
+      headerHeight: 24,
+      minPanelWidth: 162,
+      titleFont: 10,
+      titleLine: 12,
+      titleTracking: 0.03,
+    };
+  }
   const mobile = width < 640;
   const cell = mobile ? 9 : width < 900 ? 11 : 12;
   return {
@@ -43,6 +66,9 @@ export function configForWidth(width: number): LayoutConfig {
     panelGap: mobile ? 6 : 8,
     headerHeight: 32,
     minPanelWidth: mobile ? width : width < 1000 ? 175 : 150,
+    titleFont: 10.5,
+    titleLine: 14,
+    titleTracking: 0.06,
   };
 }
 

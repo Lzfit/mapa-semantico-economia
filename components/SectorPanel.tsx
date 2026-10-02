@@ -9,6 +9,9 @@ interface Props {
   gap: number;
   padding: number;
   headerHeight: number;
+  titleFont: number;
+  titleLine: number;
+  titleTracking: number;
   /** `null` antes da primeira análise. */
   scores: Record<string, number | null> | null;
   topIds: ReadonlySet<string>;
@@ -21,6 +24,9 @@ export const SectorPanel = memo(function SectorPanel({
   gap,
   padding,
   headerHeight,
+  titleFont,
+  titleLine,
+  titleTracking,
   scores,
   topIds,
   activeId,
@@ -38,8 +44,8 @@ export const SectorPanel = memo(function SectorPanel({
       }}
     >
       <h3
-        className="line-clamp-2 text-[10.5px] font-medium uppercase leading-[14px] tracking-[0.06em] text-ink-soft/80"
-        style={{ height: headerHeight }}
+        className="line-clamp-2 font-medium uppercase text-ink-soft/80"
+        style={{ height: headerHeight, fontSize: titleFont, lineHeight: `${titleLine}px`, letterSpacing: `${titleTracking}em` }}
       >
         {panel.sector}
       </h3>

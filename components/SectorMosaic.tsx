@@ -16,9 +16,11 @@ interface Props {
   /** Ids das mais associadas, em ordem de prioridade (também recebem label). */
   topIds: string[];
   loading: boolean;
+  /** Desktop: células, gaps e paddings reduzidos. */
+  compact: boolean;
 }
 
-export function SectorMosaic({ companies, scores, topIds, loading }: Props) {
+export function SectorMosaic({ companies, scores, topIds, loading, compact }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(INITIAL_WIDTH);
   const [shownId, setShownId] = useState<string | null>(null);
@@ -36,8 +38,8 @@ export function SectorMosaic({ companies, scores, topIds, loading }: Props) {
 
   // Geometria depende só da largura do container, nunca do tema pesquisado.
   const layout = useMemo(
-    () => computeLayout(companies, configForWidth(width)),
-    [companies, width],
+    () => computeLayout(companies, configForWidth(width, compact)),
+    [companies, width, compact],
   );
   const { config } = layout;
 
@@ -141,6 +143,9 @@ export function SectorMosaic({ companies, scores, topIds, loading }: Props) {
             gap={config.gap}
             padding={config.panelPadding}
             headerHeight={config.headerHeight}
+            titleFont={config.titleFont}
+            titleLine={config.titleLine}
+            titleTracking={config.titleTracking}
             scores={scores}
             topIds={topSet}
             activeId={activeId}

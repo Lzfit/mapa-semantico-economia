@@ -1,18 +1,23 @@
 import { useSyncExternalStore } from "react";
 
-const QUERY = "(max-width: 767px)";
-
-function subscribe(onChange: () => void) {
-  const mq = window.matchMedia(QUERY);
-  mq.addEventListener("change", onChange);
-  return () => mq.removeEventListener("change", onChange);
+function useMediaQuery(query: string): boolean {
+  return useSyncExternalStore(
+    (onChange) => {
+      const mq = window.matchMedia(query);
+      mq.addEventListener("change", onChange);
+      return () => mq.removeEventListener("change", onChange);
+    },
+    () => window.matchMedia(query).matches,
+    () => false,
+  );
 }
 
 /** Viewport < 768px (SPEC §18). No servidor assume desktop. */
 export function useIsMobile(): boolean {
-  return useSyncExternalStore(
-    subscribe,
-    () => window.matchMedia(QUERY).matches,
-    () => false,
-  );
+  return useMediaQuery("(max-width: 767px)");
+}
+
+/** Viewport ≥ 1024px: layout desktop (mosaico + ranking lado a lado), compacto. */
+export function useIsDesktop(): boolean {
+  return useMediaQuery("(min-width: 1024px)");
 }

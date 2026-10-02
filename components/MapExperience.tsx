@@ -3,11 +3,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { cleanTheme, isValidTheme } from "@/lib/normalizeTheme";
 import { topAssociated } from "@/lib/ranking";
-import { useIsMobile } from "@/lib/useIsMobile";
+import { useIsDesktop, useIsMobile } from "@/lib/useIsMobile";
 import type { SearchResponse } from "@/types/api";
 import type { Company } from "@/types/company";
 import { AssociationRanking } from "./AssociationRanking";
 import { ColorLegend } from "./ColorLegend";
+import { Header } from "./Header";
 import { ModelQuestion } from "./ModelQuestion";
 import { SearchBar } from "./SearchBar";
 import { SectorMosaic } from "./SectorMosaic";
@@ -27,6 +28,7 @@ async function requestSearch(theme: string): Promise<SearchResponse> {
 
 export function MapExperience({ companies }: { companies: Company[] }) {
   const isMobile = useIsMobile();
+  const isDesktop = useIsDesktop();
   const [input, setInput] = useState(INITIAL_THEME);
   const [data, setData] = useState<SearchResponse | null>(null);
   const [loading, setLoading] = useState(true); // a demonstração inicial já está a caminho
@@ -74,16 +76,19 @@ export function MapExperience({ companies }: { companies: Company[] }) {
   );
 
   return (
-    <div className="flex flex-col gap-7">
+    <div className="flex flex-col gap-7 lg:gap-3.5">
+      <Header hasResult={data !== null} />
       <SearchBar
         value={input}
         onChange={setInput}
         onSubmit={() => search(input)}
         loading={loading}
       />
-      <div className="flex flex-col gap-4">
-        <ModelQuestion theme={data?.theme ?? INITIAL_THEME} />
-        <ColorLegend />
+      <div className="flex flex-col gap-4 lg:gap-3">
+        <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:items-end lg:gap-8">
+          <ModelQuestion theme={data?.theme ?? INITIAL_THEME} />
+          <ColorLegend />
+        </div>
         {failed && (
           <p role="alert" className="text-sm text-ink-soft">
             {ERROR_MESSAGE}{" "}
@@ -96,9 +101,15 @@ export function MapExperience({ companies }: { companies: Company[] }) {
             </button>
           </p>
         )}
-        <div className="mt-1 grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8">
+        <div className="mt-1 grid grid-cols-1 gap-4 lg:mt-0 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8">
           <div className="order-2 min-w-0 lg:order-1">
-            <SectorMosaic companies={companies} scores={scores} topIds={topIds} loading={loading} />
+            <SectorMosaic
+              companies={companies}
+              scores={scores}
+              topIds={topIds}
+              loading={loading}
+              compact={isDesktop}
+            />
           </div>
           <aside className="order-1 lg:order-2">
             <AssociationRanking items={top} loading={loading} />

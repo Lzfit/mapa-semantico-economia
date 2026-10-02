@@ -73,3 +73,38 @@ describe("desktop", () => {
     expect(computeLayout(companies, configForWidth(1000)).height).toBeLessThan(700);
   });
 });
+
+describe.each([592, 848, 1008])("layout compacto (desktop) com largura %ipx", (width) => {
+  const cfg = configForWidth(width, true);
+  const layout = computeLayout(companies, cfg);
+
+  it("mantém as 1.000 células iguais, ordem por receita e painéis sem sobreposição", () => {
+    expect(cfg.cell).toBe(11);
+    expect(layout.panels.flatMap((p) => p.companies)).toHaveLength(1000);
+    for (const p of layout.panels) {
+      const ranks = p.companies.map((c) => c.rank);
+      expect(ranks).toEqual([...ranks].sort((a, b) => a - b));
+      expect(p.x + p.width).toBeLessThanOrEqual(width);
+    }
+    for (let i = 0; i < layout.panels.length; i++) {
+      for (let j = i + 1; j < layout.panels.length; j++) {
+        const a = layout.panels[i];
+        const b = layout.panels[j];
+        expect(
+          a.x < b.x + b.width && b.x < a.x + a.width && a.y < b.y + b.height && b.y < a.y + a.height,
+        ).toBe(false);
+      }
+    }
+  });
+
+  it("é mais baixo que o layout padrão desktop", () => {
+    const normal = computeLayout(companies, configForWidth(width));
+    expect(layout.height).toBeLessThan(normal.height);
+  });
+});
+
+describe("compacto em 1.008px", () => {
+  it("fica abaixo de 520px de altura", () => {
+    expect(computeLayout(companies, configForWidth(1008, true)).height).toBeLessThan(520);
+  });
+});

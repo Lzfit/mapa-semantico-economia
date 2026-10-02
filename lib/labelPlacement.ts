@@ -11,7 +11,7 @@ export interface PlacedLabel extends Rect {
   text: string;
 }
 
-const LABEL_HEIGHT = 20;
+const LABEL_HEIGHT = 18;
 const CHAR_WIDTH = 6.5;
 const H_PADDING = 24;
 export const LABEL_MAX_WIDTH = 150;
