@@ -82,6 +82,13 @@ describe("depois da primeira busca", () => {
 });
 
 describe("breakpoint de tablet largo com pouca altura", () => {
+  it("oculta só o heading da pergunta (continua para leitores de tela) e mantém o texto", () => {
+    const out = renderToStaticMarkup(createElement(ModelQuestion, { theme: "café" }));
+    expect(out).toMatch(/<h2[^>]*tshort:sr-only[^>]*>PERGUNTA AO MODELO<\/h2>/);
+    expect(out).toContain("Quais das 1.000 maiores empresas do Brasil participam de forma");
+    expect(out).toContain("“café”");
+  });
+
   it("o variante CSS e o hook usam a mesma faixa: 768–1023px de largura e até 760px de altura", () => {
     const css = readFileSync("app/globals.css", "utf8");
     const query = "(min-width: 768px) and (max-width: 1023px) and (max-height: 760px)";

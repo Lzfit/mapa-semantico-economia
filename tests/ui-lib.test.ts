@@ -6,7 +6,7 @@ import { loadCompanies } from "@/lib/companies";
 import { estimateLabelWidth, placeLabels } from "@/lib/labelPlacement";
 import { cellRect, computeLayout, configForWidth, titleRect } from "@/lib/sectorLayout";
 import type { Rect } from "@/lib/sectorLayout";
-import { topAssociated } from "@/lib/ranking";
+import { rankingLimit, topAssociated } from "@/lib/ranking";
 import type { SearchResult } from "@/types/api";
 
 const r = (rank: number, associationScore: number | null): SearchResult => ({
@@ -196,5 +196,13 @@ describe("segurança da chave", () => {
         expect(src).not.toMatch(/from "@\/lib\/(jev|batching|search)"/);
       }
     }
+  });
+});
+
+describe("rankingLimit", () => {
+  it("Top 6 no mobile e no tablet largo de pouca altura; Top 8 nos demais", () => {
+    expect(rankingLimit(true, false)).toBe(6);
+    expect(rankingLimit(false, true)).toBe(6);
+    expect(rankingLimit(false, false)).toBe(8);
   });
 });

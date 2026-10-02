@@ -2,7 +2,7 @@
 
 import { useCallback, useMemo, useRef, useState } from "react";
 import { cleanTheme, isValidTheme } from "@/lib/normalizeTheme";
-import { topAssociated } from "@/lib/ranking";
+import { rankingLimit, topAssociated } from "@/lib/ranking";
 import { useIsDesktop, useIsMobile, useIsShortDesktop, useIsTabletShort } from "@/lib/useIsMobile";
 import type { SearchResponse } from "@/types/api";
 import type { Company } from "@/types/company";
@@ -66,7 +66,7 @@ export function MapExperience({ companies }: { companies: Company[] }) {
     [track],
   );
 
-  const limit = isMobile ? 6 : 8;
+  const limit = rankingLimit(isMobile, isTabletShort);
   const top = useMemo(() => (data ? topAssociated(data.results, limit) : null), [data, limit]);
   const topIds = useMemo(() => (top ?? []).map((r) => r.id), [top]);
   const scores = useMemo(
@@ -75,7 +75,7 @@ export function MapExperience({ companies }: { companies: Company[] }) {
   );
 
   return (
-    <div className="flex flex-col gap-7 lg:gap-3.5 short:gap-2.5 tshort:gap-2.5">
+    <div className="flex flex-col gap-7 lg:gap-3.5 short:gap-2.5 tshort:gap-1.5">
       <Header hasResult={data !== null} />
       <SearchBar
         value={input}
@@ -83,7 +83,7 @@ export function MapExperience({ companies }: { companies: Company[] }) {
         onSubmit={() => search(input)}
         loading={loading}
       />
-      <div className="flex flex-col gap-4 lg:gap-3 short:gap-2 tshort:gap-2">
+      <div className="flex flex-col gap-4 lg:gap-3 short:gap-2 tshort:gap-1">
         <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:items-end lg:gap-8 tshort:grid tshort:grid-cols-[minmax(0,1fr)_260px] tshort:items-end tshort:gap-6">
           {submittedTheme !== null && <ModelQuestion theme={data?.theme ?? submittedTheme} />}
           <div className="lg:col-start-2 tshort:col-start-2">
@@ -102,7 +102,7 @@ export function MapExperience({ companies }: { companies: Company[] }) {
             </button>
           </p>
         )}
-        <div className="mt-1 grid grid-cols-1 gap-4 tshort:mt-0 tshort:gap-2 lg:mt-0 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8">
+        <div className="mt-1 grid grid-cols-1 gap-4 tshort:mt-0 tshort:gap-1 lg:mt-0 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8">
           <div className="order-2 min-w-0 lg:order-1">
             <SectorMosaic
               companies={companies}

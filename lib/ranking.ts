@@ -7,3 +7,8 @@ export function topAssociated(results: SearchResult[], limit: number): SearchRes
     .sort((a, b) => b.associationScore! - a.associationScore! || a.rank - b.rank)
     .slice(0, limit);
 }
+
+/** Top 6 no mobile e no tablet largo de pouca altura; Top 8 nos demais. */
+export function rankingLimit(isMobile: boolean, isTabletShort: boolean): number {
+  return isMobile || isTabletShort ? 6 : 8;
+}
