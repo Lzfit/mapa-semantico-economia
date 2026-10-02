@@ -1,7 +1,11 @@
+"use client";
+
 import { memo } from "react";
 import { associationColor } from "@/lib/colors";
+import { sectorName } from "@/lib/i18n";
 import type { PanelLayout } from "@/lib/sectorLayout";
 import { CompanyCell } from "./CompanyCell";
+import { useI18n } from "./LanguageProvider";
 
 interface Props {
   panel: PanelLayout;
@@ -31,9 +35,11 @@ export const SectorPanel = memo(function SectorPanel({
   topIds,
   activeId,
 }: Props) {
+  const { lang, t } = useI18n();
+  const title = sectorName(panel.sector, lang);
   return (
     <section
-      aria-label={panel.sector}
+      aria-label={title}
       className="absolute rounded-lg border border-line/50 bg-surface/50"
       style={{
         left: panel.x,
@@ -47,7 +53,7 @@ export const SectorPanel = memo(function SectorPanel({
         className="line-clamp-2 font-medium uppercase text-ink-soft/80"
         style={{ height: headerHeight, fontSize: titleFont, lineHeight: `${titleLine}px`, letterSpacing: `${titleTracking}em` }}
       >
-        {panel.sector}
+        {title}
       </h3>
       <div
         className="grid"
@@ -64,7 +70,7 @@ export const SectorPanel = memo(function SectorPanel({
               key={c.id}
               company={c}
               color={score === null ? undefined : associationColor(score)}
-              scoreLabel={score === null ? undefined : `${Math.round(score * 100)} por cento de associação`}
+              scoreLabel={score === null ? undefined : t.cell.percentLabel(Math.round(score * 100))}
               highlighted={topIds.has(c.id)}
               tabIndex={c.id === activeId ? 0 : -1}
             />

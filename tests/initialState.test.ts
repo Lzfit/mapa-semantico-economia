@@ -57,7 +57,9 @@ describe("marca do header", () => {
     expect(header.indexOf("<svg")).toBeLessThan(header.indexOf("<h1"));
     expect(header).toContain('aria-hidden="true"');
     expect(header).not.toContain("<a ");
-    expect(header).not.toContain("<button");
+    // Os únicos botões do header são os do seletor de idioma.
+    const brand = header.slice(0, header.indexOf("<h1"));
+    expect(brand).not.toContain("<button");
   });
 });
 

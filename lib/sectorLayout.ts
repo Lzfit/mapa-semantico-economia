@@ -251,10 +251,13 @@ export function cellRect(panel: PanelLayout, index: number, cfg: LayoutConfig): 
   };
 }
 
-/** Área ocupada pelo texto do nome do setor (estimada), para labels não a cobrirem. */
-export function titleRect(panel: PanelLayout, cfg: LayoutConfig): Rect {
+/**
+ * Área ocupada pelo texto do nome do setor (estimada), para labels não a cobrirem.
+ * `title` é o nome exibido (pode estar traduzido); o painel em si não muda.
+ */
+export function titleRect(panel: PanelLayout, cfg: LayoutConfig, title = panel.sector): Rect {
   const innerW = panel.width - 2 * (PANEL_BORDER + cfg.panelPadding);
-  const textW = panel.sector.length * cfg.titleFont * (0.68 + cfg.titleTracking);
+  const textW = title.length * cfg.titleFont * (0.68 + cfg.titleTracking);
   const lines = Math.min(2, Math.max(1, Math.ceil(textW / innerW)));
   return {
     x: panel.x + PANEL_BORDER + cfg.panelPadding,

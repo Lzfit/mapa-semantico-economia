@@ -9,11 +9,10 @@ import type { Company } from "@/types/company";
 import { AssociationRanking } from "./AssociationRanking";
 import { ColorLegend } from "./ColorLegend";
 import { Header } from "./Header";
+import { useI18n } from "./LanguageProvider";
 import { ModelQuestion } from "./ModelQuestion";
 import { SearchBar } from "./SearchBar";
 import { SectorMosaic } from "./SectorMosaic";
-
-const ERROR_MESSAGE = "Não foi possível concluir esta análise. Tente novamente.";
 
 async function requestSearch(theme: string): Promise<SearchResponse> {
   const res = await fetch("/api/search", {
@@ -26,6 +25,7 @@ async function requestSearch(theme: string): Promise<SearchResponse> {
 }
 
 export function MapExperience({ companies }: { companies: Company[] }) {
+  const { t } = useI18n();
   const isMobile = useIsMobile();
   const isDesktop = useIsDesktop();
   const isShort = useIsShortDesktop();
@@ -92,13 +92,13 @@ export function MapExperience({ companies }: { companies: Company[] }) {
         </div>
         {failed && (
           <p role="alert" className="text-sm text-ink-soft">
-            {ERROR_MESSAGE}{" "}
+            {t.error.message}{" "}
             <button
               type="button"
               onClick={() => search(lastTheme.current)}
               className="font-medium text-ink underline underline-offset-2"
             >
-              Tentar novamente
+              {t.error.retry}
             </button>
           </p>
         )}

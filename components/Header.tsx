@@ -1,3 +1,8 @@
+"use client";
+
+import { useI18n } from "./LanguageProvider";
+import { LanguageToggle } from "./LanguageToggle";
+
 interface Props {
   /** Com resultado na tela, o subtítulo recolhe no desktop. */
   hasResult?: boolean;
@@ -20,12 +25,13 @@ export function BrandMark() {
 }
 
 export function Header({ hasResult = false }: Props) {
+  const { t } = useI18n();
   return (
-    <header className="flex items-start gap-3 lg:gap-2.5">
+    <header className="relative flex items-start gap-3 lg:gap-2.5">
       <BrandMark />
-      <div>
+      <div className="min-w-0 flex-1">
         <h1 className="font-serif text-[28px] leading-tight tracking-tight text-ink sm:text-[38px] lg:text-[30px] short:text-[26px] tshort:text-[26px]">
-          Mapa Semântico da Economia Brasileira
+          {t.title}
         </h1>
         <div
           className={`grid grid-rows-[1fr] transition-[grid-template-rows,opacity] duration-500 ease-out ${
@@ -34,11 +40,12 @@ export function Header({ hasResult = false }: Props) {
         >
           <p className="min-h-0 overflow-hidden text-[15px] text-ink-soft sm:text-base">
             <span className="block pt-1.5">
-              Digite um tema e veja que partes da economia brasileira se acendem.
+              {t.subtitle}
             </span>
           </p>
         </div>
       </div>
+      <LanguageToggle />
     </header>
   );
 }

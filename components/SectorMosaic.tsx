@@ -4,8 +4,10 @@ import { useCallback, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { placeLabels } from "@/lib/labelPlacement";
 import { cellRect, computeLayout, configForWidth, titleRect } from "@/lib/sectorLayout";
 import type { Rect } from "@/lib/sectorLayout";
+import { sectorName } from "@/lib/i18n";
 import type { Company } from "@/types/company";
 import { CompanyTooltip, TOOLTIP_WIDTH } from "./CompanyTooltip";
+import { useI18n } from "./LanguageProvider";
 import { SectorPanel } from "./SectorPanel";
 
 const INITIAL_WIDTH = 1000;
@@ -25,6 +27,7 @@ interface Props {
 }
 
 export function SectorMosaic({ companies, scores, topIds, loading, compact, short = false, tabletShort = false }: Props) {
+  const { lang, t } = useI18n();
   const ref = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(INITIAL_WIDTH);
   const [shownId, setShownId] = useState<string | null>(null);
@@ -40,7 +43,7 @@ export function SectorMosaic({ companies, scores, topIds, loading, compact, shor
     return () => ro.disconnect();
   }, []);
 
-  // Geometria depende só da largura do container, nunca do tema pesquisado.
+  // Geometria depende só da largura do container, nunca do tema pesquisado nem do idioma.
   const layout = useMemo(
     () => computeLayout(companies, configForWidth(width, compact, short, tabletShort)),
     [companies, width, compact, short, tabletShort],
@@ -65,8 +68,8 @@ export function SectorMosaic({ companies, scores, topIds, loading, compact, shor
   const topSet = useMemo(() => new Set(topIds), [topIds]);
 
   const titles = useMemo(
-    () => layout.panels.map((p) => titleRect(p, config)),
-    [layout, config],
+    () => layout.panels.map((p) => titleRect(p, config, sectorName(p.sector, lang))),
+    [layout, config, lang],
   );
 
   const labels = useMemo(
@@ -131,7 +134,7 @@ export function SectorMosaic({ companies, scores, topIds, loading, compact, shor
       <div
         className="relative transition-opacity duration-300 ease-out"
         style={{ height: layout.height, opacity: loading ? 0.55 : 1 }}
-        aria-label="Mosaico das 1.000 maiores empresas, agrupadas por setor"
+        aria-label={t.mosaic.label}
         aria-busy={loading}
         onPointerOver={(e) => setShownId(idFromTarget(e.target))}
         onPointerLeave={() => setShownId(null)}

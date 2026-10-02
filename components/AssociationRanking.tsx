@@ -1,6 +1,9 @@
+"use client";
+
 import { ASSOCIATION_STOPS } from "@/lib/colors";
 import { formatPercent } from "@/lib/formatters";
 import type { SearchResult } from "@/types/api";
+import { useI18n } from "./LanguageProvider";
 
 const BAR_COLOR = ASSOCIATION_STOPS[ASSOCIATION_STOPS.length - 1][1];
 
@@ -11,6 +14,7 @@ interface Props {
 }
 
 export function AssociationRanking({ items, loading }: Props) {
+  const { t } = useI18n();
   return (
     <section
       aria-labelledby="ranking-titulo"
@@ -21,7 +25,7 @@ export function AssociationRanking({ items, loading }: Props) {
         id="ranking-titulo"
         className="text-xs font-semibold tracking-[0.14em] text-ink-soft"
       >
-        MAIS ASSOCIADAS
+        {t.ranking.heading}
       </h2>
       <div className="mt-2.5 border-t border-line pt-3 lg:mt-3 lg:pt-3.5 short:mt-2 short:pt-2.5 tshort:mt-1.5 tshort:pt-2">
         {items ? (
@@ -55,9 +59,7 @@ export function AssociationRanking({ items, loading }: Props) {
             })}
           </ol>
         ) : (
-          <p className="text-sm text-ink-soft">
-            As empresas mais associadas ao tema aparecerão aqui.
-          </p>
+          <p className="text-sm text-ink-soft">{t.ranking.empty}</p>
         )}
       </div>
     </section>
