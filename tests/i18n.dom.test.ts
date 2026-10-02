@@ -141,7 +141,7 @@ describe("query do usuário", () => {
 
     await act(async () => langButton("en").click());
     expect(fetchMock).toHaveBeenCalledTimes(1);
-    expect(text()).toContain("QUESTION TO THE MODEL");
+    expect(text()).toContain("QUESTION FOR THE MODEL");
     expect(text()).toContain("related to “café”?");
     expect(text()).toContain("MOST ASSOCIATED");
     expect(container.querySelectorAll("ol li")).toHaveLength(8);
@@ -171,7 +171,7 @@ describe("reload", () => {
     await load(window.location.pathname + window.location.search);
     expect(h1()).toBe("Semantic Map of the Brazilian Economy");
     expect(input().value).toBe("");
-    expect(text()).not.toContain("QUESTION TO THE MODEL");
+    expect(text()).not.toContain("QUESTION FOR THE MODEL");
     expect(text()).toContain("The companies most associated with the topic will appear here.");
   });
 });

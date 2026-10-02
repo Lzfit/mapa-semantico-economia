@@ -50,7 +50,7 @@ describe("dicionário", () => {
     expect(MESSAGES.en.title).toBe("Semantic Map of the Brazilian Economy");
     expect(MESSAGES.en.subtitle).toBe("Enter a topic and see which parts of Brazil’s economy light up.");
     expect(MESSAGES.en.search.placeholder).toBe("Enter a topic");
-    expect(MESSAGES.en.question.heading).toBe("QUESTION TO THE MODEL");
+    expect(MESSAGES.en.question.heading).toBe("QUESTION FOR THE MODEL");
     expect(MESSAGES.en.legend).toEqual({ lower: "Lower association", higher: "Higher association" });
     expect(MESSAGES.en.ranking.heading).toBe("MOST ASSOCIATED");
     expect(MESSAGES.en.ranking.empty).toBe("The companies most associated with the topic will appear here.");

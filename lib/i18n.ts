@@ -98,7 +98,7 @@ const en: Messages = {
   languageToggle: { group: "Language" },
   search: { placeholder: "Enter a topic", inputLabel: "Topic", submitLabel: "Search" },
   question: {
-    heading: "QUESTION TO THE MODEL",
+    heading: "QUESTION FOR THE MODEL",
     before:
       "Which of Brazil’s 1,000 largest companies participate in an economically relevant way in the market, value chain or ecosystem related to ",
     after: "?",
