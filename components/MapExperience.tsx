@@ -1,9 +1,11 @@
 "use client";
 
 import { useCallback, useMemo, useRef, useState } from "react";
+import { searchErrorCategory, trackEvent } from "@/lib/analytics";
 import { cleanTheme, isValidTheme } from "@/lib/normalizeTheme";
 import { rankingLimit, topAssociated } from "@/lib/ranking";
 import { useIsDesktop, useIsMobile, useIsShortDesktop, useIsTabletShort } from "@/lib/useIsMobile";
+import type { Lang } from "@/lib/i18n";
 import type { SearchResponse } from "@/types/api";
 import type { Company } from "@/types/company";
 import { AssociationRanking } from "./AssociationRanking";
@@ -14,18 +16,30 @@ import { ModelQuestion } from "./ModelQuestion";
 import { SearchBar } from "./SearchBar";
 import { SectorMosaic } from "./SectorMosaic";
 
+/** Falha de busca; `status` é `null` quando a requisição nem chegou ao servidor. */
+class SearchFailedError extends Error {
+  constructor(readonly status: number | null) {
+    super("search_failed");
+  }
+}
+
 async function requestSearch(theme: string): Promise<SearchResponse> {
-  const res = await fetch("/api/search", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ theme }),
-  });
-  if (!res.ok) throw new Error("search_failed");
+  let res: Response;
+  try {
+    res = await fetch("/api/search", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ theme }),
+    });
+  } catch {
+    throw new SearchFailedError(null);
+  }
+  if (!res.ok) throw new SearchFailedError(res.status);
   return (await res.json()) as SearchResponse;
 }
 
 export function MapExperience({ companies }: { companies: Company[] }) {
-  const { t } = useI18n();
+  const { lang, t } = useI18n();
   const isMobile = useIsMobile();
   const isDesktop = useIsDesktop();
   const isShort = useIsShortDesktop();
@@ -40,13 +54,24 @@ export function MapExperience({ companies }: { companies: Company[] }) {
   const requestSeq = useRef(0);
 
   // Atualiza o mapa só quando os scores completos chegam; respostas antigas são descartadas.
-  const track = useCallback((seq: number, promise: Promise<SearchResponse>) => {
+  // `uiLang`: idioma da interface no envio da busca (único dado enviado ao analytics).
+  const track = useCallback((seq: number, promise: Promise<SearchResponse>, uiLang: Lang) => {
     promise
       .then((body) => {
-        if (seq === requestSeq.current) setData(body);
+        if (seq !== requestSeq.current) return;
+        setData(body);
+        trackEvent("search_completed", { ui_language: uiLang, success: true });
       })
-      .catch(() => {
-        if (seq === requestSeq.current) setFailed(true);
+      .catch((err: unknown) => {
+        if (seq !== requestSeq.current) return;
+        setFailed(true);
+        trackEvent("search_error", {
+          ui_language: uiLang,
+          success: false,
+          // Falha fora do fetch/status (ex.: corpo inválido) conta como erro do servidor.
+          error_category:
+            err instanceof SearchFailedError ? searchErrorCategory(err.status) : "server_error",
+        });
       })
       .finally(() => {
         if (seq === requestSeq.current) setLoading(false);
@@ -61,9 +86,10 @@ export function MapExperience({ companies }: { companies: Company[] }) {
       setSubmittedTheme((prev) => prev ?? theme);
       setLoading(true);
       setFailed(false);
-      track(++requestSeq.current, requestSearch(theme));
+      trackEvent("search_submitted", { ui_language: lang });
+      track(++requestSeq.current, requestSearch(theme), lang);
     },
-    [track],
+    [track, lang],
   );
 
   const limit = rankingLimit(isMobile, isTabletShort);
