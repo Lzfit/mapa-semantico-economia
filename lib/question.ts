@@ -1,3 +1,6 @@
+import { modelQuestion } from "./i18n";
+
+/** Pergunta exibida na resposta da API (sempre em português; independe do idioma da UI). */
 export function buildModelQuestion(theme: string): string {
-  return `Quais das 1.000 maiores empresas do Brasil participam de forma economicamente relevante do mercado, da cadeia de valor ou do ecossistema relacionado a “${theme}”?`;
+  return modelQuestion(theme, "pt");
 }

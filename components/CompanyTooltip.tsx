@@ -1,5 +1,9 @@
-import { formatPercent, formatRevenueBi } from "@/lib/formatters";
+"use client";
+
+import { formatPercent, formatRevenue } from "@/lib/formatters";
+import { sectorName } from "@/lib/i18n";
 import type { Company } from "@/types/company";
+import { useI18n } from "./LanguageProvider";
 
 export const TOOLTIP_WIDTH = 248;
 
@@ -11,6 +15,7 @@ interface Props {
 }
 
 export function CompanyTooltip({ company, score, left, top }: Props) {
+  const { lang, t } = useI18n();
   const place = [company.city, company.state].filter(Boolean).join(", ");
   return (
     <div
@@ -20,20 +25,20 @@ export function CompanyTooltip({ company, score, left, top }: Props) {
     >
       {company.undisclosed ? (
         <>
-          <p className="text-sm font-semibold text-ink">Empresa não divulgada pela fonte</p>
-          <p className="mt-0.5">Associação não calculada</p>
+          <p className="text-sm font-semibold text-ink">{t.undisclosed.tooltipTitle}</p>
+          <p className="mt-0.5">{t.undisclosed.notCalculated}</p>
         </>
       ) : (
         <>
           <p className="text-sm font-semibold text-ink">{company.name}</p>
           {score !== null && (
-            <p className="mt-0.5 font-medium text-ink">{formatPercent(score)} de associação</p>
+            <p className="mt-0.5 font-medium text-ink">{t.tooltip.association(formatPercent(score))}</p>
           )}
-          <p className="mt-1.5">{company.sector}</p>
-          <p>#{company.rank} no ranking EXAME</p>
+          <p className="mt-1.5">{sectorName(company.sector, lang)}</p>
+          <p>{t.tooltip.rank(company.rank)}</p>
           {place && <p>{place}</p>}
           {company.revenue2025ThousandsBRL !== null && (
-            <p>Receita 2025: {formatRevenueBi(company.revenue2025ThousandsBRL)}</p>
+            <p>{t.tooltip.revenue(formatRevenue(company.revenue2025ThousandsBRL, lang))}</p>
           )}
         </>
       )}

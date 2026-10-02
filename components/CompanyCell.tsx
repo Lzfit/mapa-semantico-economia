@@ -1,6 +1,10 @@
+"use client";
+
 import { memo } from "react";
 import { ASSOCIATION_STOPS, UNSCORED_COLOR } from "@/lib/colors";
+import { sectorName } from "@/lib/i18n";
 import type { Company } from "@/types/company";
+import { useI18n } from "./LanguageProvider";
 
 interface Props {
   company: Company;
@@ -20,10 +24,12 @@ export const CompanyCell = memo(function CompanyCell({
   highlighted,
   tabIndex,
 }: Props) {
+  const { lang, t } = useI18n();
   const unscored = company.undisclosed;
+  const sector = sectorName(company.sector, lang);
   const label = unscored
-    ? `${company.name}, associação não calculada, ${company.sector}`
-    : `${company.name}${scoreLabel ? `, ${scoreLabel}` : ""}, ${company.sector}`;
+    ? `${t.undisclosed.name}, ${t.cell.notCalculated}, ${sector}`
+    : `${company.name}${scoreLabel ? `, ${scoreLabel}` : ""}, ${sector}`;
   const shadows: string[] = [];
   if (unscored) shadows.push("inset 0 0 0 1px #DAD9CF");
   if (highlighted) shadows.push("0 0 0 1.5px rgba(32, 40, 32, 0.75)");

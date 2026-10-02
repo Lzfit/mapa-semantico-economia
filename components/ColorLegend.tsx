@@ -1,6 +1,10 @@
+"use client";
+
 import { ASSOCIATION_GRADIENT } from "@/lib/colors";
+import { useI18n } from "./LanguageProvider";
 
 export function ColorLegend() {
+  const { t } = useI18n();
   return (
     <div className="max-w-[760px] lg:max-w-none tshort:max-w-none">
       <div
@@ -9,8 +13,8 @@ export function ColorLegend() {
         aria-hidden="true"
       />
       <div className="mt-1.5 flex justify-between text-xs lg:mt-1 lg:text-[11px] tshort:mt-1 tshort:text-[11px] text-ink-soft">
-        <span>Menor associação</span>
-        <span>Maior associação</span>
+        <span>{t.legend.lower}</span>
+        <span>{t.legend.higher}</span>
       </div>
     </div>
   );

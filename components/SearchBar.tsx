@@ -1,5 +1,7 @@
 "use client";
 
+import { useI18n } from "./LanguageProvider";
+
 interface Props {
   value: string;
   onChange: (value: string) => void;
@@ -8,6 +10,7 @@ interface Props {
 }
 
 export function SearchBar({ value, onChange, onSubmit, loading }: Props) {
+  const { t } = useI18n();
   return (
     <form
       role="search"
@@ -19,7 +22,7 @@ export function SearchBar({ value, onChange, onSubmit, loading }: Props) {
     >
       <button
         type="submit"
-        aria-label="Buscar"
+        aria-label={t.search.submitLabel}
         disabled={loading}
         className={`text-ink-soft ${loading ? "animate-pulse" : ""}`}
       >
@@ -32,8 +35,8 @@ export function SearchBar({ value, onChange, onSubmit, loading }: Props) {
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        placeholder="Digite um tema"
-        aria-label="Tema"
+        placeholder={t.search.placeholder}
+        aria-label={t.search.inputLabel}
         minLength={2}
         maxLength={80}
         className="h-full min-w-0 flex-1 bg-transparent text-xl text-ink outline-none placeholder:text-ink-soft/70 sm:text-2xl lg:text-xl tshort:text-xl"
