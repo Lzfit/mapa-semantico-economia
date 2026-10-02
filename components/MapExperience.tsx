@@ -1,9 +1,9 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { cleanTheme, isValidTheme } from "@/lib/normalizeTheme";
-import { topAssociated } from "@/lib/ranking";
-import { useIsDesktop, useIsMobile, useIsShortDesktop } from "@/lib/useIsMobile";
+import { rankingLimit, topAssociated } from "@/lib/ranking";
+import { useIsDesktop, useIsMobile, useIsShortDesktop, useIsTabletShort } from "@/lib/useIsMobile";
 import type { SearchResponse } from "@/types/api";
 import type { Company } from "@/types/company";
 import { AssociationRanking } from "./AssociationRanking";
@@ -13,7 +13,6 @@ import { ModelQuestion } from "./ModelQuestion";
 import { SearchBar } from "./SearchBar";
 import { SectorMosaic } from "./SectorMosaic";
 
-const INITIAL_THEME = "data centers";
 const ERROR_MESSAGE = "Não foi possível concluir esta análise. Tente novamente.";
 
 async function requestSearch(theme: string): Promise<SearchResponse> {
@@ -30,11 +29,14 @@ export function MapExperience({ companies }: { companies: Company[] }) {
   const isMobile = useIsMobile();
   const isDesktop = useIsDesktop();
   const isShort = useIsShortDesktop();
-  const [input, setInput] = useState(INITIAL_THEME);
+  const isTabletShort = useIsTabletShort();
+  const [input, setInput] = useState("");
   const [data, setData] = useState<SearchResponse | null>(null);
-  const [loading, setLoading] = useState(true); // a demonstração inicial já está a caminho
+  // Tema da primeira busca executada; `null` enquanto nenhuma busca foi feita.
+  const [submittedTheme, setSubmittedTheme] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
   const [failed, setFailed] = useState(false);
-  const lastTheme = useRef(INITIAL_THEME);
+  const lastTheme = useRef("");
   const requestSeq = useRef(0);
 
   // Atualiza o mapa só quando os scores completos chegam; respostas antigas são descartadas.
@@ -56,6 +58,7 @@ export function MapExperience({ companies }: { companies: Company[] }) {
       const theme = cleanTheme(rawTheme);
       if (!isValidTheme(theme)) return;
       lastTheme.current = theme;
+      setSubmittedTheme((prev) => prev ?? theme);
       setLoading(true);
       setFailed(false);
       track(++requestSeq.current, requestSearch(theme));
@@ -63,12 +66,7 @@ export function MapExperience({ companies }: { companies: Company[] }) {
     [track],
   );
 
-  // Estado inicial: demonstração com "data centers".
-  useEffect(() => {
-    track(++requestSeq.current, requestSearch(INITIAL_THEME));
-  }, [track]);
-
-  const limit = isMobile ? 6 : 8;
+  const limit = rankingLimit(isMobile, isTabletShort);
   const top = useMemo(() => (data ? topAssociated(data.results, limit) : null), [data, limit]);
   const topIds = useMemo(() => (top ?? []).map((r) => r.id), [top]);
   const scores = useMemo(
@@ -77,7 +75,7 @@ export function MapExperience({ companies }: { companies: Company[] }) {
   );
 
   return (
-    <div className="flex flex-col gap-7 lg:gap-3.5 short:gap-2.5">
+    <div className="flex flex-col gap-7 lg:gap-3.5 short:gap-2.5 tshort:gap-1.5">
       <Header hasResult={data !== null} />
       <SearchBar
         value={input}
@@ -85,10 +83,12 @@ export function MapExperience({ companies }: { companies: Company[] }) {
         onSubmit={() => search(input)}
         loading={loading}
       />
-      <div className="flex flex-col gap-4 lg:gap-3 short:gap-2">
-        <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:items-end lg:gap-8">
-          <ModelQuestion theme={data?.theme ?? INITIAL_THEME} />
-          <ColorLegend />
+      <div className="flex flex-col gap-4 lg:gap-3 short:gap-2 tshort:gap-1">
+        <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:items-end lg:gap-8 tshort:grid tshort:grid-cols-[minmax(0,1fr)_260px] tshort:items-end tshort:gap-6">
+          {submittedTheme !== null && <ModelQuestion theme={data?.theme ?? submittedTheme} />}
+          <div className="lg:col-start-2 tshort:col-start-2">
+            <ColorLegend />
+          </div>
         </div>
         {failed && (
           <p role="alert" className="text-sm text-ink-soft">
@@ -102,7 +102,7 @@ export function MapExperience({ companies }: { companies: Company[] }) {
             </button>
           </p>
         )}
-        <div className="mt-1 grid grid-cols-1 gap-4 lg:mt-0 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8">
+        <div className="mt-1 grid grid-cols-1 gap-4 tshort:mt-0 tshort:gap-1 lg:mt-0 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8">
           <div className="order-2 min-w-0 lg:order-1">
             <SectorMosaic
               companies={companies}
@@ -111,6 +111,7 @@ export function MapExperience({ companies }: { companies: Company[] }) {
               loading={loading}
               compact={isDesktop}
               short={isShort}
+              tabletShort={isTabletShort}
             />
           </div>
           <aside className="order-1 lg:order-2">

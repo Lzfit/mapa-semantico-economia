@@ -20,9 +20,11 @@ interface Props {
   compact: boolean;
   /** Desktop com pouca altura: compactação extra. */
   short?: boolean;
+  /** Tablet largo com pouca altura (768–1023px, ≤760px): células e paddings menores. */
+  tabletShort?: boolean;
 }
 
-export function SectorMosaic({ companies, scores, topIds, loading, compact, short = false }: Props) {
+export function SectorMosaic({ companies, scores, topIds, loading, compact, short = false, tabletShort = false }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(INITIAL_WIDTH);
   const [shownId, setShownId] = useState<string | null>(null);
@@ -40,8 +42,8 @@ export function SectorMosaic({ companies, scores, topIds, loading, compact, shor
 
   // Geometria depende só da largura do container, nunca do tema pesquisado.
   const layout = useMemo(
-    () => computeLayout(companies, configForWidth(width, compact, short)),
-    [companies, width, compact, short],
+    () => computeLayout(companies, configForWidth(width, compact, short, tabletShort)),
+    [companies, width, compact, short, tabletShort],
   );
   const { config } = layout;
 
