@@ -44,6 +44,22 @@ describe("estado inicial da experiência", () => {
   });
 });
 
+describe("marca do header", () => {
+  it("é um SVG decorativo com três barras de alturas crescentes, antes do título", () => {
+    const header = html.match(/<header[\s\S]*?<\/header>/)![0];
+    const svg = header.match(/<svg[\s\S]*?<\/svg>/)![0];
+    const heights = [...svg.matchAll(/<rect[^>]*height="([\d.]+)"/g)].map((m) => Number(m[1]));
+    expect(heights).toHaveLength(3);
+    expect(heights[0]).toBeLessThan(heights[1]);
+    expect(heights[1]).toBeLessThan(heights[2]);
+    expect(svg).toContain("rx=");
+    expect(header.indexOf("<svg")).toBeLessThan(header.indexOf("<h1"));
+    expect(header).toContain('aria-hidden="true"');
+    expect(header).not.toContain("<a ");
+    expect(header).not.toContain("<button");
+  });
+});
+
 describe("depois da primeira busca", () => {
   it("a pergunta aparece com o tema pesquisado", () => {
     const out = renderToStaticMarkup(createElement(ModelQuestion, { theme: "café" }));
