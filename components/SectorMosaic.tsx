@@ -18,9 +18,11 @@ interface Props {
   loading: boolean;
   /** Desktop: células, gaps e paddings reduzidos. */
   compact: boolean;
+  /** Desktop com pouca altura: compactação extra. */
+  short?: boolean;
 }
 
-export function SectorMosaic({ companies, scores, topIds, loading, compact }: Props) {
+export function SectorMosaic({ companies, scores, topIds, loading, compact, short = false }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(INITIAL_WIDTH);
   const [shownId, setShownId] = useState<string | null>(null);
@@ -38,8 +40,8 @@ export function SectorMosaic({ companies, scores, topIds, loading, compact }: Pr
 
   // Geometria depende só da largura do container, nunca do tema pesquisado.
   const layout = useMemo(
-    () => computeLayout(companies, configForWidth(width, compact)),
-    [companies, width, compact],
+    () => computeLayout(companies, configForWidth(width, compact, short)),
+    [companies, width, compact, short],
   );
   const { config } = layout;
 

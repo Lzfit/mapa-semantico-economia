@@ -7,7 +7,7 @@ export function Header({ hasResult = false }: Props) {
   return (
     <header className="flex items-start justify-between gap-6">
       <div>
-        <h1 className="font-serif text-[28px] leading-tight tracking-tight text-ink sm:text-[38px] lg:text-[30px]">
+        <h1 className="font-serif text-[28px] leading-tight tracking-tight text-ink sm:text-[38px] lg:text-[30px] short:text-[26px]">
           Mapa Semântico da Economia Brasileira
         </h1>
         <div

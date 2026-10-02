@@ -21,3 +21,8 @@ export function useIsMobile(): boolean {
 export function useIsDesktop(): boolean {
   return useMediaQuery("(min-width: 1024px)");
 }
+
+/** Desktop com pouca altura (ex.: 1280×720): compactação extra. */
+export function useIsShortDesktop(): boolean {
+  return useMediaQuery("(min-width: 1024px) and (max-height: 760px)");
+}

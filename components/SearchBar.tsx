@@ -15,7 +15,7 @@ export function SearchBar({ value, onChange, onSubmit, loading }: Props) {
         e.preventDefault();
         onSubmit();
       }}
-      className="flex h-16 items-center gap-4 rounded-[18px] border border-assoc-max/35 bg-surface px-6 lg:h-12 lg:gap-3 lg:rounded-2xl lg:px-5 shadow-[0_0_0_4px_rgba(47,157,85,0.06)] focus-within:border-assoc-max/70"
+      className="flex h-16 items-center gap-4 rounded-[18px] border border-assoc-max/35 bg-surface px-6 lg:h-12 short:h-[42px] lg:gap-3 lg:rounded-2xl lg:px-5 shadow-[0_0_0_4px_rgba(47,157,85,0.06)] focus-within:border-assoc-max/70"
     >
       <button
         type="submit"

@@ -41,7 +41,22 @@ export interface MosaicLayout {
  * `compact` = viewport desktop (≥1024px): células, gaps e paddings menores para o
  * mapa caber melhor na primeira dobra. A lógica do layout é a mesma.
  */
-export function configForWidth(width: number, compact = false): LayoutConfig {
+export function configForWidth(width: number, compact = false, short = false): LayoutConfig {
+  if (compact && short) {
+    // Desktop de pouca altura (≤760px): mesma lógica, células de 10px, padding e gaps menores.
+    return {
+      width,
+      cell: 10,
+      gap: 2,
+      panelPadding: 8,
+      panelGap: 4,
+      headerHeight: 24,
+      minPanelWidth: 162,
+      titleFont: 10,
+      titleLine: 12,
+      titleTracking: 0.03,
+    };
+  }
   if (compact) {
     return {
       width,

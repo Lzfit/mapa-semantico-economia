@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { cleanTheme, isValidTheme } from "@/lib/normalizeTheme";
 import { topAssociated } from "@/lib/ranking";
-import { useIsDesktop, useIsMobile } from "@/lib/useIsMobile";
+import { useIsDesktop, useIsMobile, useIsShortDesktop } from "@/lib/useIsMobile";
 import type { SearchResponse } from "@/types/api";
 import type { Company } from "@/types/company";
 import { AssociationRanking } from "./AssociationRanking";
@@ -29,6 +29,7 @@ async function requestSearch(theme: string): Promise<SearchResponse> {
 export function MapExperience({ companies }: { companies: Company[] }) {
   const isMobile = useIsMobile();
   const isDesktop = useIsDesktop();
+  const isShort = useIsShortDesktop();
   const [input, setInput] = useState(INITIAL_THEME);
   const [data, setData] = useState<SearchResponse | null>(null);
   const [loading, setLoading] = useState(true); // a demonstração inicial já está a caminho
@@ -76,7 +77,7 @@ export function MapExperience({ companies }: { companies: Company[] }) {
   );
 
   return (
-    <div className="flex flex-col gap-7 lg:gap-3.5">
+    <div className="flex flex-col gap-7 lg:gap-3.5 short:gap-2.5">
       <Header hasResult={data !== null} />
       <SearchBar
         value={input}
@@ -84,7 +85,7 @@ export function MapExperience({ companies }: { companies: Company[] }) {
         onSubmit={() => search(input)}
         loading={loading}
       />
-      <div className="flex flex-col gap-4 lg:gap-3">
+      <div className="flex flex-col gap-4 lg:gap-3 short:gap-2">
         <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:items-end lg:gap-8">
           <ModelQuestion theme={data?.theme ?? INITIAL_THEME} />
           <ColorLegend />
@@ -109,6 +110,7 @@ export function MapExperience({ companies }: { companies: Company[] }) {
               topIds={topIds}
               loading={loading}
               compact={isDesktop}
+              short={isShort}
             />
           </div>
           <aside className="order-1 lg:order-2">

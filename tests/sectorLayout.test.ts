@@ -108,3 +108,22 @@ describe("compacto em 1.008px", () => {
     expect(computeLayout(companies, configForWidth(1008, true)).height).toBeLessThan(520);
   });
 });
+
+describe("compacto de pouca altura", () => {
+  const compact = configForWidth(848, true);
+  const short = configForWidth(848, true, true);
+  const layoutShort = computeLayout(companies, short);
+
+  it("mantém ordem e 1.000 células iguais; reduz célula para 10px, paddings e gaps", () => {
+    expect(short.cell).toBe(10);
+    expect(layoutShort.panels.flatMap((p) => p.companies)).toHaveLength(1000);
+    expect(short.panelPadding).toBeLessThan(compact.panelPadding);
+    expect(short.panelGap).toBeLessThan(compact.panelGap);
+    expect(layoutShort.height).toBeLessThan(computeLayout(companies, compact).height);
+  });
+
+  it("não altera a config padrão do desktop nem a do tablet", () => {
+    expect(configForWidth(1008, true)).toEqual(configForWidth(1008, true, false));
+    expect(configForWidth(900).cell).toBe(12);
+  });
+});
