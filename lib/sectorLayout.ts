@@ -229,3 +229,16 @@ export function cellRect(panel: PanelLayout, index: number, cfg: LayoutConfig): 
     h: cfg.cell,
   };
 }
+
+/** Área ocupada pelo texto do nome do setor (estimada), para labels não a cobrirem. */
+export function titleRect(panel: PanelLayout, cfg: LayoutConfig): Rect {
+  const innerW = panel.width - 2 * (PANEL_BORDER + cfg.panelPadding);
+  const textW = panel.sector.length * cfg.titleFont * (0.68 + cfg.titleTracking);
+  const lines = Math.min(2, Math.max(1, Math.ceil(textW / innerW)));
+  return {
+    x: panel.x + PANEL_BORDER + cfg.panelPadding,
+    y: panel.y + PANEL_BORDER + cfg.panelPadding,
+    w: Math.min(innerW, textW),
+    h: lines * cfg.titleLine,
+  };
+}

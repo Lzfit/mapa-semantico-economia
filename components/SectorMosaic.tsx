@@ -2,7 +2,7 @@
 
 import { useCallback, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { placeLabels } from "@/lib/labelPlacement";
-import { cellRect, computeLayout, configForWidth } from "@/lib/sectorLayout";
+import { cellRect, computeLayout, configForWidth, titleRect } from "@/lib/sectorLayout";
 import type { Rect } from "@/lib/sectorLayout";
 import type { Company } from "@/types/company";
 import { CompanyTooltip, TOOLTIP_WIDTH } from "./CompanyTooltip";
@@ -62,13 +62,19 @@ export function SectorMosaic({ companies, scores, topIds, loading, compact, shor
   const byId = useMemo(() => new Map(companies.map((c) => [c.id, c])), [companies]);
   const topSet = useMemo(() => new Set(topIds), [topIds]);
 
+  const titles = useMemo(
+    () => layout.panels.map((p) => titleRect(p, config)),
+    [layout, config],
+  );
+
   const labels = useMemo(
     () =>
       placeLabels(
         topIds.map((id) => ({ id, text: byId.get(id)!.name, cell: rects.get(id)! })),
         { width: layout.width, height: layout.height },
+        titles,
       ),
-    [topIds, byId, rects, layout.width, layout.height],
+    [topIds, byId, rects, layout.width, layout.height, titles],
   );
 
   const idFromTarget = (target: EventTarget | null) =>
@@ -153,6 +159,27 @@ export function SectorMosaic({ companies, scores, topIds, loading, compact, shor
             activeId={activeId}
           />
         ))}
+        <svg
+          className="pointer-events-none absolute inset-0 z-[9]"
+          width={layout.width}
+          height={layout.height}
+          aria-hidden="true"
+        >
+          {labels.map(
+            (l) =>
+              l.connector && (
+                <line
+                  key={l.id}
+                  x1={l.connector.x1}
+                  y1={l.connector.y1}
+                  x2={l.connector.x2}
+                  y2={l.connector.y2}
+                  stroke="rgba(32, 40, 32, 0.4)"
+                  strokeWidth={1}
+                />
+              ),
+          )}
+        </svg>
         {labels.map((l) => (
           <span
             key={l.id}
