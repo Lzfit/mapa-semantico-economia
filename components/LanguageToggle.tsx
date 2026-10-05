@@ -18,7 +18,7 @@ export function LanguageToggle() {
     <div
       role="group"
       aria-label={t.languageToggle.group}
-      className="absolute -top-6 right-0 flex shrink-0 items-center gap-1.5 text-xs md:static md:pt-3 tracking-[0.08em] text-ink-soft lg:pt-2 short:pt-1.5 tshort:pt-1.5"
+      className="flex shrink-0 items-center gap-1.5 text-xs max-md:pt-1 md:pt-3 tracking-[0.08em] text-ink-soft lg:pt-2 short:pt-1.5 tshort:pt-1.5"
     >
       {LANGS.map((l, i) => (
         <Fragment key={l}>

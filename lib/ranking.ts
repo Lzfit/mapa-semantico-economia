@@ -8,7 +8,8 @@ export function topAssociated(results: SearchResult[], limit: number): SearchRes
     .slice(0, limit);
 }
 
-/** Top 6 no mobile e no tablet largo de pouca altura; Top 8 nos demais. */
+/** Top 5 no mobile; Top 6 no tablet largo de pouca altura; Top 8 nos demais. */
 export function rankingLimit(isMobile: boolean, isTabletShort: boolean): number {
-  return isMobile || isTabletShort ? 6 : 8;
+  if (isMobile) return 5;
+  return isTabletShort ? 6 : 8;
 }

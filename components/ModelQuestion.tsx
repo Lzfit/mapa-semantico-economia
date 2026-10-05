@@ -6,7 +6,7 @@ import { useI18n } from "./LanguageProvider";
 export function ModelQuestion({ theme }: { theme: string }) {
   const { t } = useI18n();
   return (
-    <section aria-labelledby="pergunta-titulo" className="max-w-3xl lg:max-w-none">
+    <section aria-labelledby="pergunta-titulo" className="max-w-3xl lg:max-w-none max-md:hidden">
       <h2
         id="pergunta-titulo"
         className="text-xs font-semibold tracking-[0.14em] text-ink-soft tshort:sr-only"

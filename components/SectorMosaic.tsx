@@ -24,9 +24,20 @@ interface Props {
   short?: boolean;
   /** Tablet largo com pouca altura (768–1023px, ≤760px): células e paddings menores. */
   tabletShort?: boolean;
+  /** Mobile após busca: ordem dos setores; `null` = ordem fixa. */
+  sectorOrder?: readonly string[] | null;
 }
 
-export function SectorMosaic({ companies, scores, topIds, loading, compact, short = false, tabletShort = false }: Props) {
+export function SectorMosaic({
+  companies,
+  scores,
+  topIds,
+  loading,
+  compact,
+  short = false,
+  tabletShort = false,
+  sectorOrder = null,
+}: Props) {
   const { lang, t } = useI18n();
   const ref = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(INITIAL_WIDTH);
@@ -43,10 +54,11 @@ export function SectorMosaic({ companies, scores, topIds, loading, compact, shor
     return () => ro.disconnect();
   }, []);
 
-  // Geometria depende só da largura do container, nunca do tema pesquisado nem do idioma.
+  // Geometria depende da largura do container, nunca do idioma; o tema só entra pela
+  // ordem dos setores no mobile (`sectorOrder`).
   const layout = useMemo(
-    () => computeLayout(companies, configForWidth(width, compact, short, tabletShort)),
-    [companies, width, compact, short, tabletShort],
+    () => computeLayout(companies, configForWidth(width, compact, short, tabletShort), sectorOrder),
+    [companies, width, compact, short, tabletShort, sectorOrder],
   );
   const { config } = layout;
 

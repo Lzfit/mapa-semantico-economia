@@ -4,16 +4,16 @@ import { useI18n } from "./LanguageProvider";
 import { LanguageToggle } from "./LanguageToggle";
 
 interface Props {
-  /** Com resultado na tela, o subtítulo recolhe no desktop. */
+  /** Com resultado na tela, o subtítulo recolhe no desktop; no mobile o header vira uma linha. */
   hasResult?: boolean;
 }
 
 /** Marca: três barras verticais crescentes (símbolo do canto superior esquerdo da referência). */
-export function BrandMark() {
+export function BrandMark({ className = "" }: { className?: string }) {
   return (
     <span
       aria-hidden="true"
-      className="flex h-[1.25em] shrink-0 items-center text-[28px] leading-tight sm:text-[38px] lg:text-[30px] short:text-[26px] tshort:text-[26px]"
+      className={`flex h-[1.25em] shrink-0 items-center text-[28px] leading-tight sm:text-[38px] lg:text-[30px] short:text-[26px] tshort:text-[26px] ${className}`}
     >
       <svg viewBox="0 0 28 30" className="h-[0.72em] w-auto" focusable="false">
         <rect x="0" y="16.5" width="6.5" height="13.5" rx="3.25" fill="#6fcb94" />
@@ -27,20 +27,39 @@ export function BrandMark() {
 export function Header({ hasResult = false }: Props) {
   const { t } = useI18n();
   return (
-    <header className="relative flex items-start gap-3 lg:gap-2.5">
-      <BrandMark />
+    <header
+      className={`relative flex items-start gap-3 max-md:gap-2.5 lg:gap-2.5 ${hasResult ? "max-md:items-center" : ""}`}
+    >
+      <BrandMark
+        className={
+          hasResult
+            ? "max-md:h-[1.2em] max-md:text-[1.0625rem]!"
+            : "max-md:h-[1.12em] max-md:text-[1.5625rem]! max-md:[&>svg]:h-[0.9em]"
+        }
+      />
       <div className="min-w-0 flex-1">
-        <h1 className="font-serif text-[28px] leading-tight tracking-tight text-ink sm:text-[38px] lg:text-[30px] short:text-[26px] tshort:text-[26px]">
-          {t.title}
-        </h1>
-        <div
-          className={`grid grid-rows-[1fr] transition-[grid-template-rows,opacity] duration-500 ease-out ${
-            hasResult ? "lg:grid-rows-[0fr] lg:opacity-0 tshort:grid-rows-[0fr] tshort:opacity-0" : ""
+        <h1
+          className={`font-serif text-[28px] leading-tight tracking-tight text-ink sm:text-[38px] lg:text-[30px] short:text-[26px] tshort:text-[26px] ${
+            hasResult
+              ? "max-md:truncate max-md:text-[1.0625rem]! max-md:leading-[1.2]"
+              : "max-md:text-[1.5625rem]! max-md:leading-[1.12]"
           }`}
         >
-          <p className="min-h-0 overflow-hidden text-[15px] text-ink-soft sm:text-base">
-            <span className="block pt-1.5">
-              {t.subtitle}
+          <span className={hasResult ? "max-md:hidden" : ""}>{t.title}</span>
+          {hasResult && <span className="md:hidden">{t.mobile.shortTitle}</span>}
+        </h1>
+        {/* No mobile o subtítulo avança sob o seletor PT | EN, para caber em duas linhas. */}
+        <div
+          className={`grid grid-rows-[1fr] transition-[grid-template-rows,opacity] duration-500 ease-out max-md:-mr-[4.5rem] ${
+            hasResult
+              ? "lg:grid-rows-[0fr] lg:opacity-0 tshort:grid-rows-[0fr] tshort:opacity-0 max-md:grid-rows-[0fr] max-md:opacity-0"
+              : ""
+          }`}
+        >
+          <p className="min-h-0 overflow-hidden text-[15px] text-ink-soft sm:text-base max-md:text-[0.9375rem]! max-md:leading-[1.4]">
+            <span className="block pt-1.5 max-md:pt-2">
+              <span className="max-md:hidden">{t.subtitle}</span>
+              <span className="md:hidden">{t.mobile.subtitle}</span>
             </span>
           </p>
         </div>

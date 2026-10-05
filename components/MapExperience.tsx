@@ -4,12 +4,15 @@ import { useCallback, useMemo, useRef, useState } from "react";
 import { searchErrorCategory, trackEvent } from "@/lib/analytics";
 import { cleanTheme, isValidTheme } from "@/lib/normalizeTheme";
 import { rankingLimit, topAssociated } from "@/lib/ranking";
+import { groupBySector } from "@/lib/sectorLayout";
+import { activationSectorOrder } from "@/lib/sectorOrder";
 import { useIsDesktop, useIsMobile, useIsShortDesktop, useIsTabletShort } from "@/lib/useIsMobile";
 import type { Lang } from "@/lib/i18n";
 import type { SearchResponse } from "@/types/api";
 import type { Company } from "@/types/company";
 import { AssociationRanking } from "./AssociationRanking";
 import { ColorLegend } from "./ColorLegend";
+import { MobileAnswer, MobileMapHeading, MobileRanking, MobileSuggestions } from "./MobileBlocks";
 import { Header } from "./Header";
 import { useI18n } from "./LanguageProvider";
 import { ModelQuestion } from "./ModelQuestion";
@@ -99,20 +102,50 @@ export function MapExperience({ companies }: { companies: Company[] }) {
     () => (data ? Object.fromEntries(data.results.map((r) => [r.id, r.associationScore])) : null),
     [data],
   );
+  const groups = useMemo(() => groupBySector(companies), [companies]);
+  // Só no mobile com resultado: os setores mais associados sobem; desktop e tablet mantêm a ordem fixa.
+  const sectorOrder = useMemo(
+    () => (isMobile && scores ? activationSectorOrder(groups, scores) : null),
+    [isMobile, scores, groups],
+  );
+  const hasResult = data !== null;
+  const shownTheme = data?.theme ?? submittedTheme;
 
   return (
-    <div className="flex flex-col gap-7 lg:gap-3.5 short:gap-2.5 tshort:gap-1.5">
-      <Header hasResult={data !== null} />
+    <div
+      className={`flex flex-col gap-7 lg:gap-3.5 short:gap-2.5 tshort:gap-1.5 ${
+        hasResult ? "max-md:gap-3 m45:gap-2.5" : "max-md:gap-4"
+      }`}
+    >
+      <Header hasResult={hasResult} />
       <SearchBar
         value={input}
         onChange={setInput}
         onSubmit={() => search(input)}
         loading={loading}
+        compact={hasResult}
       />
-      <div className="flex flex-col gap-4 lg:gap-3 short:gap-2 tshort:gap-1">
-        <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:items-end lg:gap-8 tshort:grid tshort:grid-cols-[minmax(0,1fr)_260px] tshort:items-end tshort:gap-6">
-          {submittedTheme !== null && <ModelQuestion theme={data?.theme ?? submittedTheme} />}
-          <div className="lg:col-start-2 tshort:col-start-2">
+      {submittedTheme === null && (
+        <MobileSuggestions
+          onPick={(theme) => {
+            setInput(theme);
+            search(theme);
+          }}
+        />
+      )}
+      <div className={`flex flex-col gap-4 lg:gap-3 short:gap-2 tshort:gap-1 ${hasResult ? "max-md:mt-1 m45:mt-0.5" : "max-md:mt-2.5"}`}>
+        <div
+          className={`flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:items-end lg:gap-8 tshort:grid tshort:grid-cols-[minmax(0,1fr)_260px] tshort:items-end tshort:gap-6 ${
+            shownTheme === null ? "max-md:hidden" : ""
+          }`}
+        >
+          {shownTheme !== null && (
+            <>
+              <ModelQuestion theme={shownTheme} />
+              {isMobile && <MobileAnswer theme={shownTheme} />}
+            </>
+          )}
+          <div className="lg:col-start-2 tshort:col-start-2 max-md:hidden">
             <ColorLegend />
           </div>
         </div>
@@ -128,8 +161,17 @@ export function MapExperience({ companies }: { companies: Company[] }) {
             </button>
           </p>
         )}
-        <div className="mt-1 grid grid-cols-1 gap-4 tshort:mt-0 tshort:gap-1 lg:mt-0 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8">
+        <div className="mt-1 grid grid-cols-1 gap-4 tshort:mt-0 tshort:gap-1 lg:mt-0 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8 max-md:mt-0 max-md:gap-[1.375rem] m45:gap-4">
           <div className="order-2 min-w-0 lg:order-1">
+            <MobileMapHeading hasResult={hasResult} />
+            {/* Mobile inicial: o mapa esmaece para baixo, sinalizando que continua. */}
+            <div
+              className={
+                hasResult
+                  ? ""
+                  : "max-md:[mask-image:linear-gradient(to_bottom,#000_0,#000_7.5rem,rgba(0,0,0,0.35)_20rem)]"
+              }
+            >
             <SectorMosaic
               companies={companies}
               scores={scores}
@@ -138,10 +180,18 @@ export function MapExperience({ companies }: { companies: Company[] }) {
               compact={isDesktop}
               short={isShort}
               tabletShort={isTabletShort}
+              sectorOrder={sectorOrder}
             />
+            </div>
           </div>
-          <aside className="order-1 lg:order-2">
-            <AssociationRanking items={top} loading={loading} />
+          <aside className={`order-1 lg:order-2 ${top ? "" : "max-md:hidden"}`}>
+            {isMobile ? (
+              top && <MobileRanking items={top} loading={loading} />
+            ) : (
+              <div className="max-md:hidden">
+                <AssociationRanking items={top} loading={loading} />
+              </div>
+            )}
           </aside>
         </div>
       </div>
