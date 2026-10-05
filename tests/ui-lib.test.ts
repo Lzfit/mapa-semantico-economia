@@ -200,8 +200,8 @@ describe("segurança da chave", () => {
 });
 
 describe("rankingLimit", () => {
-  it("Top 6 no mobile e no tablet largo de pouca altura; Top 8 nos demais", () => {
-    expect(rankingLimit(true, false)).toBe(6);
+  it("Top 5 no mobile, Top 6 no tablet largo de pouca altura; Top 8 nos demais", () => {
+    expect(rankingLimit(true, false)).toBe(5);
     expect(rankingLimit(false, true)).toBe(6);
     expect(rankingLimit(false, false)).toBe(8);
   });

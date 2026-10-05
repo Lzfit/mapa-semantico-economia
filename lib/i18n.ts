@@ -50,6 +50,27 @@ export interface Messages {
   };
   undisclosed: { name: string; tooltipTitle: string; notCalculated: string };
   footer: { source: string; association: string };
+  /** Textos exclusivos do layout mobile (< 768px). */
+  mobile: {
+    /** Título curto, numa linha, no estado com resultado. */
+    shortTitle: string;
+    subtitle: string;
+    suggestionsLabel: string;
+    /** Temas sugeridos: clicar dispara a busca com o texto exibido. */
+    suggestions: readonly string[];
+    sourceCount: string;
+    /** Texto antes de “{tema}” no título do resultado. */
+    resultBefore: string;
+    resultScope: string;
+    showQuestion: string;
+    hideQuestion: string;
+    highlightedBelow: string;
+    mapHeading: string;
+    mapHint: string;
+    sortedNote: string;
+    legendLower: string;
+    legendHigher: string;
+  };
 }
 
 const pt: Messages = {
@@ -89,6 +110,23 @@ const pt: Messages = {
     notCalculated: "Associação não calculada",
   },
   footer: { source: "Base", association: "Associação semântica" },
+  mobile: {
+    shortTitle: "Mapa Semântico da Economia",
+    subtitle: "Digite um tema e veja quais das 1.000 maiores empresas do Brasil se acendem.",
+    suggestionsLabel: "Experimente",
+    suggestions: ["São Paulo", "nióbio", "soja", "multinacional"],
+    sourceCount: "1.000 empresas",
+    resultBefore: "Mais associadas a ",
+    resultScope: "entre as 1.000 maiores empresas do Brasil",
+    showQuestion: "Ver pergunta ao modelo",
+    hideQuestion: "Ocultar pergunta ao modelo",
+    highlightedBelow: "Destacadas no mapa abaixo",
+    mapHeading: "MAPA DOS SETORES",
+    mapHint: "cada quadrado é uma empresa",
+    sortedNote: "Setores mais associados primeiro",
+    legendLower: "menor",
+    legendHigher: "maior",
+  },
 };
 
 const en: Messages = {
@@ -128,6 +166,23 @@ const en: Messages = {
     notCalculated: "Association not calculated",
   },
   footer: { source: "Source", association: "Semantic association" },
+  mobile: {
+    shortTitle: "Semantic Map of the Economy",
+    subtitle: "Enter a topic and see which of Brazil’s 1,000 largest companies light up.",
+    suggestionsLabel: "Try",
+    suggestions: ["São Paulo", "niobium", "soybeans", "multinational"],
+    sourceCount: "1,000 companies",
+    resultBefore: "Most associated with ",
+    resultScope: "among Brazil’s 1,000 largest companies",
+    showQuestion: "See the question for the model",
+    hideQuestion: "Hide the question for the model",
+    highlightedBelow: "Highlighted on the map below",
+    mapHeading: "SECTOR MAP",
+    mapHint: "each square is a company",
+    sortedNote: "Most associated sectors first",
+    legendLower: "lower",
+    legendHigher: "higher",
+  },
 };
 
 export const MESSAGES: Record<Lang, Messages> = { pt, en };

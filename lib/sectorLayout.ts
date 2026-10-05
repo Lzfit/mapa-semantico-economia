@@ -93,15 +93,35 @@ export function configForWidth(
     };
   }
   const mobile = width < 640;
-  const cell = mobile ? 9 : width < 900 ? 11 : 12;
+  if (mobile) {
+    // Celular: ~30 colunas; célula, padding e título crescem com a largura (9px em 358px,
+    // até ~13px no 4:5 de 540px). Continua igual para todas as empresas.
+    const k = Math.min(1.22, Math.max(1, width / 358));
+    const gap = 2;
+    const panelPadding = Math.round(11 * k);
+    const fit = Math.floor((width - 2 * panelPadding - 2 * PANEL_BORDER + gap) / 30) - gap;
+    return {
+      width,
+      cell: Math.min(14, Math.max(9, fit)),
+      gap,
+      panelPadding,
+      panelGap: 6,
+      headerHeight: Math.round(21 * k),
+      minPanelWidth: width,
+      titleFont: Math.round(10 * k * 10) / 10,
+      titleLine: Math.round(14 * k),
+      titleTracking: 0.05,
+    };
+  }
+  const cell = width < 900 ? 11 : 12;
   return {
     width,
     cell,
-    gap: mobile ? 2 : 3,
-    panelPadding: mobile ? 12 : 16,
-    panelGap: mobile ? 6 : 8,
+    gap: 3,
+    panelPadding: 16,
+    panelGap: 8,
     headerHeight: 32,
-    minPanelWidth: mobile ? width : width < 1000 ? 175 : 150,
+    minPanelWidth: width < 1000 ? 175 : 150,
     titleFont: 10.5,
     titleLine: 14,
     titleTracking: 0.06,
@@ -122,6 +142,21 @@ export function groupBySector(companies: Company[]): Array<[string, Company[]]> 
     (a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], "pt-BR"),
   );
   return groups;
+}
+
+/** Reordena os grupos segundo `order` (ordenação mobile após busca); sem ordem, mantém a fixa. */
+function orderGroups(
+  groups: Array<[string, Company[]]>,
+  order?: readonly string[] | null,
+): Array<[string, Company[]]> {
+  if (!order) return groups;
+  const pos = new Map(order.map((s, i) => [s, i]));
+  // Setor fora de `order` fica depois, na ordem fixa.
+  const key = (g: [string, Company[]], i: number) => pos.get(g[0]) ?? order.length + i;
+  return groups
+    .map((g, i) => [g, key(g, i)] as const)
+    .sort((a, b) => a[1] - b[1])
+    .map(([g]) => g);
 }
 
 interface Slot {
@@ -179,13 +214,15 @@ function shelfHeight(shelf: Slot[], cfg: LayoutConfig): number {
 
 /**
  * Layout determinístico em "prateleiras": painéis de setor lado a lado, todos
- * com a mesma altura de grade na prateleira. A busca nunca participa do cálculo.
+ * com a mesma altura de grade na prateleira. A busca só participa via `sectorOrder`
+ * (mobile após busca); sem ela, a ordem dos setores é fixa.
  */
 export function computeLayout(
   companies: Company[],
   cfg: LayoutConfig,
+  sectorOrder?: readonly string[] | null,
 ): MosaicLayout {
-  const groups = groupBySector(companies);
+  const groups = orderGroups(groupBySector(companies), sectorOrder);
   let best: ReturnType<typeof packShelves> | null = null;
   for (let r = 3; r <= 40; r++) {
     const candidate = packShelves(groups, r, cfg);

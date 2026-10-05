@@ -4,6 +4,9 @@
 @custom-variant short (@media (min-width: 1024px) and (max-height: 760px));
 /* Tablet largo com pouca altura (ex.: 789×718): mesma compactação vertical do desktop baixo. */
 @custom-variant tshort (@media (min-width: 768px) and (max-width: 1023px) and (max-height: 760px));
+/* Mobile largo e baixo (ex.: 4:5, 540×675): mesma estrutura mobile, menos ar vertical.
+   Celulares reais (~9:19,5) não entram. */
+@custom-variant m45 (@media (min-width: 480px) and (max-width: 767px) and (min-aspect-ratio: 3/4));
 
 @theme {
   --color-bg: #f7f6f1;
@@ -24,4 +27,12 @@ body {
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+}
+
+/* Mobile: a base tipográfica cresce com a largura (16px em 390px → ~19px em 540px),
+   e com ela todo o texto e espaçamento em rem. Desktop e tablet não mudam. */
+@media (max-width: 767px) {
+  html {
+    font-size: clamp(16px, calc(7.68px + 2.1333vw), 19.5px);
+  }
 }
